@@ -1,0 +1,1476 @@
+{
+  "contractName": "ICoFiToken",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_minter",
+          "type": "address"
+        }
+      ],
+      "name": "MinterAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_minter",
+          "type": "address"
+        }
+      ],
+      "name": "MinterRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_new",
+          "type": "address"
+        }
+      ],
+      "name": "NewGovernance",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_new",
+          "type": "address"
+        }
+      ],
+      "name": "setGovernance",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_minter",
+          "type": "address"
+        }
+      ],
+      "name": "addMinter",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_minter",
+          "type": "address"
+        }
+      ],
+      "name": "removeMinter",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_minter\",\"type\":\"address\"}],\"name\":\"MinterAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_minter\",\"type\":\"address\"}],\"name\":\"MinterRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_new\",\"type\":\"address\"}],\"name\":\"NewGovernance\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_minter\",\"type\":\"address\"}],\"name\":\"addMinter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_minter\",\"type\":\"address\"}],\"name\":\"removeMinter\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_new\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"MinterAdded(address)\":{\"details\":\"An event thats emitted when a new minter account is added\",\"params\":{\"_minter\":\"The new minter address added\"}},\"MinterRemoved(address)\":{\"details\":\"An event thats emitted when a minter account is removed\",\"params\":{\"_minter\":\"The minter address removed\"}},\"NewGovernance(address)\":{\"details\":\"An event thats emitted when a new governance account is set\",\"params\":{\"_new\":\"The new governance address\"}}},\"kind\":\"dev\",\"methods\":{\"addMinter(address)\":{\"details\":\"Add a new minter account to CoFi token, who can mint tokens. Only governance has the right to execute.\",\"params\":{\"_minter\":\"The new minter address\"}},\"allowance(address,address)\":{\"details\":\"Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called.\"},\"approve(address,uint256)\":{\"details\":\"Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the amount of tokens owned by `account`.\"},\"mint(address,uint256)\":{\"details\":\"mint is used to distribute CoFi token to users, minters are CoFi mining pools\",\"params\":{\"_amount\":\"The amount of tokens minted\",\"_to\":\"The receiver address\"}},\"removeMinter(address)\":{\"details\":\"Remove a minter account from CoFi token, who can mint tokens. Only governance has the right to execute.\",\"params\":{\"_minter\":\"The minter address removed\"}},\"setGovernance(address)\":{\"details\":\"Set governance address of CoFi token. Only governance has the right to execute.\",\"params\":{\"_new\":\"The new governance address\"}},\"totalSupply()\":{\"details\":\"Returns the amount of tokens in existence.\"},\"transfer(address,uint256)\":{\"details\":\"Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiToken.sol\":\"ICoFiToken\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiToken.sol\":{\"keccak256\":\"0xb47a6234433e4f4c3ee0dc8c626c79d5314fbe1f1567e7af4fba29a8412ce84b\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://011c94f1526a6f2fea35ba03a49acc550a8b17797410c920ba8b23dd092382e2\",\"dweb:/ipfs/QmQdeWG9JZiTmrh6Dju3N4aQFNfLkNgn87ZyW5LmrPMTjX\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL-3.0-or-later\n\npragma solidity 0.6.12;\n\nimport \"@openzeppelin/contracts/token/ERC20/IERC20.sol\";\n\ninterface ICoFiToken is IERC20 {\n\n    /// @dev An event thats emitted when a new governance account is set\n    /// @param  _new The new governance address\n    event NewGovernance(address _new);\n\n    /// @dev An event thats emitted when a new minter account is added\n    /// @param  _minter The new minter address added\n    event MinterAdded(address _minter);\n\n    /// @dev An event thats emitted when a minter account is removed\n    /// @param  _minter The minter address removed\n    event MinterRemoved(address _minter);\n\n    /// @dev Set governance address of CoFi token. Only governance has the right to execute.\n    /// @param  _new The new governance address\n    function setGovernance(address _new) external;\n\n    /// @dev Add a new minter account to CoFi token, who can mint tokens. Only governance has the right to execute.\n    /// @param  _minter The new minter address\n    function addMinter(address _minter) external;\n\n    /// @dev Remove a minter account from CoFi token, who can mint tokens. Only governance has the right to execute.\n    /// @param  _minter The minter address removed\n    function removeMinter(address _minter) external;\n\n    /// @dev mint is used to distribute CoFi token to users, minters are CoFi mining pools\n    /// @param  _to The receiver address\n    /// @param  _amount The amount of tokens minted\n    function mint(address _to, uint256 _amount) external;\n}",
+  "sourcePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiToken.sol",
+  "ast": {
+    "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiToken.sol",
+    "exportedSymbols": {
+      "ICoFiToken": [
+        27200
+      ]
+    },
+    "id": 27201,
+    "license": "GPL-3.0-or-later",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 27155,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "46:23:32"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "id": 27156,
+        "nodeType": "ImportDirective",
+        "scope": 27201,
+        "sourceUnit": 37580,
+        "src": "71:56:32",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 27157,
+              "name": "IERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 37579,
+              "src": "153:6:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IERC20_$37579",
+                "typeString": "contract IERC20"
+              }
+            },
+            "id": 27158,
+            "nodeType": "InheritanceSpecifier",
+            "src": "153:6:32"
+          }
+        ],
+        "contractDependencies": [
+          37579
+        ],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 27200,
+        "linearizedBaseContracts": [
+          27200,
+          37579
+        ],
+        "name": "ICoFiToken",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 27159,
+              "nodeType": "StructuredDocumentation",
+              "src": "167:116:32",
+              "text": "@dev An event thats emitted when a new governance account is set\n @param  _new The new governance address"
+            },
+            "id": 27163,
+            "name": "NewGovernance",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 27162,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27161,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_new",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27163,
+                  "src": "308:12:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 27160,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "308:7:32",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "307:14:32"
+            },
+            "src": "288:34:32"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 27164,
+              "nodeType": "StructuredDocumentation",
+              "src": "328:119:32",
+              "text": "@dev An event thats emitted when a new minter account is added\n @param  _minter The new minter address added"
+            },
+            "id": 27168,
+            "name": "MinterAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 27167,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27166,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_minter",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27168,
+                  "src": "470:15:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 27165,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "470:7:32",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "469:17:32"
+            },
+            "src": "452:35:32"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 27169,
+              "nodeType": "StructuredDocumentation",
+              "src": "493:115:32",
+              "text": "@dev An event thats emitted when a minter account is removed\n @param  _minter The minter address removed"
+            },
+            "id": 27173,
+            "name": "MinterRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 27172,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27171,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_minter",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27173,
+                  "src": "633:15:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 27170,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "633:7:32",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "632:17:32"
+            },
+            "src": "613:37:32"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 27174,
+              "nodeType": "StructuredDocumentation",
+              "src": "656:136:32",
+              "text": "@dev Set governance address of CoFi token. Only governance has the right to execute.\n @param  _new The new governance address"
+            },
+            "functionSelector": "ab033ea9",
+            "id": 27179,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setGovernance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 27177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27176,
+                  "mutability": "mutable",
+                  "name": "_new",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27179,
+                  "src": "820:12:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 27175,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "820:7:32",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "819:14:32"
+            },
+            "returnParameters": {
+              "id": 27178,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "842:0:32"
+            },
+            "scope": 27200,
+            "src": "797:46:32",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 27180,
+              "nodeType": "StructuredDocumentation",
+              "src": "849:158:32",
+              "text": "@dev Add a new minter account to CoFi token, who can mint tokens. Only governance has the right to execute.\n @param  _minter The new minter address"
+            },
+            "functionSelector": "983b2d56",
+            "id": 27185,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addMinter",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 27183,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27182,
+                  "mutability": "mutable",
+                  "name": "_minter",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27185,
+                  "src": "1031:15:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 27181,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1031:7:32",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1030:17:32"
+            },
+            "returnParameters": {
+              "id": 27184,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1056:0:32"
+            },
+            "scope": 27200,
+            "src": "1012:45:32",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 27186,
+              "nodeType": "StructuredDocumentation",
+              "src": "1063:163:32",
+              "text": "@dev Remove a minter account from CoFi token, who can mint tokens. Only governance has the right to execute.\n @param  _minter The minter address removed"
+            },
+            "functionSelector": "3092afd5",
+            "id": 27191,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeMinter",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 27189,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27188,
+                  "mutability": "mutable",
+                  "name": "_minter",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27191,
+                  "src": "1253:15:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 27187,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1253:7:32",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1252:17:32"
+            },
+            "returnParameters": {
+              "id": 27190,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1278:0:32"
+            },
+            "scope": 27200,
+            "src": "1231:48:32",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 27192,
+              "nodeType": "StructuredDocumentation",
+              "src": "1285:179:32",
+              "text": "@dev mint is used to distribute CoFi token to users, minters are CoFi mining pools\n @param  _to The receiver address\n @param  _amount The amount of tokens minted"
+            },
+            "functionSelector": "40c10f19",
+            "id": 27199,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 27197,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 27194,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27199,
+                  "src": "1483:11:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 27193,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1483:7:32",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 27196,
+                  "mutability": "mutable",
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 27199,
+                  "src": "1496:15:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 27195,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1496:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1482:30:32"
+            },
+            "returnParameters": {
+              "id": 27198,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1521:0:32"
+            },
+            "scope": 27200,
+            "src": "1469:53:32",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 27201,
+        "src": "129:1395:32"
+      }
+    ],
+    "src": "46:1478:32"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiToken.sol",
+      "exportedSymbols": {
+        "ICoFiToken": [
+          27200
+        ]
+      },
+      "license": "GPL-3.0-or-later"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".12"
+          ]
+        },
+        "id": 27155,
+        "name": "PragmaDirective",
+        "src": "46:23:32"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 37580,
+          "absolutePath": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+          "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+          "scope": 27201,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 27156,
+        "name": "ImportDirective",
+        "src": "71:56:32"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            37579
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            27200,
+            37579
+          ],
+          "name": "ICoFiToken",
+          "scope": 27201
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "IERC20",
+                  "referencedDeclaration": 37579,
+                  "type": "contract IERC20"
+                },
+                "id": 27157,
+                "name": "UserDefinedTypeName",
+                "src": "153:6:32"
+              }
+            ],
+            "id": 27158,
+            "name": "InheritanceSpecifier",
+            "src": "153:6:32"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "NewGovernance"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev An event thats emitted when a new governance account is set\n @param  _new The new governance address"
+                },
+                "id": 27159,
+                "name": "StructuredDocumentation",
+                "src": "167:116:32"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_new",
+                      "overrides": null,
+                      "scope": 27163,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 27160,
+                        "name": "ElementaryTypeName",
+                        "src": "308:7:32"
+                      }
+                    ],
+                    "id": 27161,
+                    "name": "VariableDeclaration",
+                    "src": "308:12:32"
+                  }
+                ],
+                "id": 27162,
+                "name": "ParameterList",
+                "src": "307:14:32"
+              }
+            ],
+            "id": 27163,
+            "name": "EventDefinition",
+            "src": "288:34:32"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "MinterAdded"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev An event thats emitted when a new minter account is added\n @param  _minter The new minter address added"
+                },
+                "id": 27164,
+                "name": "StructuredDocumentation",
+                "src": "328:119:32"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_minter",
+                      "overrides": null,
+                      "scope": 27168,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 27165,
+                        "name": "ElementaryTypeName",
+                        "src": "470:7:32"
+                      }
+                    ],
+                    "id": 27166,
+                    "name": "VariableDeclaration",
+                    "src": "470:15:32"
+                  }
+                ],
+                "id": 27167,
+                "name": "ParameterList",
+                "src": "469:17:32"
+              }
+            ],
+            "id": 27168,
+            "name": "EventDefinition",
+            "src": "452:35:32"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "MinterRemoved"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev An event thats emitted when a minter account is removed\n @param  _minter The minter address removed"
+                },
+                "id": 27169,
+                "name": "StructuredDocumentation",
+                "src": "493:115:32"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "_minter",
+                      "overrides": null,
+                      "scope": 27173,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 27170,
+                        "name": "ElementaryTypeName",
+                        "src": "633:7:32"
+                      }
+                    ],
+                    "id": 27171,
+                    "name": "VariableDeclaration",
+                    "src": "633:15:32"
+                  }
+                ],
+                "id": 27172,
+                "name": "ParameterList",
+                "src": "632:17:32"
+              }
+            ],
+            "id": 27173,
+            "name": "EventDefinition",
+            "src": "613:37:32"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "ab033ea9",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setGovernance",
+              "overrides": null,
+              "scope": 27200,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev Set governance address of CoFi token. Only governance has the right to execute.\n @param  _new The new governance address"
+                },
+                "id": 27174,
+                "name": "StructuredDocumentation",
+                "src": "656:136:32"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_new",
+                      "overrides": null,
+                      "scope": 27179,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 27175,
+                        "name": "ElementaryTypeName",
+                        "src": "820:7:32"
+                      }
+                    ],
+                    "id": 27176,
+                    "name": "VariableDeclaration",
+                    "src": "820:12:32"
+                  }
+                ],
+                "id": 27177,
+                "name": "ParameterList",
+                "src": "819:14:32"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 27178,
+                "name": "ParameterList",
+                "src": "842:0:32"
+              }
+            ],
+            "id": 27179,
+            "name": "FunctionDefinition",
+            "src": "797:46:32"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "983b2d56",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "addMinter",
+              "overrides": null,
+              "scope": 27200,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev Add a new minter account to CoFi token, who can mint tokens. Only governance has the right to execute.\n @param  _minter The new minter address"
+                },
+                "id": 27180,
+                "name": "StructuredDocumentation",
+                "src": "849:158:32"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_minter",
+                      "overrides": null,
+                      "scope": 27185,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 27181,
+                        "name": "ElementaryTypeName",
+                        "src": "1031:7:32"
+                      }
+                    ],
+                    "id": 27182,
+                    "name": "VariableDeclaration",
+                    "src": "1031:15:32"
+                  }
+                ],
+                "id": 27183,
+                "name": "ParameterList",
+                "src": "1030:17:32"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 27184,
+                "name": "ParameterList",
+                "src": "1056:0:32"
+              }
+            ],
+            "id": 27185,
+            "name": "FunctionDefinition",
+            "src": "1012:45:32"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "3092afd5",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "removeMinter",
+              "overrides": null,
+              "scope": 27200,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev Remove a minter account from CoFi token, who can mint tokens. Only governance has the right to execute.\n @param  _minter The minter address removed"
+                },
+                "id": 27186,
+                "name": "StructuredDocumentation",
+                "src": "1063:163:32"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_minter",
+                      "overrides": null,
+                      "scope": 27191,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 27187,
+                        "name": "ElementaryTypeName",
+                        "src": "1253:7:32"
+                      }
+                    ],
+                    "id": 27188,
+                    "name": "VariableDeclaration",
+                    "src": "1253:15:32"
+                  }
+                ],
+                "id": 27189,
+                "name": "ParameterList",
+                "src": "1252:17:32"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 27190,
+                "name": "ParameterList",
+                "src": "1278:0:32"
+              }
+            ],
+            "id": 27191,
+            "name": "FunctionDefinition",
+            "src": "1231:48:32"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "functionSelector": "40c10f19",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "mint",
+              "overrides": null,
+              "scope": 27200,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@dev mint is used to distribute CoFi token to users, minters are CoFi mining pools\n @param  _to The receiver address\n @param  _amount The amount of tokens minted"
+                },
+                "id": 27192,
+                "name": "StructuredDocumentation",
+                "src": "1285:179:32"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_to",
+                      "overrides": null,
+                      "scope": 27199,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 27193,
+                        "name": "ElementaryTypeName",
+                        "src": "1483:7:32"
+                      }
+                    ],
+                    "id": 27194,
+                    "name": "VariableDeclaration",
+                    "src": "1483:11:32"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_amount",
+                      "overrides": null,
+                      "scope": 27199,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 27195,
+                        "name": "ElementaryTypeName",
+                        "src": "1496:7:32"
+                      }
+                    ],
+                    "id": 27196,
+                    "name": "VariableDeclaration",
+                    "src": "1496:15:32"
+                  }
+                ],
+                "id": 27197,
+                "name": "ParameterList",
+                "src": "1482:30:32"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 27198,
+                "name": "ParameterList",
+                "src": "1521:0:32"
+              }
+            ],
+            "id": 27199,
+            "name": "FunctionDefinition",
+            "src": "1469:53:32"
+          }
+        ],
+        "id": 27200,
+        "name": "ContractDefinition",
+        "src": "129:1395:32"
+      }
+    ],
+    "id": 27201,
+    "name": "SourceUnit",
+    "src": "46:1478:32"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-05-11T03:07:10.142Z",
+  "devdoc": {
+    "events": {
+      "MinterAdded(address)": {
+        "details": "An event thats emitted when a new minter account is added",
+        "params": {
+          "_minter": "The new minter address added"
+        }
+      },
+      "MinterRemoved(address)": {
+        "details": "An event thats emitted when a minter account is removed",
+        "params": {
+          "_minter": "The minter address removed"
+        }
+      },
+      "NewGovernance(address)": {
+        "details": "An event thats emitted when a new governance account is set",
+        "params": {
+          "_new": "The new governance address"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "addMinter(address)": {
+        "details": "Add a new minter account to CoFi token, who can mint tokens. Only governance has the right to execute.",
+        "params": {
+          "_minter": "The new minter address"
+        }
+      },
+      "allowance(address,address)": {
+        "details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
+      },
+      "approve(address,uint256)": {
+        "details": "Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
+      },
+      "balanceOf(address)": {
+        "details": "Returns the amount of tokens owned by `account`."
+      },
+      "mint(address,uint256)": {
+        "details": "mint is used to distribute CoFi token to users, minters are CoFi mining pools",
+        "params": {
+          "_amount": "The amount of tokens minted",
+          "_to": "The receiver address"
+        }
+      },
+      "removeMinter(address)": {
+        "details": "Remove a minter account from CoFi token, who can mint tokens. Only governance has the right to execute.",
+        "params": {
+          "_minter": "The minter address removed"
+        }
+      },
+      "setGovernance(address)": {
+        "details": "Set governance address of CoFi token. Only governance has the right to execute.",
+        "params": {
+          "_new": "The new governance address"
+        }
+      },
+      "totalSupply()": {
+        "details": "Returns the amount of tokens in existence."
+      },
+      "transfer(address,uint256)": {
+        "details": "Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
+      },
+      "transferFrom(address,address,uint256)": {
+        "details": "Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

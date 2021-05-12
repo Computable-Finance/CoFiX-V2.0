@@ -1,0 +1,773 @@
+{
+  "contractName": "ICoFiXV2DAO",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "gov",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "CoFiBurn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "gov",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "flag",
+          "type": "uint256"
+        }
+      ],
+      "name": "FlagSet",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "gov",
+          "type": "address"
+        }
+      ],
+      "name": "setGovernance",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "start",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "addETHReward",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"CoFiBurn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"flag\",\"type\":\"uint256\"}],\"name\":\"FlagSet\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"addETHReward\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"start\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol\":\"ICoFiXV2DAO\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol\":{\"keccak256\":\"0x9c3b668f17866356f15165ae1623e56b618a1a96cf17f4938ac0837a7a9e5daf\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://0c38c52ebc2c4e3c5b38755fcda115edcb0183219f2902048d49304c85fb1fd5\",\"dweb:/ipfs/QmafoQWQZ8EgtPf83zidNQM9MG75QepYpk3mRrV3sBhqnt\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL-3.0-or-later\n\npragma solidity 0.6.12;\n\ninterface ICoFiXV2DAO {\n\n    function setGovernance(address gov) external;\n    function start() external; \n\n    function addETHReward() external payable; \n\n    event FlagSet(address gov, uint256 flag);\n    event CoFiBurn(address gov, uint256 amount);\n}",
+  "sourcePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol",
+  "ast": {
+    "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol",
+    "exportedSymbols": {
+      "ICoFiXV2DAO": [
+        28436
+      ]
+    },
+    "id": 28437,
+    "license": "GPL-3.0-or-later",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 28412,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".12"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "46:23:42"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 28436,
+        "linearizedBaseContracts": [
+          28436
+        ],
+        "name": "ICoFiXV2DAO",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "ab033ea9",
+            "id": 28417,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setGovernance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28415,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28414,
+                  "mutability": "mutable",
+                  "name": "gov",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28417,
+                  "src": "123:11:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28413,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "123:7:42",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "122:13:42"
+            },
+            "returnParameters": {
+              "id": 28416,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "144:0:42"
+            },
+            "scope": 28436,
+            "src": "100:45:42",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "be9a6555",
+            "id": 28420,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "start",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28418,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "164:2:42"
+            },
+            "returnParameters": {
+              "id": 28419,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "175:0:42"
+            },
+            "scope": 28436,
+            "src": "150:26:42",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "41f894ff",
+            "id": 28423,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addETHReward",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 28421,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "204:2:42"
+            },
+            "returnParameters": {
+              "id": 28422,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "223:0:42"
+            },
+            "scope": 28436,
+            "src": "183:41:42",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 28429,
+            "name": "FlagSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 28428,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28425,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "gov",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28429,
+                  "src": "245:11:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28424,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "245:7:42",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28427,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "flag",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28429,
+                  "src": "258:12:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28426,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "244:27:42"
+            },
+            "src": "231:41:42"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 28435,
+            "name": "CoFiBurn",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 28434,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28431,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "gov",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28435,
+                  "src": "292:11:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 28430,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "292:7:42",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 28433,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 28435,
+                  "src": "305:14:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 28432,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "305:7:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "291:29:42"
+            },
+            "src": "277:44:42"
+          }
+        ],
+        "scope": 28437,
+        "src": "71:252:42"
+      }
+    ],
+    "src": "46:277:42"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol",
+      "exportedSymbols": {
+        "ICoFiXV2DAO": [
+          28436
+        ]
+      },
+      "license": "GPL-3.0-or-later"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.6",
+            ".12"
+          ]
+        },
+        "id": 28412,
+        "name": "PragmaDirective",
+        "src": "46:23:42"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            28436
+          ],
+          "name": "ICoFiXV2DAO",
+          "scope": 28437
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "ab033ea9",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setGovernance",
+              "overrides": null,
+              "scope": 28436,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "gov",
+                      "overrides": null,
+                      "scope": 28417,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28413,
+                        "name": "ElementaryTypeName",
+                        "src": "123:7:42"
+                      }
+                    ],
+                    "id": 28414,
+                    "name": "VariableDeclaration",
+                    "src": "123:11:42"
+                  }
+                ],
+                "id": 28415,
+                "name": "ParameterList",
+                "src": "122:13:42"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28416,
+                "name": "ParameterList",
+                "src": "144:0:42"
+              }
+            ],
+            "id": 28417,
+            "name": "FunctionDefinition",
+            "src": "100:45:42"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "be9a6555",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "start",
+              "overrides": null,
+              "scope": 28436,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28418,
+                "name": "ParameterList",
+                "src": "164:2:42"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28419,
+                "name": "ParameterList",
+                "src": "175:0:42"
+              }
+            ],
+            "id": 28420,
+            "name": "FunctionDefinition",
+            "src": "150:26:42"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "41f894ff",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "addETHReward",
+              "overrides": null,
+              "scope": 28436,
+              "stateMutability": "payable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28421,
+                "name": "ParameterList",
+                "src": "204:2:42"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28422,
+                "name": "ParameterList",
+                "src": "223:0:42"
+              }
+            ],
+            "id": 28423,
+            "name": "FunctionDefinition",
+            "src": "183:41:42"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "FlagSet"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "gov",
+                      "overrides": null,
+                      "scope": 28429,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28424,
+                        "name": "ElementaryTypeName",
+                        "src": "245:7:42"
+                      }
+                    ],
+                    "id": 28425,
+                    "name": "VariableDeclaration",
+                    "src": "245:11:42"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "flag",
+                      "overrides": null,
+                      "scope": 28429,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28426,
+                        "name": "ElementaryTypeName",
+                        "src": "258:7:42"
+                      }
+                    ],
+                    "id": 28427,
+                    "name": "VariableDeclaration",
+                    "src": "258:12:42"
+                  }
+                ],
+                "id": 28428,
+                "name": "ParameterList",
+                "src": "244:27:42"
+              }
+            ],
+            "id": 28429,
+            "name": "EventDefinition",
+            "src": "231:41:42"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "CoFiBurn"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "gov",
+                      "overrides": null,
+                      "scope": 28435,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 28430,
+                        "name": "ElementaryTypeName",
+                        "src": "292:7:42"
+                      }
+                    ],
+                    "id": 28431,
+                    "name": "VariableDeclaration",
+                    "src": "292:11:42"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "amount",
+                      "overrides": null,
+                      "scope": 28435,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 28432,
+                        "name": "ElementaryTypeName",
+                        "src": "305:7:42"
+                      }
+                    ],
+                    "id": 28433,
+                    "name": "VariableDeclaration",
+                    "src": "305:14:42"
+                  }
+                ],
+                "id": 28434,
+                "name": "ParameterList",
+                "src": "291:29:42"
+              }
+            ],
+            "id": 28435,
+            "name": "EventDefinition",
+            "src": "277:44:42"
+          }
+        ],
+        "id": 28436,
+        "name": "ContractDefinition",
+        "src": "71:252:42"
+      }
+    ],
+    "id": 28437,
+    "name": "SourceUnit",
+    "src": "46:277:42"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-05-11T03:07:10.173Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

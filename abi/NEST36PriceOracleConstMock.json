@@ -1,0 +1,172 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "priceInfoMap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "latestPriceBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "latestPriceValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredPriceBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredPriceValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredAvgPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredSigmaSQ",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "payback",
+        "type": "address"
+      }
+    ],
+    "name": "latestPriceAndTriggeredPriceInfo",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "latestPriceBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "latestPriceValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredPriceBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredPriceValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredAvgPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredSigmaSQ",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "latestPrice",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "latestPriceBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "latestPriceValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredPriceBlockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredPriceValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredAvgPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredSigmaSQ",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "latestPriceValue",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredAvgPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "triggeredSigmaSQ",
+        "type": "uint256"
+      }
+    ],
+    "name": "feedPrice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

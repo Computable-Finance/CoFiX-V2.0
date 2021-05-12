@@ -1,0 +1,157 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "priceInfoMap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "ethAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "erc20Amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "avgPrice",
+        "type": "uint128"
+      },
+      {
+        "internalType": "int128",
+        "name": "vola",
+        "type": "int128"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lastUpdateBlock",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "payback",
+        "type": "address"
+      }
+    ],
+    "name": "queryPriceAvgVola",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "ethAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "avgPrice",
+        "type": "uint128"
+      },
+      {
+        "internalType": "int128",
+        "name": "vola",
+        "type": "int128"
+      },
+      {
+        "internalType": "uint256",
+        "name": "bn",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "latestPrice",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "ethAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "avgPrice",
+        "type": "uint128"
+      },
+      {
+        "internalType": "int128",
+        "name": "vola",
+        "type": "int128"
+      },
+      {
+        "internalType": "uint256",
+        "name": "bn",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "ethAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "erc20Amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint128",
+        "name": "avgPrice",
+        "type": "uint128"
+      },
+      {
+        "internalType": "int128",
+        "name": "vola",
+        "type": "int128"
+      }
+    ],
+    "name": "feedPrice",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

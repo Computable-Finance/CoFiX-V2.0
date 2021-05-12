@@ -32,7 +32,7 @@ module.exports = async function (deployer, network) {
         HBTC = await HBTC.at("0x0316EB71485b0Ab14103307bf65a021042c6d380");
         NEST = await NEST.at("0x04abEdA201850aC0124161F037Efd70c74ddC74C");
         WETH9 = await WETH9.at("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2");
-        NestPriceOracle = await NestPriceOracle.at("0x3bf046c114385357838D9cAE9509C6fBBfE306d2"); // nest 3.6: NestPriceFacade 
+        NestPriceOracle = await NestPriceOracle.at("0xB5D2890c061c321A5B6A4a4254bb1522425BAF0A"); // nest 3.6: NestPriceFacade 
         CoFiToken = await CoFiToken.at("0x1a23a6BfBAdB59fa563008c0fB7cf96dfCF34Ea1");
         // https://uniswap.org/docs/v2/smart-contracts/factory/
         UniswapFactory = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";

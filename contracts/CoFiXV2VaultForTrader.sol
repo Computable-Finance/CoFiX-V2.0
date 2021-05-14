@@ -30,15 +30,15 @@ contract CoFiXV2VaultForTrader is ICoFiXV2VaultForTrader, ReentrancyGuard {
     uint256 public constant NAVPS_BASE = 1E18; // NAVPS (Net Asset Value Per Share), need accuracy
 
     // make all of these constant, so we can reduce gas cost for swap features
-    uint256 public constant COFI_DECAY_PERIOD = 2400000; // LP pool yield decays for every 2,400,000 blocks
-    uint256 public constant THETA_FEE_UINIT = 1 ether;
-    uint256 public constant L_LIMIT = 100 ether;
-    uint256 public constant COFI_RATE_UPDATE_INTERVAL = 1000;
+    // uint256 public constant COFI_DECAY_PERIOD = 2400000; // LP pool yield decays for every 2,400,000 blocks
+    // uint256 public constant THETA_FEE_UINIT = 1 ether;
+    // uint256 public constant L_LIMIT = 100 ether;
+    // uint256 public constant COFI_RATE_UPDATE_INTERVAL = 1000;
 
-    uint256 public constant EXPECT_YIELD_BASE = 10;
-    uint256 public constant L_BASE = 1000;
-    uint256 public constant THETA_BASE = 1000;
-    uint256 public constant REWARD_MULTIPLE_BASE = 100;
+    // uint256 public constant EXPECT_YIELD_BASE = 10;
+    // uint256 public constant L_BASE = 1000;
+    // uint256 public constant THETA_BASE = 1000;
+    // uint256 public constant REWARD_MULTIPLE_BASE = 100;
 
     address public immutable cofiToken;
     address public immutable factory;
@@ -76,17 +76,17 @@ contract CoFiXV2VaultForTrader is ICoFiXV2VaultForTrader, ReentrancyGuard {
         governance = _new;
     }
 
-    function setExpectedYieldRatio(uint256 r) external override onlyGovernance {
-        EXPECT_YIELD_RATIO = r;
-    }
+    // function setExpectedYieldRatio(uint256 r) external override onlyGovernance {
+    //     EXPECT_YIELD_RATIO = r;
+    // }
 
-    function setLRatio(uint256 lRatio) external override onlyGovernance {
-        L_RATIO = lRatio;
-    }
+    // function setLRatio(uint256 lRatio) external override onlyGovernance {
+    //     L_RATIO = lRatio;
+    // }
 
-    function setTheta(uint256 theta) external override onlyGovernance {
-        THETA = theta;
-    }
+    // function setTheta(uint256 theta) external override onlyGovernance {
+    //     THETA = theta;
+    // }
 
     function setCofiRate(uint256 _cofiRate) external override onlyGovernance {
         cofiRate = _cofiRate;

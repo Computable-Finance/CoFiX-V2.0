@@ -67,34 +67,34 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"CoFiBurn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"flag\",\"type\":\"uint256\"}],\"name\":\"FlagSet\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"addETHReward\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"start\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol\":\"ICoFiXV2DAO\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol\":{\"keccak256\":\"0x9c3b668f17866356f15165ae1623e56b618a1a96cf17f4938ac0837a7a9e5daf\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://0c38c52ebc2c4e3c5b38755fcda115edcb0183219f2902048d49304c85fb1fd5\",\"dweb:/ipfs/QmafoQWQZ8EgtPf83zidNQM9MG75QepYpk3mRrV3sBhqnt\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"CoFiBurn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"flag\",\"type\":\"uint256\"}],\"name\":\"FlagSet\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"addETHReward\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"gov\",\"type\":\"address\"}],\"name\":\"setGovernance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"start\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2DAO.sol\":\"ICoFiXV2DAO\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2DAO.sol\":{\"keccak256\":\"0x9c3b668f17866356f15165ae1623e56b618a1a96cf17f4938ac0837a7a9e5daf\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://0c38c52ebc2c4e3c5b38755fcda115edcb0183219f2902048d49304c85fb1fd5\",\"dweb:/ipfs/QmafoQWQZ8EgtPf83zidNQM9MG75QepYpk3mRrV3sBhqnt\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: GPL-3.0-or-later\n\npragma solidity 0.6.12;\n\ninterface ICoFiXV2DAO {\n\n    function setGovernance(address gov) external;\n    function start() external; \n\n    function addETHReward() external payable; \n\n    event FlagSet(address gov, uint256 flag);\n    event CoFiBurn(address gov, uint256 amount);\n}",
-  "sourcePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol",
+  "sourcePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2DAO.sol",
   "ast": {
-    "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol",
+    "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2DAO.sol",
     "exportedSymbols": {
       "ICoFiXV2DAO": [
-        28436
+        11837
       ]
     },
-    "id": 28437,
+    "id": 11838,
     "license": "GPL-3.0-or-later",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 28412,
+        "id": 11813,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "46:23:42"
+        "src": "46:23:19"
       },
       {
         "abstract": false,
@@ -103,9 +103,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 28436,
+        "id": 11837,
         "linearizedBaseContracts": [
-          28436
+          11837
         ],
         "name": "ICoFiXV2DAO",
         "nodeType": "ContractDefinition",
@@ -114,7 +114,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "ab033ea9",
-            "id": 28417,
+            "id": 11818,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -122,18 +122,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28415,
+              "id": 11816,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28414,
+                  "id": 11815,
                   "mutability": "mutable",
                   "name": "gov",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28417,
-                  "src": "123:11:42",
+                  "scope": 11818,
+                  "src": "123:11:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -141,10 +141,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28413,
+                    "id": 11814,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "123:7:42",
+                    "src": "123:7:19",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -155,16 +155,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "122:13:42"
+              "src": "122:13:19"
             },
             "returnParameters": {
-              "id": 28416,
+              "id": 11817,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "144:0:42"
+              "src": "144:0:19"
             },
-            "scope": 28436,
-            "src": "100:45:42",
+            "scope": 11837,
+            "src": "100:45:19",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -173,7 +173,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "be9a6555",
-            "id": 28420,
+            "id": 11821,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -181,19 +181,19 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28418,
+              "id": 11819,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "164:2:42"
+              "src": "164:2:19"
             },
             "returnParameters": {
-              "id": 28419,
+              "id": 11820,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "175:0:42"
+              "src": "175:0:19"
             },
-            "scope": 28436,
-            "src": "150:26:42",
+            "scope": 11837,
+            "src": "150:26:19",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -202,7 +202,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "41f894ff",
-            "id": 28423,
+            "id": 11824,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -210,19 +210,19 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28421,
+              "id": 11822,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "204:2:42"
+              "src": "204:2:19"
             },
             "returnParameters": {
-              "id": 28422,
+              "id": 11823,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "223:0:42"
+              "src": "223:0:19"
             },
-            "scope": 28436,
-            "src": "183:41:42",
+            "scope": 11837,
+            "src": "183:41:19",
             "stateMutability": "payable",
             "virtual": false,
             "visibility": "external"
@@ -230,23 +230,23 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 28429,
+            "id": 11830,
             "name": "FlagSet",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 28428,
+              "id": 11829,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28425,
+                  "id": 11826,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "gov",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28429,
-                  "src": "245:11:42",
+                  "scope": 11830,
+                  "src": "245:11:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -254,10 +254,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28424,
+                    "id": 11825,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "245:7:42",
+                    "src": "245:7:19",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -269,14 +269,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28427,
+                  "id": 11828,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "flag",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28429,
-                  "src": "258:12:42",
+                  "scope": 11830,
+                  "src": "258:12:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -284,10 +284,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28426,
+                    "id": 11827,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "258:7:42",
+                    "src": "258:7:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -297,30 +297,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "244:27:42"
+              "src": "244:27:19"
             },
-            "src": "231:41:42"
+            "src": "231:41:19"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 28435,
+            "id": 11836,
             "name": "CoFiBurn",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 28434,
+              "id": 11835,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28431,
+                  "id": 11832,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "gov",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28435,
-                  "src": "292:11:42",
+                  "scope": 11836,
+                  "src": "292:11:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -328,10 +328,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28430,
+                    "id": 11831,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "292:7:42",
+                    "src": "292:7:19",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -343,14 +343,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28433,
+                  "id": 11834,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28435,
-                  "src": "305:14:42",
+                  "scope": 11836,
+                  "src": "305:14:19",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -358,10 +358,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28432,
+                    "id": 11833,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "305:7:42",
+                    "src": "305:7:19",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -371,23 +371,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "291:29:42"
+              "src": "291:29:19"
             },
-            "src": "277:44:42"
+            "src": "277:44:19"
           }
         ],
-        "scope": 28437,
-        "src": "71:252:42"
+        "scope": 11838,
+        "src": "71:252:19"
       }
     ],
-    "src": "46:277:42"
+    "src": "46:277:19"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXV2DAO.sol",
+      "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2DAO.sol",
       "exportedSymbols": {
         "ICoFiXV2DAO": [
-          28436
+          11837
         ]
       },
       "license": "GPL-3.0-or-later"
@@ -401,9 +401,9 @@
             ".12"
           ]
         },
-        "id": 28412,
+        "id": 11813,
         "name": "PragmaDirective",
-        "src": "46:23:42"
+        "src": "46:23:19"
       },
       {
         "attributes": {
@@ -418,10 +418,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            28436
+            11837
           ],
           "name": "ICoFiXV2DAO",
-          "scope": 28437
+          "scope": 11838
         },
         "children": [
           {
@@ -437,7 +437,7 @@
               ],
               "name": "setGovernance",
               "overrides": null,
-              "scope": 28436,
+              "scope": 11837,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -451,7 +451,7 @@
                       "mutability": "mutable",
                       "name": "gov",
                       "overrides": null,
-                      "scope": 28417,
+                      "scope": 11818,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -465,19 +465,19 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28413,
+                        "id": 11814,
                         "name": "ElementaryTypeName",
-                        "src": "123:7:42"
+                        "src": "123:7:19"
                       }
                     ],
-                    "id": 28414,
+                    "id": 11815,
                     "name": "VariableDeclaration",
-                    "src": "123:11:42"
+                    "src": "123:11:19"
                   }
                 ],
-                "id": 28415,
+                "id": 11816,
                 "name": "ParameterList",
-                "src": "122:13:42"
+                "src": "122:13:19"
               },
               {
                 "attributes": {
@@ -486,14 +486,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28416,
+                "id": 11817,
                 "name": "ParameterList",
-                "src": "144:0:42"
+                "src": "144:0:19"
               }
             ],
-            "id": 28417,
+            "id": 11818,
             "name": "FunctionDefinition",
-            "src": "100:45:42"
+            "src": "100:45:19"
           },
           {
             "attributes": {
@@ -508,7 +508,7 @@
               ],
               "name": "start",
               "overrides": null,
-              "scope": 28436,
+              "scope": 11837,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -521,9 +521,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28418,
+                "id": 11819,
                 "name": "ParameterList",
-                "src": "164:2:42"
+                "src": "164:2:19"
               },
               {
                 "attributes": {
@@ -532,14 +532,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28419,
+                "id": 11820,
                 "name": "ParameterList",
-                "src": "175:0:42"
+                "src": "175:0:19"
               }
             ],
-            "id": 28420,
+            "id": 11821,
             "name": "FunctionDefinition",
-            "src": "150:26:42"
+            "src": "150:26:19"
           },
           {
             "attributes": {
@@ -554,7 +554,7 @@
               ],
               "name": "addETHReward",
               "overrides": null,
-              "scope": 28436,
+              "scope": 11837,
               "stateMutability": "payable",
               "virtual": false,
               "visibility": "external"
@@ -567,9 +567,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28421,
+                "id": 11822,
                 "name": "ParameterList",
-                "src": "204:2:42"
+                "src": "204:2:19"
               },
               {
                 "attributes": {
@@ -578,14 +578,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28422,
+                "id": 11823,
                 "name": "ParameterList",
-                "src": "223:0:42"
+                "src": "223:0:19"
               }
             ],
-            "id": 28423,
+            "id": 11824,
             "name": "FunctionDefinition",
-            "src": "183:41:42"
+            "src": "183:41:19"
           },
           {
             "attributes": {
@@ -603,7 +603,7 @@
                       "mutability": "mutable",
                       "name": "gov",
                       "overrides": null,
-                      "scope": 28429,
+                      "scope": 11830,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -617,14 +617,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28424,
+                        "id": 11825,
                         "name": "ElementaryTypeName",
-                        "src": "245:7:42"
+                        "src": "245:7:19"
                       }
                     ],
-                    "id": 28425,
+                    "id": 11826,
                     "name": "VariableDeclaration",
-                    "src": "245:11:42"
+                    "src": "245:11:19"
                   },
                   {
                     "attributes": {
@@ -633,7 +633,7 @@
                       "mutability": "mutable",
                       "name": "flag",
                       "overrides": null,
-                      "scope": 28429,
+                      "scope": 11830,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -646,24 +646,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28426,
+                        "id": 11827,
                         "name": "ElementaryTypeName",
-                        "src": "258:7:42"
+                        "src": "258:7:19"
                       }
                     ],
-                    "id": 28427,
+                    "id": 11828,
                     "name": "VariableDeclaration",
-                    "src": "258:12:42"
+                    "src": "258:12:19"
                   }
                 ],
-                "id": 28428,
+                "id": 11829,
                 "name": "ParameterList",
-                "src": "244:27:42"
+                "src": "244:27:19"
               }
             ],
-            "id": 28429,
+            "id": 11830,
             "name": "EventDefinition",
-            "src": "231:41:42"
+            "src": "231:41:19"
           },
           {
             "attributes": {
@@ -681,7 +681,7 @@
                       "mutability": "mutable",
                       "name": "gov",
                       "overrides": null,
-                      "scope": 28435,
+                      "scope": 11836,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -695,14 +695,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28430,
+                        "id": 11831,
                         "name": "ElementaryTypeName",
-                        "src": "292:7:42"
+                        "src": "292:7:19"
                       }
                     ],
-                    "id": 28431,
+                    "id": 11832,
                     "name": "VariableDeclaration",
-                    "src": "292:11:42"
+                    "src": "292:11:19"
                   },
                   {
                     "attributes": {
@@ -711,7 +711,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28435,
+                      "scope": 11836,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -724,42 +724,42 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28432,
+                        "id": 11833,
                         "name": "ElementaryTypeName",
-                        "src": "305:7:42"
+                        "src": "305:7:19"
                       }
                     ],
-                    "id": 28433,
+                    "id": 11834,
                     "name": "VariableDeclaration",
-                    "src": "305:14:42"
+                    "src": "305:14:19"
                   }
                 ],
-                "id": 28434,
+                "id": 11835,
                 "name": "ParameterList",
-                "src": "291:29:42"
+                "src": "291:29:19"
               }
             ],
-            "id": 28435,
+            "id": 11836,
             "name": "EventDefinition",
-            "src": "277:44:42"
+            "src": "277:44:19"
           }
         ],
-        "id": 28436,
+        "id": 11837,
         "name": "ContractDefinition",
-        "src": "71:252:42"
+        "src": "71:252:19"
       }
     ],
-    "id": 28437,
+    "id": 11838,
     "name": "SourceUnit",
-    "src": "46:277:42"
+    "src": "46:277:19"
   },
   "compiler": {
     "name": "solc",
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.1",
-  "updatedAt": "2021-05-11T03:07:10.173Z",
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-05-14T05:46:42.479Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -12,9 +12,9 @@ interface ICoFiXV2VaultForTrader {
 
     function setGovernance(address gov) external;
 
-    function setExpectedYieldRatio(uint256 r) external;
-    function setLRatio(uint256 lRatio) external;
-    function setTheta(uint256 theta) external;
+    // function setExpectedYieldRatio(uint256 r) external;
+    // function setLRatio(uint256 lRatio) external;
+    // function setTheta(uint256 theta) external;
     function setCofiRate(uint256 cofiRate) external;
 
     function allowRouter(address router) external;

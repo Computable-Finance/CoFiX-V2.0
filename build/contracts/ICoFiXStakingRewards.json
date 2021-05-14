@@ -349,34 +349,34 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EmergencyWithdraw\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"RewardAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"RewardPaid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"other\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"StakedForOther\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawn\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"accrued\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"addReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"earned\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"exit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRewardAndStake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastBlockRewardApplicable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardPerToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardsToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardsVault\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"other\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stakeForOther\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakingToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"accrued()\":{\"details\":\"How many reward tokens accrued recently\",\"returns\":{\"_0\":\"The amount of reward tokens accrued recently\"}},\"addReward(uint256)\":{\"details\":\"Add reward to the mining pool\"},\"balanceOf(address)\":{\"details\":\"How many stakingToken (XToken) deposited by the target account\",\"params\":{\"account\":\"The target account\"},\"returns\":{\"_0\":\"The total amount of XToken deposited in this mining pool\"}},\"earned(address)\":{\"details\":\"How many reward tokens a user has earned but not claimed at present\",\"params\":{\"account\":\"The target account\"},\"returns\":{\"_0\":\"The amount of reward tokens a user earned\"}},\"emergencyWithdraw()\":{\"details\":\"Withdraw without caring about rewards. EMERGENCY ONLY.\"},\"exit()\":{\"details\":\"User exit the reward pool, it's actually withdraw and getReward\"},\"getReward()\":{\"details\":\"Claim the reward the user earned\"},\"lastBlockRewardApplicable()\":{\"details\":\"The lastBlock reward applicable\",\"returns\":{\"_0\":\"Returns the latest block.number on-chain\"}},\"rewardPerToken()\":{\"details\":\"Reward amount represents by per staking token\"},\"rewardRate()\":{\"details\":\"Get the latest reward rate of this mining pool (tokens amount per block)\",\"returns\":{\"_0\":\"The latest reward rate\"}},\"rewardsToken()\":{\"details\":\"Get the address of token for rewards in this mining pool\",\"returns\":{\"_0\":\"The rewards token address\"}},\"rewardsVault()\":{\"details\":\"The rewards vault contract address set in factory contract\",\"returns\":{\"_0\":\"Returns the vault address\"}},\"stake(uint256)\":{\"details\":\"Stake/Deposit into the reward pool (mining pool)\",\"params\":{\"amount\":\"The target amount\"}},\"stakeForOther(address,uint256)\":{\"details\":\"Stake/Deposit into the reward pool (mining pool) for other account\",\"params\":{\"amount\":\"The target amount\",\"other\":\"The target account\"}},\"stakingToken()\":{\"details\":\"Get the address of token for staking in this mining pool\",\"returns\":{\"_0\":\"The staking token address\"}},\"totalSupply()\":{\"details\":\"How many stakingToken (XToken) deposited into to this reward pool (mining pool)\",\"returns\":{\"_0\":\"The total amount of XTokens deposited in this mining pool\"}},\"withdraw(uint256)\":{\"details\":\"Withdraw from the reward pool (mining pool), get the original tokens back\",\"params\":{\"amount\":\"The target amount\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXStakingRewards.sol\":\"ICoFiXStakingRewards\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXStakingRewards.sol\":{\"keccak256\":\"0xec95ff23d33b64a60cb65e383e414e4aac9c21183127191c18bf44d4eb0cc569\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8910063d87ab369ff58135af2a4f3eed63aaa2f7d6a92d7c82bb89516b7401c8\",\"dweb:/ipfs/QmRSDEHHBVexyjmYpzXyXqJXrdkwB59ZDMoFdxHaVJcfbJ\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EmergencyWithdraw\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"RewardAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"RewardPaid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"other\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"StakedForOther\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawn\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"accrued\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"addReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"earned\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"exit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRewardAndStake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastBlockRewardApplicable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardPerToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardsToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardsVault\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"other\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stakeForOther\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakingToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"accrued()\":{\"details\":\"How many reward tokens accrued recently\",\"returns\":{\"_0\":\"The amount of reward tokens accrued recently\"}},\"addReward(uint256)\":{\"details\":\"Add reward to the mining pool\"},\"balanceOf(address)\":{\"details\":\"How many stakingToken (XToken) deposited by the target account\",\"params\":{\"account\":\"The target account\"},\"returns\":{\"_0\":\"The total amount of XToken deposited in this mining pool\"}},\"earned(address)\":{\"details\":\"How many reward tokens a user has earned but not claimed at present\",\"params\":{\"account\":\"The target account\"},\"returns\":{\"_0\":\"The amount of reward tokens a user earned\"}},\"emergencyWithdraw()\":{\"details\":\"Withdraw without caring about rewards. EMERGENCY ONLY.\"},\"exit()\":{\"details\":\"User exit the reward pool, it's actually withdraw and getReward\"},\"getReward()\":{\"details\":\"Claim the reward the user earned\"},\"lastBlockRewardApplicable()\":{\"details\":\"The lastBlock reward applicable\",\"returns\":{\"_0\":\"Returns the latest block.number on-chain\"}},\"rewardPerToken()\":{\"details\":\"Reward amount represents by per staking token\"},\"rewardRate()\":{\"details\":\"Get the latest reward rate of this mining pool (tokens amount per block)\",\"returns\":{\"_0\":\"The latest reward rate\"}},\"rewardsToken()\":{\"details\":\"Get the address of token for rewards in this mining pool\",\"returns\":{\"_0\":\"The rewards token address\"}},\"rewardsVault()\":{\"details\":\"The rewards vault contract address set in factory contract\",\"returns\":{\"_0\":\"Returns the vault address\"}},\"stake(uint256)\":{\"details\":\"Stake/Deposit into the reward pool (mining pool)\",\"params\":{\"amount\":\"The target amount\"}},\"stakeForOther(address,uint256)\":{\"details\":\"Stake/Deposit into the reward pool (mining pool) for other account\",\"params\":{\"amount\":\"The target amount\",\"other\":\"The target account\"}},\"stakingToken()\":{\"details\":\"Get the address of token for staking in this mining pool\",\"returns\":{\"_0\":\"The staking token address\"}},\"totalSupply()\":{\"details\":\"How many stakingToken (XToken) deposited into to this reward pool (mining pool)\",\"returns\":{\"_0\":\"The total amount of XTokens deposited in this mining pool\"}},\"withdraw(uint256)\":{\"details\":\"Withdraw from the reward pool (mining pool), get the original tokens back\",\"params\":{\"amount\":\"The target amount\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol\":\"ICoFiXStakingRewards\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol\":{\"keccak256\":\"0xec95ff23d33b64a60cb65e383e414e4aac9c21183127191c18bf44d4eb0cc569\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8910063d87ab369ff58135af2a4f3eed63aaa2f7d6a92d7c82bb89516b7401c8\",\"dweb:/ipfs/QmRSDEHHBVexyjmYpzXyXqJXrdkwB59ZDMoFdxHaVJcfbJ\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\n\n\ninterface ICoFiXStakingRewards {\n    // Views\n\n    /// @dev The rewards vault contract address set in factory contract\n    /// @return Returns the vault address\n    function rewardsVault() external view returns (address);\n\n    /// @dev The lastBlock reward applicable\n    /// @return Returns the latest block.number on-chain\n    function lastBlockRewardApplicable() external view returns (uint256);\n\n    /// @dev Reward amount represents by per staking token\n    function rewardPerToken() external view returns (uint256);\n\n    /// @dev How many reward tokens a user has earned but not claimed at present\n    /// @param  account The target account\n    /// @return The amount of reward tokens a user earned\n    function earned(address account) external view returns (uint256);\n\n    /// @dev How many reward tokens accrued recently\n    /// @return The amount of reward tokens accrued recently\n    function accrued() external view returns (uint256);\n\n    /// @dev Get the latest reward rate of this mining pool (tokens amount per block)\n    /// @return The latest reward rate\n    function rewardRate() external view returns (uint256);\n\n    /// @dev How many stakingToken (XToken) deposited into to this reward pool (mining pool)\n    /// @return The total amount of XTokens deposited in this mining pool\n    function totalSupply() external view returns (uint256);\n\n    /// @dev How many stakingToken (XToken) deposited by the target account\n    /// @param  account The target account\n    /// @return The total amount of XToken deposited in this mining pool\n    function balanceOf(address account) external view returns (uint256);\n\n    /// @dev Get the address of token for staking in this mining pool\n    /// @return The staking token address\n    function stakingToken() external view returns (address);\n\n    /// @dev Get the address of token for rewards in this mining pool\n    /// @return The rewards token address\n    function rewardsToken() external view returns (address);\n\n    // Mutative\n\n    /// @dev Stake/Deposit into the reward pool (mining pool)\n    /// @param  amount The target amount\n    function stake(uint256 amount) external;\n\n    /// @dev Stake/Deposit into the reward pool (mining pool) for other account\n    /// @param  other The target account\n    /// @param  amount The target amount\n    function stakeForOther(address other, uint256 amount) external;\n\n    /// @dev Withdraw from the reward pool (mining pool), get the original tokens back\n    /// @param  amount The target amount\n    function withdraw(uint256 amount) external;\n\n    /// @dev Withdraw without caring about rewards. EMERGENCY ONLY.\n    function emergencyWithdraw() external;\n\n    /// @dev Claim the reward the user earned\n    function getReward() external;\n\n    function getRewardAndStake() external;\n\n    /// @dev User exit the reward pool, it's actually withdraw and getReward\n    function exit() external;\n\n    /// @dev Add reward to the mining pool\n    function addReward(uint256 amount) external;\n\n    // Events\n    event RewardAdded(address sender, uint256 reward);\n    event Staked(address indexed user, uint256 amount);\n    event StakedForOther(address indexed user, address indexed other, uint256 amount);\n    event Withdrawn(address indexed user, uint256 amount);\n    event EmergencyWithdraw(address indexed user, uint256 amount);\n    event RewardPaid(address indexed user, uint256 reward);\n}",
-  "sourcePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXStakingRewards.sol",
+  "sourcePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol",
   "ast": {
-    "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXStakingRewards.sol",
+    "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol",
     "exportedSymbols": {
       "ICoFiXStakingRewards": [
-        28290
+        11691
       ]
     },
-    "id": 28291,
+    "id": 11692,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 28146,
+        "id": 11547,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:40"
+        "src": "33:23:17"
       },
       {
         "abstract": false,
@@ -385,9 +385,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 28290,
+        "id": 11691,
         "linearizedBaseContracts": [
-          28290
+          11691
         ],
         "name": "ICoFiXStakingRewards",
         "nodeType": "ContractDefinition",
@@ -395,13 +395,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28147,
+              "id": 11548,
               "nodeType": "StructuredDocumentation",
-              "src": "110:109:40",
+              "src": "110:109:17",
               "text": "@dev The rewards vault contract address set in factory contract\n @return Returns the vault address"
             },
             "functionSelector": "5579ed01",
-            "id": 28152,
+            "id": 11553,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -409,24 +409,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28148,
+              "id": 11549,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "245:2:40"
+              "src": "245:2:17"
             },
             "returnParameters": {
-              "id": 28151,
+              "id": 11552,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28150,
+                  "id": 11551,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28152,
-                  "src": "271:7:40",
+                  "scope": 11553,
+                  "src": "271:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -434,10 +434,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28149,
+                    "id": 11550,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "271:7:40",
+                    "src": "271:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -448,10 +448,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "270:9:40"
+              "src": "270:9:17"
             },
-            "scope": 28290,
-            "src": "224:56:40",
+            "scope": 11691,
+            "src": "224:56:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -459,13 +459,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28153,
+              "id": 11554,
               "nodeType": "StructuredDocumentation",
-              "src": "286:97:40",
+              "src": "286:97:17",
               "text": "@dev The lastBlock reward applicable\n @return Returns the latest block.number on-chain"
             },
             "functionSelector": "abe0429c",
-            "id": 28158,
+            "id": 11559,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -473,24 +473,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28154,
+              "id": 11555,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "422:2:40"
+              "src": "422:2:17"
             },
             "returnParameters": {
-              "id": 28157,
+              "id": 11558,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28156,
+                  "id": 11557,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28158,
-                  "src": "448:7:40",
+                  "scope": 11559,
+                  "src": "448:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -498,10 +498,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28155,
+                    "id": 11556,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "448:7:40",
+                    "src": "448:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -511,10 +511,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "447:9:40"
+              "src": "447:9:17"
             },
-            "scope": 28290,
-            "src": "388:69:40",
+            "scope": 11691,
+            "src": "388:69:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -522,13 +522,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28159,
+              "id": 11560,
               "nodeType": "StructuredDocumentation",
-              "src": "463:54:40",
+              "src": "463:54:17",
               "text": "@dev Reward amount represents by per staking token"
             },
             "functionSelector": "cd3daf9d",
-            "id": 28164,
+            "id": 11565,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -536,24 +536,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28160,
+              "id": 11561,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "545:2:40"
+              "src": "545:2:17"
             },
             "returnParameters": {
-              "id": 28163,
+              "id": 11564,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28162,
+                  "id": 11563,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28164,
-                  "src": "571:7:40",
+                  "scope": 11565,
+                  "src": "571:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -561,10 +561,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28161,
+                    "id": 11562,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "571:7:40",
+                    "src": "571:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -574,10 +574,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "570:9:40"
+              "src": "570:9:17"
             },
-            "scope": 28290,
-            "src": "522:58:40",
+            "scope": 11691,
+            "src": "522:58:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -585,13 +585,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28165,
+              "id": 11566,
               "nodeType": "StructuredDocumentation",
-              "src": "586:177:40",
+              "src": "586:177:17",
               "text": "@dev How many reward tokens a user has earned but not claimed at present\n @param  account The target account\n @return The amount of reward tokens a user earned"
             },
             "functionSelector": "008cc262",
-            "id": 28172,
+            "id": 11573,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -599,18 +599,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28168,
+              "id": 11569,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28167,
+                  "id": 11568,
                   "mutability": "mutable",
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28172,
-                  "src": "784:15:40",
+                  "scope": 11573,
+                  "src": "784:15:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -618,10 +618,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28166,
+                    "id": 11567,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "784:7:40",
+                    "src": "784:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -632,21 +632,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "783:17:40"
+              "src": "783:17:17"
             },
             "returnParameters": {
-              "id": 28171,
+              "id": 11572,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28170,
+                  "id": 11571,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28172,
-                  "src": "824:7:40",
+                  "scope": 11573,
+                  "src": "824:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -654,10 +654,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28169,
+                    "id": 11570,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "824:7:40",
+                    "src": "824:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -667,10 +667,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "823:9:40"
+              "src": "823:9:17"
             },
-            "scope": 28290,
-            "src": "768:65:40",
+            "scope": 11691,
+            "src": "768:65:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -678,13 +678,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28173,
+              "id": 11574,
               "nodeType": "StructuredDocumentation",
-              "src": "839:109:40",
+              "src": "839:109:17",
               "text": "@dev How many reward tokens accrued recently\n @return The amount of reward tokens accrued recently"
             },
             "functionSelector": "a07e52a2",
-            "id": 28178,
+            "id": 11579,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -692,24 +692,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28174,
+              "id": 11575,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "969:2:40"
+              "src": "969:2:17"
             },
             "returnParameters": {
-              "id": 28177,
+              "id": 11578,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28176,
+                  "id": 11577,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28178,
-                  "src": "995:7:40",
+                  "scope": 11579,
+                  "src": "995:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -717,10 +717,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28175,
+                    "id": 11576,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "995:7:40",
+                    "src": "995:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -730,10 +730,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "994:9:40"
+              "src": "994:9:17"
             },
-            "scope": 28290,
-            "src": "953:51:40",
+            "scope": 11691,
+            "src": "953:51:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -741,13 +741,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28179,
+              "id": 11580,
               "nodeType": "StructuredDocumentation",
-              "src": "1010:120:40",
+              "src": "1010:120:17",
               "text": "@dev Get the latest reward rate of this mining pool (tokens amount per block)\n @return The latest reward rate"
             },
             "functionSelector": "7b0a47ee",
-            "id": 28184,
+            "id": 11585,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -755,24 +755,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28180,
+              "id": 11581,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1154:2:40"
+              "src": "1154:2:17"
             },
             "returnParameters": {
-              "id": 28183,
+              "id": 11584,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28182,
+                  "id": 11583,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28184,
-                  "src": "1180:7:40",
+                  "scope": 11585,
+                  "src": "1180:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -780,10 +780,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28181,
+                    "id": 11582,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1180:7:40",
+                    "src": "1180:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -793,10 +793,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1179:9:40"
+              "src": "1179:9:17"
             },
-            "scope": 28290,
-            "src": "1135:54:40",
+            "scope": 11691,
+            "src": "1135:54:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -804,13 +804,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28185,
+              "id": 11586,
               "nodeType": "StructuredDocumentation",
-              "src": "1195:162:40",
+              "src": "1195:162:17",
               "text": "@dev How many stakingToken (XToken) deposited into to this reward pool (mining pool)\n @return The total amount of XTokens deposited in this mining pool"
             },
             "functionSelector": "18160ddd",
-            "id": 28190,
+            "id": 11591,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -818,24 +818,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28186,
+              "id": 11587,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1382:2:40"
+              "src": "1382:2:17"
             },
             "returnParameters": {
-              "id": 28189,
+              "id": 11590,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28188,
+                  "id": 11589,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28190,
-                  "src": "1408:7:40",
+                  "scope": 11591,
+                  "src": "1408:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -843,10 +843,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28187,
+                    "id": 11588,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1408:7:40",
+                    "src": "1408:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -856,10 +856,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1407:9:40"
+              "src": "1407:9:17"
             },
-            "scope": 28290,
-            "src": "1362:55:40",
+            "scope": 11691,
+            "src": "1362:55:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -867,13 +867,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28191,
+              "id": 11592,
               "nodeType": "StructuredDocumentation",
-              "src": "1423:187:40",
+              "src": "1423:187:17",
               "text": "@dev How many stakingToken (XToken) deposited by the target account\n @param  account The target account\n @return The total amount of XToken deposited in this mining pool"
             },
             "functionSelector": "70a08231",
-            "id": 28198,
+            "id": 11599,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -881,18 +881,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28194,
+              "id": 11595,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28193,
+                  "id": 11594,
                   "mutability": "mutable",
                   "name": "account",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28198,
-                  "src": "1634:15:40",
+                  "scope": 11599,
+                  "src": "1634:15:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -900,10 +900,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28192,
+                    "id": 11593,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1634:7:40",
+                    "src": "1634:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -914,21 +914,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1633:17:40"
+              "src": "1633:17:17"
             },
             "returnParameters": {
-              "id": 28197,
+              "id": 11598,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28196,
+                  "id": 11597,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28198,
-                  "src": "1674:7:40",
+                  "scope": 11599,
+                  "src": "1674:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -936,10 +936,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28195,
+                    "id": 11596,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1674:7:40",
+                    "src": "1674:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -949,10 +949,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1673:9:40"
+              "src": "1673:9:17"
             },
-            "scope": 28290,
-            "src": "1615:68:40",
+            "scope": 11691,
+            "src": "1615:68:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -960,13 +960,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28199,
+              "id": 11600,
               "nodeType": "StructuredDocumentation",
-              "src": "1689:107:40",
+              "src": "1689:107:17",
               "text": "@dev Get the address of token for staking in this mining pool\n @return The staking token address"
             },
             "functionSelector": "72f702f3",
-            "id": 28204,
+            "id": 11605,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -974,24 +974,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28200,
+              "id": 11601,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1822:2:40"
+              "src": "1822:2:17"
             },
             "returnParameters": {
-              "id": 28203,
+              "id": 11604,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28202,
+                  "id": 11603,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28204,
-                  "src": "1848:7:40",
+                  "scope": 11605,
+                  "src": "1848:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -999,10 +999,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28201,
+                    "id": 11602,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1848:7:40",
+                    "src": "1848:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1013,10 +1013,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1847:9:40"
+              "src": "1847:9:17"
             },
-            "scope": 28290,
-            "src": "1801:56:40",
+            "scope": 11691,
+            "src": "1801:56:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -1024,13 +1024,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28205,
+              "id": 11606,
               "nodeType": "StructuredDocumentation",
-              "src": "1863:107:40",
+              "src": "1863:107:17",
               "text": "@dev Get the address of token for rewards in this mining pool\n @return The rewards token address"
             },
             "functionSelector": "d1af0c7d",
-            "id": 28210,
+            "id": 11611,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1038,24 +1038,24 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28206,
+              "id": 11607,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1996:2:40"
+              "src": "1996:2:17"
             },
             "returnParameters": {
-              "id": 28209,
+              "id": 11610,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28208,
+                  "id": 11609,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28210,
-                  "src": "2022:7:40",
+                  "scope": 11611,
+                  "src": "2022:7:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1063,10 +1063,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28207,
+                    "id": 11608,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2022:7:40",
+                    "src": "2022:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1077,10 +1077,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2021:9:40"
+              "src": "2021:9:17"
             },
-            "scope": 28290,
-            "src": "1975:56:40",
+            "scope": 11691,
+            "src": "1975:56:17",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -1088,13 +1088,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28211,
+              "id": 11612,
               "nodeType": "StructuredDocumentation",
-              "src": "2054:98:40",
+              "src": "2054:98:17",
               "text": "@dev Stake/Deposit into the reward pool (mining pool)\n @param  amount The target amount"
             },
             "functionSelector": "a694fc3a",
-            "id": 28216,
+            "id": 11617,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1102,18 +1102,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28214,
+              "id": 11615,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28213,
+                  "id": 11614,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28216,
-                  "src": "2172:14:40",
+                  "scope": 11617,
+                  "src": "2172:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1121,10 +1121,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28212,
+                    "id": 11613,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2172:7:40",
+                    "src": "2172:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1134,16 +1134,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2171:16:40"
+              "src": "2171:16:17"
             },
             "returnParameters": {
-              "id": 28215,
+              "id": 11616,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2196:0:40"
+              "src": "2196:0:17"
             },
-            "scope": 28290,
-            "src": "2157:40:40",
+            "scope": 11691,
+            "src": "2157:40:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1151,13 +1151,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28217,
+              "id": 11618,
               "nodeType": "StructuredDocumentation",
-              "src": "2203:157:40",
+              "src": "2203:157:17",
               "text": "@dev Stake/Deposit into the reward pool (mining pool) for other account\n @param  other The target account\n @param  amount The target amount"
             },
             "functionSelector": "fe72bd01",
-            "id": 28224,
+            "id": 11625,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1165,18 +1165,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28222,
+              "id": 11623,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28219,
+                  "id": 11620,
                   "mutability": "mutable",
                   "name": "other",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28224,
-                  "src": "2388:13:40",
+                  "scope": 11625,
+                  "src": "2388:13:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1184,10 +1184,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28218,
+                    "id": 11619,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2388:7:40",
+                    "src": "2388:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1199,13 +1199,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 28221,
+                  "id": 11622,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28224,
-                  "src": "2403:14:40",
+                  "scope": 11625,
+                  "src": "2403:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1213,10 +1213,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28220,
+                    "id": 11621,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2403:7:40",
+                    "src": "2403:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1226,16 +1226,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2387:31:40"
+              "src": "2387:31:17"
             },
             "returnParameters": {
-              "id": 28223,
+              "id": 11624,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2427:0:40"
+              "src": "2427:0:17"
             },
-            "scope": 28290,
-            "src": "2365:63:40",
+            "scope": 11691,
+            "src": "2365:63:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1243,13 +1243,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28225,
+              "id": 11626,
               "nodeType": "StructuredDocumentation",
-              "src": "2434:123:40",
+              "src": "2434:123:17",
               "text": "@dev Withdraw from the reward pool (mining pool), get the original tokens back\n @param  amount The target amount"
             },
             "functionSelector": "2e1a7d4d",
-            "id": 28230,
+            "id": 11631,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1257,18 +1257,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28228,
+              "id": 11629,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28227,
+                  "id": 11628,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28230,
-                  "src": "2580:14:40",
+                  "scope": 11631,
+                  "src": "2580:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1276,10 +1276,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28226,
+                    "id": 11627,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2580:7:40",
+                    "src": "2580:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1289,16 +1289,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2579:16:40"
+              "src": "2579:16:17"
             },
             "returnParameters": {
-              "id": 28229,
+              "id": 11630,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2604:0:40"
+              "src": "2604:0:17"
             },
-            "scope": 28290,
-            "src": "2562:43:40",
+            "scope": 11691,
+            "src": "2562:43:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1306,13 +1306,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28231,
+              "id": 11632,
               "nodeType": "StructuredDocumentation",
-              "src": "2611:63:40",
+              "src": "2611:63:17",
               "text": "@dev Withdraw without caring about rewards. EMERGENCY ONLY."
             },
             "functionSelector": "db2e21bc",
-            "id": 28234,
+            "id": 11635,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1320,19 +1320,19 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28232,
+              "id": 11633,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2705:2:40"
+              "src": "2705:2:17"
             },
             "returnParameters": {
-              "id": 28233,
+              "id": 11634,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2716:0:40"
+              "src": "2716:0:17"
             },
-            "scope": 28290,
-            "src": "2679:38:40",
+            "scope": 11691,
+            "src": "2679:38:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1340,13 +1340,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28235,
+              "id": 11636,
               "nodeType": "StructuredDocumentation",
-              "src": "2723:41:40",
+              "src": "2723:41:17",
               "text": "@dev Claim the reward the user earned"
             },
             "functionSelector": "3d18b912",
-            "id": 28238,
+            "id": 11639,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1354,19 +1354,19 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28236,
+              "id": 11637,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2787:2:40"
+              "src": "2787:2:17"
             },
             "returnParameters": {
-              "id": 28237,
+              "id": 11638,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2798:0:40"
+              "src": "2798:0:17"
             },
-            "scope": 28290,
-            "src": "2769:30:40",
+            "scope": 11691,
+            "src": "2769:30:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1375,7 +1375,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "27e63443",
-            "id": 28241,
+            "id": 11642,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1383,19 +1383,19 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28239,
+              "id": 11640,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2831:2:40"
+              "src": "2831:2:17"
             },
             "returnParameters": {
-              "id": 28240,
+              "id": 11641,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2842:0:40"
+              "src": "2842:0:17"
             },
-            "scope": 28290,
-            "src": "2805:38:40",
+            "scope": 11691,
+            "src": "2805:38:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1403,13 +1403,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28242,
+              "id": 11643,
               "nodeType": "StructuredDocumentation",
-              "src": "2849:72:40",
+              "src": "2849:72:17",
               "text": "@dev User exit the reward pool, it's actually withdraw and getReward"
             },
             "functionSelector": "e9fad8ee",
-            "id": 28245,
+            "id": 11646,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1417,19 +1417,19 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28243,
+              "id": 11644,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2939:2:40"
+              "src": "2939:2:17"
             },
             "returnParameters": {
-              "id": 28244,
+              "id": 11645,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2950:0:40"
+              "src": "2950:0:17"
             },
-            "scope": 28290,
-            "src": "2926:25:40",
+            "scope": 11691,
+            "src": "2926:25:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1437,13 +1437,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 28246,
+              "id": 11647,
               "nodeType": "StructuredDocumentation",
-              "src": "2957:38:40",
+              "src": "2957:38:17",
               "text": "@dev Add reward to the mining pool"
             },
             "functionSelector": "74de4ec4",
-            "id": 28251,
+            "id": 11652,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1451,18 +1451,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 28249,
+              "id": 11650,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28248,
+                  "id": 11649,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28251,
-                  "src": "3019:14:40",
+                  "scope": 11652,
+                  "src": "3019:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1470,10 +1470,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28247,
+                    "id": 11648,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3019:7:40",
+                    "src": "3019:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1483,16 +1483,16 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3018:16:40"
+              "src": "3018:16:17"
             },
             "returnParameters": {
-              "id": 28250,
+              "id": 11651,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3043:0:40"
+              "src": "3043:0:17"
             },
-            "scope": 28290,
-            "src": "3000:44:40",
+            "scope": 11691,
+            "src": "3000:44:17",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
@@ -1500,23 +1500,23 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 28257,
+            "id": 11658,
             "name": "RewardAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 28256,
+              "id": 11657,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28253,
+                  "id": 11654,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "sender",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28257,
-                  "src": "3082:14:40",
+                  "scope": 11658,
+                  "src": "3082:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1524,10 +1524,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28252,
+                    "id": 11653,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3082:7:40",
+                    "src": "3082:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1539,14 +1539,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28255,
+                  "id": 11656,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "reward",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28257,
-                  "src": "3098:14:40",
+                  "scope": 11658,
+                  "src": "3098:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1554,10 +1554,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28254,
+                    "id": 11655,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3098:7:40",
+                    "src": "3098:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1567,30 +1567,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3081:32:40"
+              "src": "3081:32:17"
             },
-            "src": "3064:50:40"
+            "src": "3064:50:17"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 28263,
+            "id": 11664,
             "name": "Staked",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 28262,
+              "id": 11663,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28259,
+                  "id": 11660,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "user",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28263,
-                  "src": "3132:20:40",
+                  "scope": 11664,
+                  "src": "3132:20:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1598,10 +1598,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28258,
+                    "id": 11659,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3132:7:40",
+                    "src": "3132:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1613,14 +1613,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28261,
+                  "id": 11662,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28263,
-                  "src": "3154:14:40",
+                  "scope": 11664,
+                  "src": "3154:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1628,10 +1628,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28260,
+                    "id": 11661,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3154:7:40",
+                    "src": "3154:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1641,30 +1641,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3131:38:40"
+              "src": "3131:38:17"
             },
-            "src": "3119:51:40"
+            "src": "3119:51:17"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 28271,
+            "id": 11672,
             "name": "StakedForOther",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 28270,
+              "id": 11671,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28265,
+                  "id": 11666,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "user",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28271,
-                  "src": "3196:20:40",
+                  "scope": 11672,
+                  "src": "3196:20:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1672,10 +1672,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28264,
+                    "id": 11665,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3196:7:40",
+                    "src": "3196:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1687,14 +1687,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28267,
+                  "id": 11668,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "other",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28271,
-                  "src": "3218:21:40",
+                  "scope": 11672,
+                  "src": "3218:21:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1702,10 +1702,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28266,
+                    "id": 11667,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3218:7:40",
+                    "src": "3218:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1717,14 +1717,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28269,
+                  "id": 11670,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28271,
-                  "src": "3241:14:40",
+                  "scope": 11672,
+                  "src": "3241:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1732,10 +1732,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28268,
+                    "id": 11669,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3241:7:40",
+                    "src": "3241:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1745,30 +1745,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3195:61:40"
+              "src": "3195:61:17"
             },
-            "src": "3175:82:40"
+            "src": "3175:82:17"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 28277,
+            "id": 11678,
             "name": "Withdrawn",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 28276,
+              "id": 11677,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28273,
+                  "id": 11674,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "user",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28277,
-                  "src": "3278:20:40",
+                  "scope": 11678,
+                  "src": "3278:20:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1776,10 +1776,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28272,
+                    "id": 11673,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3278:7:40",
+                    "src": "3278:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1791,14 +1791,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28275,
+                  "id": 11676,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28277,
-                  "src": "3300:14:40",
+                  "scope": 11678,
+                  "src": "3300:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1806,10 +1806,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28274,
+                    "id": 11675,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3300:7:40",
+                    "src": "3300:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1819,30 +1819,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3277:38:40"
+              "src": "3277:38:17"
             },
-            "src": "3262:54:40"
+            "src": "3262:54:17"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 28283,
+            "id": 11684,
             "name": "EmergencyWithdraw",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 28282,
+              "id": 11683,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28279,
+                  "id": 11680,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "user",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28283,
-                  "src": "3345:20:40",
+                  "scope": 11684,
+                  "src": "3345:20:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1850,10 +1850,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28278,
+                    "id": 11679,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3345:7:40",
+                    "src": "3345:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1865,14 +1865,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28281,
+                  "id": 11682,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "amount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28283,
-                  "src": "3367:14:40",
+                  "scope": 11684,
+                  "src": "3367:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1880,10 +1880,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28280,
+                    "id": 11681,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3367:7:40",
+                    "src": "3367:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1893,30 +1893,30 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3344:38:40"
+              "src": "3344:38:17"
             },
-            "src": "3321:62:40"
+            "src": "3321:62:17"
           },
           {
             "anonymous": false,
             "documentation": null,
-            "id": 28289,
+            "id": 11690,
             "name": "RewardPaid",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 28288,
+              "id": 11689,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 28285,
+                  "id": 11686,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "user",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28289,
-                  "src": "3405:20:40",
+                  "scope": 11690,
+                  "src": "3405:20:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1924,10 +1924,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 28284,
+                    "id": 11685,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3405:7:40",
+                    "src": "3405:7:17",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1939,14 +1939,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 28287,
+                  "id": 11688,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "reward",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 28289,
-                  "src": "3427:14:40",
+                  "scope": 11690,
+                  "src": "3427:14:17",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1954,10 +1954,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 28286,
+                    "id": 11687,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3427:7:40",
+                    "src": "3427:7:17",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1967,23 +1967,23 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3404:38:40"
+              "src": "3404:38:17"
             },
-            "src": "3388:55:40"
+            "src": "3388:55:17"
           }
         ],
-        "scope": 28291,
-        "src": "59:3386:40"
+        "scope": 11692,
+        "src": "59:3386:17"
       }
     ],
-    "src": "33:3412:40"
+    "src": "33:3412:17"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXStakingRewards.sol",
+      "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol",
       "exportedSymbols": {
         "ICoFiXStakingRewards": [
-          28290
+          11691
         ]
       },
       "license": "MIT"
@@ -1997,9 +1997,9 @@
             ".12"
           ]
         },
-        "id": 28146,
+        "id": 11547,
         "name": "PragmaDirective",
-        "src": "33:23:40"
+        "src": "33:23:17"
       },
       {
         "attributes": {
@@ -2014,10 +2014,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            28290
+            11691
           ],
           "name": "ICoFiXStakingRewards",
-          "scope": 28291
+          "scope": 11692
         },
         "children": [
           {
@@ -2032,7 +2032,7 @@
               ],
               "name": "rewardsVault",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2042,9 +2042,9 @@
                 "attributes": {
                   "text": "@dev The rewards vault contract address set in factory contract\n @return Returns the vault address"
                 },
-                "id": 28147,
+                "id": 11548,
                 "name": "StructuredDocumentation",
-                "src": "110:109:40"
+                "src": "110:109:17"
               },
               {
                 "attributes": {
@@ -2053,9 +2053,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28148,
+                "id": 11549,
                 "name": "ParameterList",
-                "src": "245:2:40"
+                "src": "245:2:17"
               },
               {
                 "children": [
@@ -2065,7 +2065,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28152,
+                      "scope": 11553,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -2079,24 +2079,24 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28149,
+                        "id": 11550,
                         "name": "ElementaryTypeName",
-                        "src": "271:7:40"
+                        "src": "271:7:17"
                       }
                     ],
-                    "id": 28150,
+                    "id": 11551,
                     "name": "VariableDeclaration",
-                    "src": "271:7:40"
+                    "src": "271:7:17"
                   }
                 ],
-                "id": 28151,
+                "id": 11552,
                 "name": "ParameterList",
-                "src": "270:9:40"
+                "src": "270:9:17"
               }
             ],
-            "id": 28152,
+            "id": 11553,
             "name": "FunctionDefinition",
-            "src": "224:56:40"
+            "src": "224:56:17"
           },
           {
             "attributes": {
@@ -2110,7 +2110,7 @@
               ],
               "name": "lastBlockRewardApplicable",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2120,9 +2120,9 @@
                 "attributes": {
                   "text": "@dev The lastBlock reward applicable\n @return Returns the latest block.number on-chain"
                 },
-                "id": 28153,
+                "id": 11554,
                 "name": "StructuredDocumentation",
-                "src": "286:97:40"
+                "src": "286:97:17"
               },
               {
                 "attributes": {
@@ -2131,9 +2131,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28154,
+                "id": 11555,
                 "name": "ParameterList",
-                "src": "422:2:40"
+                "src": "422:2:17"
               },
               {
                 "children": [
@@ -2143,7 +2143,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28158,
+                      "scope": 11559,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2156,24 +2156,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28155,
+                        "id": 11556,
                         "name": "ElementaryTypeName",
-                        "src": "448:7:40"
+                        "src": "448:7:17"
                       }
                     ],
-                    "id": 28156,
+                    "id": 11557,
                     "name": "VariableDeclaration",
-                    "src": "448:7:40"
+                    "src": "448:7:17"
                   }
                 ],
-                "id": 28157,
+                "id": 11558,
                 "name": "ParameterList",
-                "src": "447:9:40"
+                "src": "447:9:17"
               }
             ],
-            "id": 28158,
+            "id": 11559,
             "name": "FunctionDefinition",
-            "src": "388:69:40"
+            "src": "388:69:17"
           },
           {
             "attributes": {
@@ -2187,7 +2187,7 @@
               ],
               "name": "rewardPerToken",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2197,9 +2197,9 @@
                 "attributes": {
                   "text": "@dev Reward amount represents by per staking token"
                 },
-                "id": 28159,
+                "id": 11560,
                 "name": "StructuredDocumentation",
-                "src": "463:54:40"
+                "src": "463:54:17"
               },
               {
                 "attributes": {
@@ -2208,9 +2208,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28160,
+                "id": 11561,
                 "name": "ParameterList",
-                "src": "545:2:40"
+                "src": "545:2:17"
               },
               {
                 "children": [
@@ -2220,7 +2220,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28164,
+                      "scope": 11565,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2233,24 +2233,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28161,
+                        "id": 11562,
                         "name": "ElementaryTypeName",
-                        "src": "571:7:40"
+                        "src": "571:7:17"
                       }
                     ],
-                    "id": 28162,
+                    "id": 11563,
                     "name": "VariableDeclaration",
-                    "src": "571:7:40"
+                    "src": "571:7:17"
                   }
                 ],
-                "id": 28163,
+                "id": 11564,
                 "name": "ParameterList",
-                "src": "570:9:40"
+                "src": "570:9:17"
               }
             ],
-            "id": 28164,
+            "id": 11565,
             "name": "FunctionDefinition",
-            "src": "522:58:40"
+            "src": "522:58:17"
           },
           {
             "attributes": {
@@ -2264,7 +2264,7 @@
               ],
               "name": "earned",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2274,9 +2274,9 @@
                 "attributes": {
                   "text": "@dev How many reward tokens a user has earned but not claimed at present\n @param  account The target account\n @return The amount of reward tokens a user earned"
                 },
-                "id": 28165,
+                "id": 11566,
                 "name": "StructuredDocumentation",
-                "src": "586:177:40"
+                "src": "586:177:17"
               },
               {
                 "children": [
@@ -2286,7 +2286,7 @@
                       "mutability": "mutable",
                       "name": "account",
                       "overrides": null,
-                      "scope": 28172,
+                      "scope": 11573,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -2300,19 +2300,19 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28166,
+                        "id": 11567,
                         "name": "ElementaryTypeName",
-                        "src": "784:7:40"
+                        "src": "784:7:17"
                       }
                     ],
-                    "id": 28167,
+                    "id": 11568,
                     "name": "VariableDeclaration",
-                    "src": "784:15:40"
+                    "src": "784:15:17"
                   }
                 ],
-                "id": 28168,
+                "id": 11569,
                 "name": "ParameterList",
-                "src": "783:17:40"
+                "src": "783:17:17"
               },
               {
                 "children": [
@@ -2322,7 +2322,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28172,
+                      "scope": 11573,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2335,24 +2335,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28169,
+                        "id": 11570,
                         "name": "ElementaryTypeName",
-                        "src": "824:7:40"
+                        "src": "824:7:17"
                       }
                     ],
-                    "id": 28170,
+                    "id": 11571,
                     "name": "VariableDeclaration",
-                    "src": "824:7:40"
+                    "src": "824:7:17"
                   }
                 ],
-                "id": 28171,
+                "id": 11572,
                 "name": "ParameterList",
-                "src": "823:9:40"
+                "src": "823:9:17"
               }
             ],
-            "id": 28172,
+            "id": 11573,
             "name": "FunctionDefinition",
-            "src": "768:65:40"
+            "src": "768:65:17"
           },
           {
             "attributes": {
@@ -2366,7 +2366,7 @@
               ],
               "name": "accrued",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2376,9 +2376,9 @@
                 "attributes": {
                   "text": "@dev How many reward tokens accrued recently\n @return The amount of reward tokens accrued recently"
                 },
-                "id": 28173,
+                "id": 11574,
                 "name": "StructuredDocumentation",
-                "src": "839:109:40"
+                "src": "839:109:17"
               },
               {
                 "attributes": {
@@ -2387,9 +2387,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28174,
+                "id": 11575,
                 "name": "ParameterList",
-                "src": "969:2:40"
+                "src": "969:2:17"
               },
               {
                 "children": [
@@ -2399,7 +2399,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28178,
+                      "scope": 11579,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2412,24 +2412,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28175,
+                        "id": 11576,
                         "name": "ElementaryTypeName",
-                        "src": "995:7:40"
+                        "src": "995:7:17"
                       }
                     ],
-                    "id": 28176,
+                    "id": 11577,
                     "name": "VariableDeclaration",
-                    "src": "995:7:40"
+                    "src": "995:7:17"
                   }
                 ],
-                "id": 28177,
+                "id": 11578,
                 "name": "ParameterList",
-                "src": "994:9:40"
+                "src": "994:9:17"
               }
             ],
-            "id": 28178,
+            "id": 11579,
             "name": "FunctionDefinition",
-            "src": "953:51:40"
+            "src": "953:51:17"
           },
           {
             "attributes": {
@@ -2443,7 +2443,7 @@
               ],
               "name": "rewardRate",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2453,9 +2453,9 @@
                 "attributes": {
                   "text": "@dev Get the latest reward rate of this mining pool (tokens amount per block)\n @return The latest reward rate"
                 },
-                "id": 28179,
+                "id": 11580,
                 "name": "StructuredDocumentation",
-                "src": "1010:120:40"
+                "src": "1010:120:17"
               },
               {
                 "attributes": {
@@ -2464,9 +2464,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28180,
+                "id": 11581,
                 "name": "ParameterList",
-                "src": "1154:2:40"
+                "src": "1154:2:17"
               },
               {
                 "children": [
@@ -2476,7 +2476,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28184,
+                      "scope": 11585,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2489,24 +2489,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28181,
+                        "id": 11582,
                         "name": "ElementaryTypeName",
-                        "src": "1180:7:40"
+                        "src": "1180:7:17"
                       }
                     ],
-                    "id": 28182,
+                    "id": 11583,
                     "name": "VariableDeclaration",
-                    "src": "1180:7:40"
+                    "src": "1180:7:17"
                   }
                 ],
-                "id": 28183,
+                "id": 11584,
                 "name": "ParameterList",
-                "src": "1179:9:40"
+                "src": "1179:9:17"
               }
             ],
-            "id": 28184,
+            "id": 11585,
             "name": "FunctionDefinition",
-            "src": "1135:54:40"
+            "src": "1135:54:17"
           },
           {
             "attributes": {
@@ -2520,7 +2520,7 @@
               ],
               "name": "totalSupply",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2530,9 +2530,9 @@
                 "attributes": {
                   "text": "@dev How many stakingToken (XToken) deposited into to this reward pool (mining pool)\n @return The total amount of XTokens deposited in this mining pool"
                 },
-                "id": 28185,
+                "id": 11586,
                 "name": "StructuredDocumentation",
-                "src": "1195:162:40"
+                "src": "1195:162:17"
               },
               {
                 "attributes": {
@@ -2541,9 +2541,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28186,
+                "id": 11587,
                 "name": "ParameterList",
-                "src": "1382:2:40"
+                "src": "1382:2:17"
               },
               {
                 "children": [
@@ -2553,7 +2553,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28190,
+                      "scope": 11591,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2566,24 +2566,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28187,
+                        "id": 11588,
                         "name": "ElementaryTypeName",
-                        "src": "1408:7:40"
+                        "src": "1408:7:17"
                       }
                     ],
-                    "id": 28188,
+                    "id": 11589,
                     "name": "VariableDeclaration",
-                    "src": "1408:7:40"
+                    "src": "1408:7:17"
                   }
                 ],
-                "id": 28189,
+                "id": 11590,
                 "name": "ParameterList",
-                "src": "1407:9:40"
+                "src": "1407:9:17"
               }
             ],
-            "id": 28190,
+            "id": 11591,
             "name": "FunctionDefinition",
-            "src": "1362:55:40"
+            "src": "1362:55:17"
           },
           {
             "attributes": {
@@ -2597,7 +2597,7 @@
               ],
               "name": "balanceOf",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2607,9 +2607,9 @@
                 "attributes": {
                   "text": "@dev How many stakingToken (XToken) deposited by the target account\n @param  account The target account\n @return The total amount of XToken deposited in this mining pool"
                 },
-                "id": 28191,
+                "id": 11592,
                 "name": "StructuredDocumentation",
-                "src": "1423:187:40"
+                "src": "1423:187:17"
               },
               {
                 "children": [
@@ -2619,7 +2619,7 @@
                       "mutability": "mutable",
                       "name": "account",
                       "overrides": null,
-                      "scope": 28198,
+                      "scope": 11599,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -2633,19 +2633,19 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28192,
+                        "id": 11593,
                         "name": "ElementaryTypeName",
-                        "src": "1634:7:40"
+                        "src": "1634:7:17"
                       }
                     ],
-                    "id": 28193,
+                    "id": 11594,
                     "name": "VariableDeclaration",
-                    "src": "1634:15:40"
+                    "src": "1634:15:17"
                   }
                 ],
-                "id": 28194,
+                "id": 11595,
                 "name": "ParameterList",
-                "src": "1633:17:40"
+                "src": "1633:17:17"
               },
               {
                 "children": [
@@ -2655,7 +2655,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28198,
+                      "scope": 11599,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2668,24 +2668,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28195,
+                        "id": 11596,
                         "name": "ElementaryTypeName",
-                        "src": "1674:7:40"
+                        "src": "1674:7:17"
                       }
                     ],
-                    "id": 28196,
+                    "id": 11597,
                     "name": "VariableDeclaration",
-                    "src": "1674:7:40"
+                    "src": "1674:7:17"
                   }
                 ],
-                "id": 28197,
+                "id": 11598,
                 "name": "ParameterList",
-                "src": "1673:9:40"
+                "src": "1673:9:17"
               }
             ],
-            "id": 28198,
+            "id": 11599,
             "name": "FunctionDefinition",
-            "src": "1615:68:40"
+            "src": "1615:68:17"
           },
           {
             "attributes": {
@@ -2699,7 +2699,7 @@
               ],
               "name": "stakingToken",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2709,9 +2709,9 @@
                 "attributes": {
                   "text": "@dev Get the address of token for staking in this mining pool\n @return The staking token address"
                 },
-                "id": 28199,
+                "id": 11600,
                 "name": "StructuredDocumentation",
-                "src": "1689:107:40"
+                "src": "1689:107:17"
               },
               {
                 "attributes": {
@@ -2720,9 +2720,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28200,
+                "id": 11601,
                 "name": "ParameterList",
-                "src": "1822:2:40"
+                "src": "1822:2:17"
               },
               {
                 "children": [
@@ -2732,7 +2732,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28204,
+                      "scope": 11605,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -2746,24 +2746,24 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28201,
+                        "id": 11602,
                         "name": "ElementaryTypeName",
-                        "src": "1848:7:40"
+                        "src": "1848:7:17"
                       }
                     ],
-                    "id": 28202,
+                    "id": 11603,
                     "name": "VariableDeclaration",
-                    "src": "1848:7:40"
+                    "src": "1848:7:17"
                   }
                 ],
-                "id": 28203,
+                "id": 11604,
                 "name": "ParameterList",
-                "src": "1847:9:40"
+                "src": "1847:9:17"
               }
             ],
-            "id": 28204,
+            "id": 11605,
             "name": "FunctionDefinition",
-            "src": "1801:56:40"
+            "src": "1801:56:17"
           },
           {
             "attributes": {
@@ -2777,7 +2777,7 @@
               ],
               "name": "rewardsToken",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -2787,9 +2787,9 @@
                 "attributes": {
                   "text": "@dev Get the address of token for rewards in this mining pool\n @return The rewards token address"
                 },
-                "id": 28205,
+                "id": 11606,
                 "name": "StructuredDocumentation",
-                "src": "1863:107:40"
+                "src": "1863:107:17"
               },
               {
                 "attributes": {
@@ -2798,9 +2798,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28206,
+                "id": 11607,
                 "name": "ParameterList",
-                "src": "1996:2:40"
+                "src": "1996:2:17"
               },
               {
                 "children": [
@@ -2810,7 +2810,7 @@
                       "mutability": "mutable",
                       "name": "",
                       "overrides": null,
-                      "scope": 28210,
+                      "scope": 11611,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -2824,24 +2824,24 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28207,
+                        "id": 11608,
                         "name": "ElementaryTypeName",
-                        "src": "2022:7:40"
+                        "src": "2022:7:17"
                       }
                     ],
-                    "id": 28208,
+                    "id": 11609,
                     "name": "VariableDeclaration",
-                    "src": "2022:7:40"
+                    "src": "2022:7:17"
                   }
                 ],
-                "id": 28209,
+                "id": 11610,
                 "name": "ParameterList",
-                "src": "2021:9:40"
+                "src": "2021:9:17"
               }
             ],
-            "id": 28210,
+            "id": 11611,
             "name": "FunctionDefinition",
-            "src": "1975:56:40"
+            "src": "1975:56:17"
           },
           {
             "attributes": {
@@ -2855,7 +2855,7 @@
               ],
               "name": "stake",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -2865,9 +2865,9 @@
                 "attributes": {
                   "text": "@dev Stake/Deposit into the reward pool (mining pool)\n @param  amount The target amount"
                 },
-                "id": 28211,
+                "id": 11612,
                 "name": "StructuredDocumentation",
-                "src": "2054:98:40"
+                "src": "2054:98:17"
               },
               {
                 "children": [
@@ -2877,7 +2877,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28216,
+                      "scope": 11617,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2890,19 +2890,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28212,
+                        "id": 11613,
                         "name": "ElementaryTypeName",
-                        "src": "2172:7:40"
+                        "src": "2172:7:17"
                       }
                     ],
-                    "id": 28213,
+                    "id": 11614,
                     "name": "VariableDeclaration",
-                    "src": "2172:14:40"
+                    "src": "2172:14:17"
                   }
                 ],
-                "id": 28214,
+                "id": 11615,
                 "name": "ParameterList",
-                "src": "2171:16:40"
+                "src": "2171:16:17"
               },
               {
                 "attributes": {
@@ -2911,14 +2911,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28215,
+                "id": 11616,
                 "name": "ParameterList",
-                "src": "2196:0:40"
+                "src": "2196:0:17"
               }
             ],
-            "id": 28216,
+            "id": 11617,
             "name": "FunctionDefinition",
-            "src": "2157:40:40"
+            "src": "2157:40:17"
           },
           {
             "attributes": {
@@ -2932,7 +2932,7 @@
               ],
               "name": "stakeForOther",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -2942,9 +2942,9 @@
                 "attributes": {
                   "text": "@dev Stake/Deposit into the reward pool (mining pool) for other account\n @param  other The target account\n @param  amount The target amount"
                 },
-                "id": 28217,
+                "id": 11618,
                 "name": "StructuredDocumentation",
-                "src": "2203:157:40"
+                "src": "2203:157:17"
               },
               {
                 "children": [
@@ -2954,7 +2954,7 @@
                       "mutability": "mutable",
                       "name": "other",
                       "overrides": null,
-                      "scope": 28224,
+                      "scope": 11625,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -2968,14 +2968,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28218,
+                        "id": 11619,
                         "name": "ElementaryTypeName",
-                        "src": "2388:7:40"
+                        "src": "2388:7:17"
                       }
                     ],
-                    "id": 28219,
+                    "id": 11620,
                     "name": "VariableDeclaration",
-                    "src": "2388:13:40"
+                    "src": "2388:13:17"
                   },
                   {
                     "attributes": {
@@ -2983,7 +2983,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28224,
+                      "scope": 11625,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -2996,19 +2996,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28220,
+                        "id": 11621,
                         "name": "ElementaryTypeName",
-                        "src": "2403:7:40"
+                        "src": "2403:7:17"
                       }
                     ],
-                    "id": 28221,
+                    "id": 11622,
                     "name": "VariableDeclaration",
-                    "src": "2403:14:40"
+                    "src": "2403:14:17"
                   }
                 ],
-                "id": 28222,
+                "id": 11623,
                 "name": "ParameterList",
-                "src": "2387:31:40"
+                "src": "2387:31:17"
               },
               {
                 "attributes": {
@@ -3017,14 +3017,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28223,
+                "id": 11624,
                 "name": "ParameterList",
-                "src": "2427:0:40"
+                "src": "2427:0:17"
               }
             ],
-            "id": 28224,
+            "id": 11625,
             "name": "FunctionDefinition",
-            "src": "2365:63:40"
+            "src": "2365:63:17"
           },
           {
             "attributes": {
@@ -3038,7 +3038,7 @@
               ],
               "name": "withdraw",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -3048,9 +3048,9 @@
                 "attributes": {
                   "text": "@dev Withdraw from the reward pool (mining pool), get the original tokens back\n @param  amount The target amount"
                 },
-                "id": 28225,
+                "id": 11626,
                 "name": "StructuredDocumentation",
-                "src": "2434:123:40"
+                "src": "2434:123:17"
               },
               {
                 "children": [
@@ -3060,7 +3060,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28230,
+                      "scope": 11631,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3073,19 +3073,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28226,
+                        "id": 11627,
                         "name": "ElementaryTypeName",
-                        "src": "2580:7:40"
+                        "src": "2580:7:17"
                       }
                     ],
-                    "id": 28227,
+                    "id": 11628,
                     "name": "VariableDeclaration",
-                    "src": "2580:14:40"
+                    "src": "2580:14:17"
                   }
                 ],
-                "id": 28228,
+                "id": 11629,
                 "name": "ParameterList",
-                "src": "2579:16:40"
+                "src": "2579:16:17"
               },
               {
                 "attributes": {
@@ -3094,14 +3094,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28229,
+                "id": 11630,
                 "name": "ParameterList",
-                "src": "2604:0:40"
+                "src": "2604:0:17"
               }
             ],
-            "id": 28230,
+            "id": 11631,
             "name": "FunctionDefinition",
-            "src": "2562:43:40"
+            "src": "2562:43:17"
           },
           {
             "attributes": {
@@ -3115,7 +3115,7 @@
               ],
               "name": "emergencyWithdraw",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -3125,9 +3125,9 @@
                 "attributes": {
                   "text": "@dev Withdraw without caring about rewards. EMERGENCY ONLY."
                 },
-                "id": 28231,
+                "id": 11632,
                 "name": "StructuredDocumentation",
-                "src": "2611:63:40"
+                "src": "2611:63:17"
               },
               {
                 "attributes": {
@@ -3136,9 +3136,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28232,
+                "id": 11633,
                 "name": "ParameterList",
-                "src": "2705:2:40"
+                "src": "2705:2:17"
               },
               {
                 "attributes": {
@@ -3147,14 +3147,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28233,
+                "id": 11634,
                 "name": "ParameterList",
-                "src": "2716:0:40"
+                "src": "2716:0:17"
               }
             ],
-            "id": 28234,
+            "id": 11635,
             "name": "FunctionDefinition",
-            "src": "2679:38:40"
+            "src": "2679:38:17"
           },
           {
             "attributes": {
@@ -3168,7 +3168,7 @@
               ],
               "name": "getReward",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -3178,9 +3178,9 @@
                 "attributes": {
                   "text": "@dev Claim the reward the user earned"
                 },
-                "id": 28235,
+                "id": 11636,
                 "name": "StructuredDocumentation",
-                "src": "2723:41:40"
+                "src": "2723:41:17"
               },
               {
                 "attributes": {
@@ -3189,9 +3189,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28236,
+                "id": 11637,
                 "name": "ParameterList",
-                "src": "2787:2:40"
+                "src": "2787:2:17"
               },
               {
                 "attributes": {
@@ -3200,14 +3200,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28237,
+                "id": 11638,
                 "name": "ParameterList",
-                "src": "2798:0:40"
+                "src": "2798:0:17"
               }
             ],
-            "id": 28238,
+            "id": 11639,
             "name": "FunctionDefinition",
-            "src": "2769:30:40"
+            "src": "2769:30:17"
           },
           {
             "attributes": {
@@ -3222,7 +3222,7 @@
               ],
               "name": "getRewardAndStake",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -3235,9 +3235,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28239,
+                "id": 11640,
                 "name": "ParameterList",
-                "src": "2831:2:40"
+                "src": "2831:2:17"
               },
               {
                 "attributes": {
@@ -3246,14 +3246,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28240,
+                "id": 11641,
                 "name": "ParameterList",
-                "src": "2842:0:40"
+                "src": "2842:0:17"
               }
             ],
-            "id": 28241,
+            "id": 11642,
             "name": "FunctionDefinition",
-            "src": "2805:38:40"
+            "src": "2805:38:17"
           },
           {
             "attributes": {
@@ -3267,7 +3267,7 @@
               ],
               "name": "exit",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -3277,9 +3277,9 @@
                 "attributes": {
                   "text": "@dev User exit the reward pool, it's actually withdraw and getReward"
                 },
-                "id": 28242,
+                "id": 11643,
                 "name": "StructuredDocumentation",
-                "src": "2849:72:40"
+                "src": "2849:72:17"
               },
               {
                 "attributes": {
@@ -3288,9 +3288,9 @@
                   ]
                 },
                 "children": [],
-                "id": 28243,
+                "id": 11644,
                 "name": "ParameterList",
-                "src": "2939:2:40"
+                "src": "2939:2:17"
               },
               {
                 "attributes": {
@@ -3299,14 +3299,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28244,
+                "id": 11645,
                 "name": "ParameterList",
-                "src": "2950:0:40"
+                "src": "2950:0:17"
               }
             ],
-            "id": 28245,
+            "id": 11646,
             "name": "FunctionDefinition",
-            "src": "2926:25:40"
+            "src": "2926:25:17"
           },
           {
             "attributes": {
@@ -3320,7 +3320,7 @@
               ],
               "name": "addReward",
               "overrides": null,
-              "scope": 28290,
+              "scope": 11691,
               "stateMutability": "nonpayable",
               "virtual": false,
               "visibility": "external"
@@ -3330,9 +3330,9 @@
                 "attributes": {
                   "text": "@dev Add reward to the mining pool"
                 },
-                "id": 28246,
+                "id": 11647,
                 "name": "StructuredDocumentation",
-                "src": "2957:38:40"
+                "src": "2957:38:17"
               },
               {
                 "children": [
@@ -3342,7 +3342,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28251,
+                      "scope": 11652,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3355,19 +3355,19 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28247,
+                        "id": 11648,
                         "name": "ElementaryTypeName",
-                        "src": "3019:7:40"
+                        "src": "3019:7:17"
                       }
                     ],
-                    "id": 28248,
+                    "id": 11649,
                     "name": "VariableDeclaration",
-                    "src": "3019:14:40"
+                    "src": "3019:14:17"
                   }
                 ],
-                "id": 28249,
+                "id": 11650,
                 "name": "ParameterList",
-                "src": "3018:16:40"
+                "src": "3018:16:17"
               },
               {
                 "attributes": {
@@ -3376,14 +3376,14 @@
                   ]
                 },
                 "children": [],
-                "id": 28250,
+                "id": 11651,
                 "name": "ParameterList",
-                "src": "3043:0:40"
+                "src": "3043:0:17"
               }
             ],
-            "id": 28251,
+            "id": 11652,
             "name": "FunctionDefinition",
-            "src": "3000:44:40"
+            "src": "3000:44:17"
           },
           {
             "attributes": {
@@ -3401,7 +3401,7 @@
                       "mutability": "mutable",
                       "name": "sender",
                       "overrides": null,
-                      "scope": 28257,
+                      "scope": 11658,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3415,14 +3415,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28252,
+                        "id": 11653,
                         "name": "ElementaryTypeName",
-                        "src": "3082:7:40"
+                        "src": "3082:7:17"
                       }
                     ],
-                    "id": 28253,
+                    "id": 11654,
                     "name": "VariableDeclaration",
-                    "src": "3082:14:40"
+                    "src": "3082:14:17"
                   },
                   {
                     "attributes": {
@@ -3431,7 +3431,7 @@
                       "mutability": "mutable",
                       "name": "reward",
                       "overrides": null,
-                      "scope": 28257,
+                      "scope": 11658,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3444,24 +3444,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28254,
+                        "id": 11655,
                         "name": "ElementaryTypeName",
-                        "src": "3098:7:40"
+                        "src": "3098:7:17"
                       }
                     ],
-                    "id": 28255,
+                    "id": 11656,
                     "name": "VariableDeclaration",
-                    "src": "3098:14:40"
+                    "src": "3098:14:17"
                   }
                 ],
-                "id": 28256,
+                "id": 11657,
                 "name": "ParameterList",
-                "src": "3081:32:40"
+                "src": "3081:32:17"
               }
             ],
-            "id": 28257,
+            "id": 11658,
             "name": "EventDefinition",
-            "src": "3064:50:40"
+            "src": "3064:50:17"
           },
           {
             "attributes": {
@@ -3479,7 +3479,7 @@
                       "mutability": "mutable",
                       "name": "user",
                       "overrides": null,
-                      "scope": 28263,
+                      "scope": 11664,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3493,14 +3493,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28258,
+                        "id": 11659,
                         "name": "ElementaryTypeName",
-                        "src": "3132:7:40"
+                        "src": "3132:7:17"
                       }
                     ],
-                    "id": 28259,
+                    "id": 11660,
                     "name": "VariableDeclaration",
-                    "src": "3132:20:40"
+                    "src": "3132:20:17"
                   },
                   {
                     "attributes": {
@@ -3509,7 +3509,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28263,
+                      "scope": 11664,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3522,24 +3522,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28260,
+                        "id": 11661,
                         "name": "ElementaryTypeName",
-                        "src": "3154:7:40"
+                        "src": "3154:7:17"
                       }
                     ],
-                    "id": 28261,
+                    "id": 11662,
                     "name": "VariableDeclaration",
-                    "src": "3154:14:40"
+                    "src": "3154:14:17"
                   }
                 ],
-                "id": 28262,
+                "id": 11663,
                 "name": "ParameterList",
-                "src": "3131:38:40"
+                "src": "3131:38:17"
               }
             ],
-            "id": 28263,
+            "id": 11664,
             "name": "EventDefinition",
-            "src": "3119:51:40"
+            "src": "3119:51:17"
           },
           {
             "attributes": {
@@ -3557,7 +3557,7 @@
                       "mutability": "mutable",
                       "name": "user",
                       "overrides": null,
-                      "scope": 28271,
+                      "scope": 11672,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3571,14 +3571,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28264,
+                        "id": 11665,
                         "name": "ElementaryTypeName",
-                        "src": "3196:7:40"
+                        "src": "3196:7:17"
                       }
                     ],
-                    "id": 28265,
+                    "id": 11666,
                     "name": "VariableDeclaration",
-                    "src": "3196:20:40"
+                    "src": "3196:20:17"
                   },
                   {
                     "attributes": {
@@ -3587,7 +3587,7 @@
                       "mutability": "mutable",
                       "name": "other",
                       "overrides": null,
-                      "scope": 28271,
+                      "scope": 11672,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3601,14 +3601,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28266,
+                        "id": 11667,
                         "name": "ElementaryTypeName",
-                        "src": "3218:7:40"
+                        "src": "3218:7:17"
                       }
                     ],
-                    "id": 28267,
+                    "id": 11668,
                     "name": "VariableDeclaration",
-                    "src": "3218:21:40"
+                    "src": "3218:21:17"
                   },
                   {
                     "attributes": {
@@ -3617,7 +3617,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28271,
+                      "scope": 11672,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3630,24 +3630,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28268,
+                        "id": 11669,
                         "name": "ElementaryTypeName",
-                        "src": "3241:7:40"
+                        "src": "3241:7:17"
                       }
                     ],
-                    "id": 28269,
+                    "id": 11670,
                     "name": "VariableDeclaration",
-                    "src": "3241:14:40"
+                    "src": "3241:14:17"
                   }
                 ],
-                "id": 28270,
+                "id": 11671,
                 "name": "ParameterList",
-                "src": "3195:61:40"
+                "src": "3195:61:17"
               }
             ],
-            "id": 28271,
+            "id": 11672,
             "name": "EventDefinition",
-            "src": "3175:82:40"
+            "src": "3175:82:17"
           },
           {
             "attributes": {
@@ -3665,7 +3665,7 @@
                       "mutability": "mutable",
                       "name": "user",
                       "overrides": null,
-                      "scope": 28277,
+                      "scope": 11678,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3679,14 +3679,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28272,
+                        "id": 11673,
                         "name": "ElementaryTypeName",
-                        "src": "3278:7:40"
+                        "src": "3278:7:17"
                       }
                     ],
-                    "id": 28273,
+                    "id": 11674,
                     "name": "VariableDeclaration",
-                    "src": "3278:20:40"
+                    "src": "3278:20:17"
                   },
                   {
                     "attributes": {
@@ -3695,7 +3695,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28277,
+                      "scope": 11678,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3708,24 +3708,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28274,
+                        "id": 11675,
                         "name": "ElementaryTypeName",
-                        "src": "3300:7:40"
+                        "src": "3300:7:17"
                       }
                     ],
-                    "id": 28275,
+                    "id": 11676,
                     "name": "VariableDeclaration",
-                    "src": "3300:14:40"
+                    "src": "3300:14:17"
                   }
                 ],
-                "id": 28276,
+                "id": 11677,
                 "name": "ParameterList",
-                "src": "3277:38:40"
+                "src": "3277:38:17"
               }
             ],
-            "id": 28277,
+            "id": 11678,
             "name": "EventDefinition",
-            "src": "3262:54:40"
+            "src": "3262:54:17"
           },
           {
             "attributes": {
@@ -3743,7 +3743,7 @@
                       "mutability": "mutable",
                       "name": "user",
                       "overrides": null,
-                      "scope": 28283,
+                      "scope": 11684,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3757,14 +3757,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28278,
+                        "id": 11679,
                         "name": "ElementaryTypeName",
-                        "src": "3345:7:40"
+                        "src": "3345:7:17"
                       }
                     ],
-                    "id": 28279,
+                    "id": 11680,
                     "name": "VariableDeclaration",
-                    "src": "3345:20:40"
+                    "src": "3345:20:17"
                   },
                   {
                     "attributes": {
@@ -3773,7 +3773,7 @@
                       "mutability": "mutable",
                       "name": "amount",
                       "overrides": null,
-                      "scope": 28283,
+                      "scope": 11684,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3786,24 +3786,24 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28280,
+                        "id": 11681,
                         "name": "ElementaryTypeName",
-                        "src": "3367:7:40"
+                        "src": "3367:7:17"
                       }
                     ],
-                    "id": 28281,
+                    "id": 11682,
                     "name": "VariableDeclaration",
-                    "src": "3367:14:40"
+                    "src": "3367:14:17"
                   }
                 ],
-                "id": 28282,
+                "id": 11683,
                 "name": "ParameterList",
-                "src": "3344:38:40"
+                "src": "3344:38:17"
               }
             ],
-            "id": 28283,
+            "id": 11684,
             "name": "EventDefinition",
-            "src": "3321:62:40"
+            "src": "3321:62:17"
           },
           {
             "attributes": {
@@ -3821,7 +3821,7 @@
                       "mutability": "mutable",
                       "name": "user",
                       "overrides": null,
-                      "scope": 28289,
+                      "scope": 11690,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -3835,14 +3835,14 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 28284,
+                        "id": 11685,
                         "name": "ElementaryTypeName",
-                        "src": "3405:7:40"
+                        "src": "3405:7:17"
                       }
                     ],
-                    "id": 28285,
+                    "id": 11686,
                     "name": "VariableDeclaration",
-                    "src": "3405:20:40"
+                    "src": "3405:20:17"
                   },
                   {
                     "attributes": {
@@ -3851,7 +3851,7 @@
                       "mutability": "mutable",
                       "name": "reward",
                       "overrides": null,
-                      "scope": 28289,
+                      "scope": 11690,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "uint256",
@@ -3864,42 +3864,42 @@
                           "name": "uint256",
                           "type": "uint256"
                         },
-                        "id": 28286,
+                        "id": 11687,
                         "name": "ElementaryTypeName",
-                        "src": "3427:7:40"
+                        "src": "3427:7:17"
                       }
                     ],
-                    "id": 28287,
+                    "id": 11688,
                     "name": "VariableDeclaration",
-                    "src": "3427:14:40"
+                    "src": "3427:14:17"
                   }
                 ],
-                "id": 28288,
+                "id": 11689,
                 "name": "ParameterList",
-                "src": "3404:38:40"
+                "src": "3404:38:17"
               }
             ],
-            "id": 28289,
+            "id": 11690,
             "name": "EventDefinition",
-            "src": "3388:55:40"
+            "src": "3388:55:17"
           }
         ],
-        "id": 28290,
+        "id": 11691,
         "name": "ContractDefinition",
-        "src": "59:3386:40"
+        "src": "59:3386:17"
       }
     ],
-    "id": 28291,
+    "id": 11692,
     "name": "SourceUnit",
-    "src": "33:3412:40"
+    "src": "33:3412:17"
   },
   "compiler": {
     "name": "solc",
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.1",
-  "updatedAt": "2021-05-11T03:07:10.169Z",
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-05-14T05:46:42.475Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

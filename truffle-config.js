@@ -20,14 +20,14 @@
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const utils = require('web3-utils');
-const { execSync } = require("child_process")
+// const { execSync } = require("child_process")
 
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
-const commitHash = execSync("git describe --always --long").toString().trim();
+// const commitHash = execSync("git describe --always --long").toString().trim();
 
 module.exports = {
   /**
@@ -66,7 +66,7 @@ module.exports = {
     // },
 
     mainnet: {
-      provider: () => new HDWalletProvider(process.env.mainnetMnemonic, `wss://mainnet.infura.io/ws/v3/`+ process.env.INFURA_PROJECT_ID),
+      provider: () => new HDWalletProvider({privateKeys: [process.env.mainnetMnemonic], providerOrUrl: `wss://mainnet.infura.io/ws/v3/`+ process.env.INFURA_PROJECT_ID, chainId: 1}),
       network_id: 1,
       gas: 6000000,
       gasPrice: utils.toWei('40', 'gwei'),
@@ -79,7 +79,7 @@ module.exports = {
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
     ropsten: {
-      provider: () => new HDWalletProvider(process.env.mnemonic, `wss://ropsten.infura.io/ws/v3/`+ process.env.INFURA_PROJECT_ID),
+      provider: () => new HDWalletProvider({privateKeys: [process.env.mnemonic], providerOrUrl: `wss://ropsten.infura.io/ws/v3/`+ process.env.INFURA_PROJECT_ID, chainId: 3}),
       network_id: 3,       // Ropsten's id
       gas: 7000000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
@@ -88,12 +88,21 @@ module.exports = {
     },
 
     kovan: {
-      provider: () => new HDWalletProvider(process.env.mnemonic, `wss://kovan.infura.io/ws/v3/`+ process.env.INFURA_PROJECT_ID),
+      provider: () => new HDWalletProvider({privateKeys: [process.env.mnemonic], providerOrUrl: `wss://kovan.infura.io/ws/v3/`+ process.env.INFURA_PROJECT_ID, chainId: 42}),
       network_id: '42',
       gas: 7000000,
       confirmations: 2,
       timeoutBlocks: 200,
       skipDryRun: false
+    },
+
+    rinkeby: {
+      provider: () => new HDWalletProvider({privateKeys: [process.env.mnemonic], providerOrUrl: `wss://rinkeby.infura.io/ws/v3/`+ process.env.INFURA_PROJECT_ID, chainId: 4}),
+      network_id: 4,
+      gas: 7000000,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true
     },
 
     // Useful for private networks
@@ -110,14 +119,14 @@ module.exports = {
     etherscan: process.env.ETHERSCAN_API_KEY
   },
 
-  verify: {
-    preamble: `
-Author: CoFiX Core, https://cofix.io
-Commit hash: ${commitHash}
-Repository: https://github.com/Computable-Finance/CoFiX
-Issues: https://github.com/Computable-Finance/CoFiX/issues
-`
-  },
+//   verify: {
+//     preamble: `
+// Author: CoFiX Core, https://cofix.io
+// Commit hash: ${commitHash}
+// Repository: https://github.com/Computable-Finance/CoFiX
+// Issues: https://github.com/Computable-Finance/CoFiX/issues
+// `
+//   },
 
   // Set default mocha options here, use special reporters etc.
   mocha: {

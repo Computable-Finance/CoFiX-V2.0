@@ -21,34 +21,34 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"checkAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/INest_3_VoteFactory.sol\":\"INest_3_VoteFactory\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/INest_3_VoteFactory.sol\":{\"keccak256\":\"0x72bd899148b272d696f6d9e294c8df2d3b71a24da8fc16aae74d5305563d1851\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://6e98f366da7104679d197e6278bdb1b1b25eeb3eb2b794a6ea53def338611be5\",\"dweb:/ipfs/QmUkWtmY5GHU5F5Lbmfx37XjQCSm39RCxQkXcrDpCNpGqZ\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"checkAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/INest_3_VoteFactory.sol\":\"INest_3_VoteFactory\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/INest_3_VoteFactory.sol\":{\"keccak256\":\"0x72bd899148b272d696f6d9e294c8df2d3b71a24da8fc16aae74d5305563d1851\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://6e98f366da7104679d197e6278bdb1b1b25eeb3eb2b794a6ea53def338611be5\",\"dweb:/ipfs/QmUkWtmY5GHU5F5Lbmfx37XjQCSm39RCxQkXcrDpCNpGqZ\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: GPL-3.0-or-later\n\npragma solidity 0.6.12;\n\ninterface INest_3_VoteFactory {\n    // 查询地址\n\tfunction checkAddress(string calldata name) external view returns (address contractAddress);\n    // _offerPrice = Nest_3_OfferPrice(address(voteFactoryMap.checkAddress(\"nest.v3.offerPrice\")));\n}",
-  "sourcePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/INest_3_VoteFactory.sol",
+  "sourcePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/INest_3_VoteFactory.sol",
   "ast": {
-    "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/INest_3_VoteFactory.sol",
+    "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/INest_3_VoteFactory.sol",
     "exportedSymbols": {
       "INest_3_VoteFactory": [
-        29911
+        13140
       ]
     },
-    "id": 29912,
+    "id": 13141,
     "license": "GPL-3.0-or-later",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 29903,
+        "id": 13132,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "46:23:53"
+        "src": "46:23:29"
       },
       {
         "abstract": false,
@@ -57,9 +57,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 29911,
+        "id": 13140,
         "linearizedBaseContracts": [
-          29911
+          13140
         ],
         "name": "INest_3_VoteFactory",
         "nodeType": "ContractDefinition",
@@ -68,7 +68,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "8fe77e86",
-            "id": 29910,
+            "id": 13139,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -76,18 +76,18 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 29906,
+              "id": 13135,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 29905,
+                  "id": 13134,
                   "mutability": "mutable",
                   "name": "name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 29910,
-                  "src": "146:20:53",
+                  "scope": 13139,
+                  "src": "146:20:29",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -95,10 +95,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 29904,
+                    "id": 13133,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "146:6:53",
+                    "src": "146:6:29",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -108,21 +108,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "145:22:53"
+              "src": "145:22:29"
             },
             "returnParameters": {
-              "id": 29909,
+              "id": 13138,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 29908,
+                  "id": 13137,
                   "mutability": "mutable",
                   "name": "contractAddress",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 29910,
-                  "src": "191:23:53",
+                  "scope": 13139,
+                  "src": "191:23:29",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -130,10 +130,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 29907,
+                    "id": 13136,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "191:7:53",
+                    "src": "191:7:29",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -144,27 +144,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "190:25:53"
+              "src": "190:25:29"
             },
-            "scope": 29911,
-            "src": "124:92:53",
+            "scope": 13140,
+            "src": "124:92:29",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 29912,
-        "src": "71:247:53"
+        "scope": 13141,
+        "src": "71:247:29"
       }
     ],
-    "src": "46:272:53"
+    "src": "46:272:29"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/INest_3_VoteFactory.sol",
+      "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/INest_3_VoteFactory.sol",
       "exportedSymbols": {
         "INest_3_VoteFactory": [
-          29911
+          13140
         ]
       },
       "license": "GPL-3.0-or-later"
@@ -178,9 +178,9 @@
             ".12"
           ]
         },
-        "id": 29903,
+        "id": 13132,
         "name": "PragmaDirective",
-        "src": "46:23:53"
+        "src": "46:23:29"
       },
       {
         "attributes": {
@@ -195,10 +195,10 @@
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            29911
+            13140
           ],
           "name": "INest_3_VoteFactory",
-          "scope": 29912
+          "scope": 13141
         },
         "children": [
           {
@@ -214,7 +214,7 @@
               ],
               "name": "checkAddress",
               "overrides": null,
-              "scope": 29911,
+              "scope": 13140,
               "stateMutability": "view",
               "virtual": false,
               "visibility": "external"
@@ -228,7 +228,7 @@
                       "mutability": "mutable",
                       "name": "name",
                       "overrides": null,
-                      "scope": 29910,
+                      "scope": 13139,
                       "stateVariable": false,
                       "storageLocation": "calldata",
                       "type": "string",
@@ -241,19 +241,19 @@
                           "name": "string",
                           "type": "string"
                         },
-                        "id": 29904,
+                        "id": 13133,
                         "name": "ElementaryTypeName",
-                        "src": "146:6:53"
+                        "src": "146:6:29"
                       }
                     ],
-                    "id": 29905,
+                    "id": 13134,
                     "name": "VariableDeclaration",
-                    "src": "146:20:53"
+                    "src": "146:20:29"
                   }
                 ],
-                "id": 29906,
+                "id": 13135,
                 "name": "ParameterList",
-                "src": "145:22:53"
+                "src": "145:22:29"
               },
               {
                 "children": [
@@ -263,7 +263,7 @@
                       "mutability": "mutable",
                       "name": "contractAddress",
                       "overrides": null,
-                      "scope": 29910,
+                      "scope": 13139,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address",
@@ -277,42 +277,42 @@
                           "stateMutability": "nonpayable",
                           "type": "address"
                         },
-                        "id": 29907,
+                        "id": 13136,
                         "name": "ElementaryTypeName",
-                        "src": "191:7:53"
+                        "src": "191:7:29"
                       }
                     ],
-                    "id": 29908,
+                    "id": 13137,
                     "name": "VariableDeclaration",
-                    "src": "191:23:53"
+                    "src": "191:23:29"
                   }
                 ],
-                "id": 29909,
+                "id": 13138,
                 "name": "ParameterList",
-                "src": "190:25:53"
+                "src": "190:25:29"
               }
             ],
-            "id": 29910,
+            "id": 13139,
             "name": "FunctionDefinition",
-            "src": "124:92:53"
+            "src": "124:92:29"
           }
         ],
-        "id": 29911,
+        "id": 13140,
         "name": "ContractDefinition",
-        "src": "71:247:53"
+        "src": "71:247:29"
       }
     ],
-    "id": 29912,
+    "id": 13141,
     "name": "SourceUnit",
-    "src": "46:272:53"
+    "src": "46:272:29"
   },
   "compiler": {
     "name": "solc",
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.1",
-  "updatedAt": "2021-05-11T03:07:10.211Z",
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-05-14T05:46:42.507Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

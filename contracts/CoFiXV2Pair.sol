@@ -148,14 +148,14 @@ contract CoFiXV2Pair is ICoFiXV2Pair, CoFiXERC20 {
         uint liquidity = balanceOf[address(this)];
 
         uint256 _ethBalanceBefore = address(this).balance;
-        uint256 fee;
+        // uint256 fee;
         {
             bytes memory data = abi.encode(msg.sender, liquidity);
             // query price
             OraclePrice memory _op;
             (_op.K, _op.ethAmount, _op.erc20Amount, _op.blockNum, _op.theta) = _queryOracle(_token1, CoFiX_OP.BURN, data);
 
-            (amountTokenOut, amountEthOut, fee) = calcOutTokenAndETHForBurn(liquidity, _op); // navps calculated
+            (amountTokenOut, amountEthOut) = calcOutTokenAndETHForBurn(liquidity, _op); // navps calculated
         }
         oracleFeeChange = msg.value.sub(_ethBalanceBefore.sub(address(this).balance));
 
@@ -165,14 +165,14 @@ contract CoFiXV2Pair is ICoFiXV2Pair, CoFiXERC20 {
         _safeTransfer(_token1, tokenTo, amountTokenOut);
         _safeTransfer(_token0, ethTo, amountEthOut);
 
-        if (fee > 0) {
-            if (ICoFiXV2Factory(factory).getTradeMiningStatus(_token1)) {
-                // only transfer fee to protocol feeReceiver when trade mining is enabled for this trading pair
-                _safeSendFeeForDAO(_token0, fee);
-            } else {
-                _safeSendFeeForLP(_token0, _token1, fee);
-            }
-        }
+        // if (fee > 0) {
+        //     if (ICoFiXV2Factory(factory).getTradeMiningStatus(_token1)) {
+        //         // only transfer fee to protocol feeReceiver when trade mining is enabled for this trading pair
+        //         _safeSendFeeForDAO(_token0, fee);
+        //     } else {
+        //         _safeSendFeeForLP(_token0, _token1, fee);
+        //     }
+        // }
 
         balance0 = IERC20(_token0).balanceOf(address(this));
         balance1 = IERC20(_token1).balanceOf(address(this));
@@ -445,7 +445,7 @@ contract CoFiXV2Pair is ICoFiXV2Pair, CoFiXERC20 {
         return calcLiquidity(amount0, navps);
     }
 
-    function calcOutTokenAndETHForBurn(uint256 liquidity, OraclePrice memory _op) public view returns (uint256 amountTokenOut, uint256 amountEthOut, uint256 fee) {
+    function calcOutTokenAndETHForBurn(uint256 liquidity, OraclePrice memory _op) public view returns (uint256 amountTokenOut, uint256 amountEthOut) {
         // amountEthOut = liquidity * navps * (THETA_BASE - theta) / THETA_BASE
         // amountTokenOut = liquidity * navps * (THETA_BASE - theta) * initToken1Amount / (initToken0Amount * THETA_BASE)
         uint256 navps;
@@ -459,18 +459,18 @@ contract CoFiXV2Pair is ICoFiXV2Pair, CoFiXERC20 {
             // amountTokenOut = amountEthOut.mul(initToken1Amount).div(initToken0Amount);
         }
 
-        if (_op.theta != 0) {
-            /*
-            fee = liquidity * navps * (1 + \frac{k_0}{P_t}) * theta \\\\
-                = \frac{liquidity * navps * (1 + \frac{initToken1Amount}{initToken0Amount} * \frac{ethAmount}{erc20Amount}) * theta}{NAVPS\_BASE * THETA\_BASE}\\\\
-                = \frac{liquidity * navps * (initToken0Amount * erc20Amount + initToken1Amount * ethAmount) * theta}{initToken0Amount * erc20Amount * NAVPS\_BASE * THETA\_BASE}
-             */
-            {
-                uint256 initToken1AmountMulEthAmount = initToken1Amount.mul(_op.ethAmount);
-                uint256 erc20AmountMulInitToken0Amount = _op.erc20Amount.mul(initToken0Amount);
-                fee = navps.mul(initToken1AmountMulEthAmount.add(erc20AmountMulInitToken0Amount)).div(erc20AmountMulInitToken0Amount).mul(liquidity).mul(_op.theta).div(THETA_BASE).div(NAVPS_BASE);
-            }
-        }
+        // if (_op.theta != 0) {
+            
+        //     fee = liquidity * navps * (1 + \frac{k_0}{P_t}) * theta \\\\
+        //         = \frac{liquidity * navps * (1 + \frac{initToken1Amount}{initToken0Amount} * \frac{ethAmount}{erc20Amount}) * theta}{NAVPS\_BASE * THETA\_BASE}\\\\
+        //         = \frac{liquidity * navps * (initToken0Amount * erc20Amount + initToken1Amount * ethAmount) * theta}{initToken0Amount * erc20Amount * NAVPS\_BASE * THETA\_BASE}
+             
+        //     {
+        //         uint256 initToken1AmountMulEthAmount = initToken1Amount.mul(_op.ethAmount);
+        //         uint256 erc20AmountMulInitToken0Amount = _op.erc20Amount.mul(initToken0Amount);
+        //         fee = navps.mul(initToken1AmountMulEthAmount.add(erc20AmountMulInitToken0Amount)).div(erc20AmountMulInitToken0Amount).mul(liquidity).mul(_op.theta).div(THETA_BASE).div(NAVPS_BASE);
+        //     }
+        // }
 
         // recalc amountOut when has no enough reserve0 or reserve1 to out in initAssetRatio
         {

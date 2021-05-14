@@ -349,43 +349,43 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EmergencyWithdraw\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"RewardAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"RewardPaid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"other\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"StakedForOther\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawn\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"accrued\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"addReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"earned\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"exit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRewardAndStake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastBlockRewardApplicable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardPerToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardsToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardsVault\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"other\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stakeForOther\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakingToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"accrued()\":{\"details\":\"How many reward tokens accrued recently\",\"returns\":{\"_0\":\"The amount of reward tokens accrued recently\"}},\"addReward(uint256)\":{\"details\":\"Add reward to the mining pool\"},\"balanceOf(address)\":{\"details\":\"How many stakingToken (XToken) deposited by the target account\",\"params\":{\"account\":\"The target account\"},\"returns\":{\"_0\":\"The total amount of XToken deposited in this mining pool\"}},\"earned(address)\":{\"details\":\"How many reward tokens a user has earned but not claimed at present\",\"params\":{\"account\":\"The target account\"},\"returns\":{\"_0\":\"The amount of reward tokens a user earned\"}},\"emergencyWithdraw()\":{\"details\":\"Withdraw without caring about rewards. EMERGENCY ONLY.\"},\"exit()\":{\"details\":\"User exit the reward pool, it's actually withdraw and getReward\"},\"getReward()\":{\"details\":\"Claim the reward the user earned\"},\"lastBlockRewardApplicable()\":{\"details\":\"The lastBlock reward applicable\",\"returns\":{\"_0\":\"Returns the latest block.number on-chain\"}},\"rewardPerToken()\":{\"details\":\"Reward amount represents by per staking token\"},\"rewardRate()\":{\"details\":\"Get the latest reward rate of this mining pool (tokens amount per block)\",\"returns\":{\"_0\":\"The latest reward rate\"}},\"rewardsToken()\":{\"details\":\"Get the address of token for rewards in this mining pool\",\"returns\":{\"_0\":\"The rewards token address\"}},\"rewardsVault()\":{\"details\":\"The rewards vault contract address set in factory contract\",\"returns\":{\"_0\":\"Returns the vault address\"}},\"stake(uint256)\":{\"details\":\"Stake/Deposit into the reward pool (mining pool)\",\"params\":{\"amount\":\"The target amount\"}},\"stakeForOther(address,uint256)\":{\"details\":\"Stake/Deposit into the reward pool (mining pool) for other account\",\"params\":{\"amount\":\"The target amount\",\"other\":\"The target account\"}},\"stakingToken()\":{\"details\":\"Get the address of token for staking in this mining pool\",\"returns\":{\"_0\":\"The staking token address\"}},\"totalSupply()\":{\"details\":\"How many stakingToken (XToken) deposited into to this reward pool (mining pool)\",\"returns\":{\"_0\":\"The total amount of XTokens deposited in this mining pool\"}},\"withdraw(uint256)\":{\"details\":\"Withdraw from the reward pool (mining pool), get the original tokens back\",\"params\":{\"amount\":\"The target amount\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICNodeStakingRewards.sol\":\"ICNodeStakingRewards\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICNodeStakingRewards.sol\":{\"keccak256\":\"0x6bcb243047473da75dd86449dd5335cf43f1c36cf022073a4a9e4de1803862dd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e08709850f8af5ca8b82c42efea453cd1e8657ea9f04c7be54fca2052fd6a691\",\"dweb:/ipfs/QmXhipHScHTHNGux8rbkBQ2SdmUx1h6gnLh3b9WT97p1Ze\"]},\"/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXStakingRewards.sol\":{\"keccak256\":\"0xec95ff23d33b64a60cb65e383e414e4aac9c21183127191c18bf44d4eb0cc569\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8910063d87ab369ff58135af2a4f3eed63aaa2f7d6a92d7c82bb89516b7401c8\",\"dweb:/ipfs/QmRSDEHHBVexyjmYpzXyXqJXrdkwB59ZDMoFdxHaVJcfbJ\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"EmergencyWithdraw\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"RewardAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"reward\",\"type\":\"uint256\"}],\"name\":\"RewardPaid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Staked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"other\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"StakedForOther\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Withdrawn\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"accrued\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"addReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"earned\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"emergencyWithdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"exit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getReward\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRewardAndStake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastBlockRewardApplicable\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardPerToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardsToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rewardsVault\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"other\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"stakeForOther\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stakingToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"accrued()\":{\"details\":\"How many reward tokens accrued recently\",\"returns\":{\"_0\":\"The amount of reward tokens accrued recently\"}},\"addReward(uint256)\":{\"details\":\"Add reward to the mining pool\"},\"balanceOf(address)\":{\"details\":\"How many stakingToken (XToken) deposited by the target account\",\"params\":{\"account\":\"The target account\"},\"returns\":{\"_0\":\"The total amount of XToken deposited in this mining pool\"}},\"earned(address)\":{\"details\":\"How many reward tokens a user has earned but not claimed at present\",\"params\":{\"account\":\"The target account\"},\"returns\":{\"_0\":\"The amount of reward tokens a user earned\"}},\"emergencyWithdraw()\":{\"details\":\"Withdraw without caring about rewards. EMERGENCY ONLY.\"},\"exit()\":{\"details\":\"User exit the reward pool, it's actually withdraw and getReward\"},\"getReward()\":{\"details\":\"Claim the reward the user earned\"},\"lastBlockRewardApplicable()\":{\"details\":\"The lastBlock reward applicable\",\"returns\":{\"_0\":\"Returns the latest block.number on-chain\"}},\"rewardPerToken()\":{\"details\":\"Reward amount represents by per staking token\"},\"rewardRate()\":{\"details\":\"Get the latest reward rate of this mining pool (tokens amount per block)\",\"returns\":{\"_0\":\"The latest reward rate\"}},\"rewardsToken()\":{\"details\":\"Get the address of token for rewards in this mining pool\",\"returns\":{\"_0\":\"The rewards token address\"}},\"rewardsVault()\":{\"details\":\"The rewards vault contract address set in factory contract\",\"returns\":{\"_0\":\"Returns the vault address\"}},\"stake(uint256)\":{\"details\":\"Stake/Deposit into the reward pool (mining pool)\",\"params\":{\"amount\":\"The target amount\"}},\"stakeForOther(address,uint256)\":{\"details\":\"Stake/Deposit into the reward pool (mining pool) for other account\",\"params\":{\"amount\":\"The target amount\",\"other\":\"The target account\"}},\"stakingToken()\":{\"details\":\"Get the address of token for staking in this mining pool\",\"returns\":{\"_0\":\"The staking token address\"}},\"totalSupply()\":{\"details\":\"How many stakingToken (XToken) deposited into to this reward pool (mining pool)\",\"returns\":{\"_0\":\"The total amount of XTokens deposited in this mining pool\"}},\"withdraw(uint256)\":{\"details\":\"Withdraw from the reward pool (mining pool), get the original tokens back\",\"params\":{\"amount\":\"The target amount\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICNodeStakingRewards.sol\":\"ICNodeStakingRewards\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICNodeStakingRewards.sol\":{\"keccak256\":\"0x6bcb243047473da75dd86449dd5335cf43f1c36cf022073a4a9e4de1803862dd\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e08709850f8af5ca8b82c42efea453cd1e8657ea9f04c7be54fca2052fd6a691\",\"dweb:/ipfs/QmXhipHScHTHNGux8rbkBQ2SdmUx1h6gnLh3b9WT97p1Ze\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol\":{\"keccak256\":\"0xec95ff23d33b64a60cb65e383e414e4aac9c21183127191c18bf44d4eb0cc569\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8910063d87ab369ff58135af2a4f3eed63aaa2f7d6a92d7c82bb89516b7401c8\",\"dweb:/ipfs/QmRSDEHHBVexyjmYpzXyXqJXrdkwB59ZDMoFdxHaVJcfbJ\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.6.12;\n\nimport \"./ICoFiXStakingRewards.sol\";\n\ninterface ICNodeStakingRewards is ICoFiXStakingRewards {\n    // // Views\n\n    // /// @dev The lastBlock reward applicable\n    // /// @return Returns the latest block.number on-chain\n    // function lastBlockRewardApplicable() external view returns (uint256);\n\n    // /// @dev Reward amount represents by per staking token\n    // function rewardPerToken() external view returns (uint256);\n\n    // /// @dev How many reward tokens a user has earned but not claimed at present\n    // /// @param  account The target account\n    // /// @return The amount of reward tokens a user earned\n    // function earned(address account) external view returns (uint256);\n\n    // /// @dev How many reward tokens accrued recently\n    // /// @return The amount of reward tokens accrued recently\n    // function accrued() external view returns (uint256);\n\n    // /// @dev Get the latest reward rate of this mining pool (tokens amount per block)\n    // /// @return The latest reward rate\n    // function rewardRate() external view returns (uint256);\n\n    // /// @dev How many stakingToken (XToken) deposited into to this reward pool (mining pool)\n    // /// @return The total amount of XTokens deposited in this mining pool\n    // function totalSupply() external view returns (uint256);\n\n    // /// @dev How many stakingToken (XToken) deposited by the target account\n    // /// @param  account The target account\n    // /// @return The total amount of XToken deposited in this mining pool\n    // function balanceOf(address account) external view returns (uint256);\n\n    // /// @dev Get the address of token for staking in this mining pool\n    // /// @return The staking token address\n    // function stakingToken() external view returns (address);\n\n    // /// @dev Get the address of token for rewards in this mining pool\n    // /// @return The rewards token address\n    // function rewardsToken() external view returns (address);\n\n    // // Mutative\n\n    // /// @dev Stake/Deposit into the reward pool (mining pool)\n    // /// @param  amount The target amount\n    // function stake(uint256 amount) external;\n\n    // /// @dev Stake/Deposit into the reward pool (mining pool) for other account\n    // /// @param  other The target account\n    // /// @param  amount The target amount\n    // function stakeForOther(address other, uint256 amount) external;\n\n    // /// @dev Withdraw from the reward pool (mining pool), get the original tokens back\n    // /// @param  amount The target amount\n    // function withdraw(uint256 amount) external;\n\n    // /// @dev Claim the reward the user earned\n    // function getReward() external;\n\n    // /// @dev User exit the reward pool, it's actually withdraw and getReward\n    // function exit() external;\n\n    // /// @dev Add reward to the mining pool\n    // function addReward(uint256 amount) external;\n\n    // // Events\n    // event RewardAdded(address sender, uint256 reward);\n    // event Staked(address indexed user, uint256 amount);\n    // event StakedForOther(address indexed user, address indexed other, uint256 amount);\n    // event Withdrawn(address indexed user, uint256 amount);\n    // event EmergencyWithdraw(address indexed user, uint256 amount);\n    // event RewardPaid(address indexed user, uint256 reward);\n}",
-  "sourcePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICNodeStakingRewards.sol",
+  "sourcePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICNodeStakingRewards.sol",
   "ast": {
-    "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICNodeStakingRewards.sol",
+    "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICNodeStakingRewards.sol",
     "exportedSymbols": {
       "ICNodeStakingRewards": [
-        27030
+        11052
       ]
     },
-    "id": 27031,
+    "id": 11053,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 27026,
+        "id": 11048,
         "literals": [
           "solidity",
           "0.6",
           ".12"
         ],
         "nodeType": "PragmaDirective",
-        "src": "33:23:30"
+        "src": "33:23:12"
       },
       {
-        "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXStakingRewards.sol",
+        "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol",
         "file": "./ICoFiXStakingRewards.sol",
-        "id": 27027,
+        "id": 11049,
         "nodeType": "ImportDirective",
-        "scope": 27031,
-        "sourceUnit": 28291,
-        "src": "58:36:30",
+        "scope": 11053,
+        "sourceUnit": 11692,
+        "src": "58:36:12",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -396,47 +396,47 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 27028,
+              "id": 11050,
               "name": "ICoFiXStakingRewards",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 28290,
-              "src": "130:20:30",
+              "referencedDeclaration": 11691,
+              "src": "130:20:12",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ICoFiXStakingRewards_$28290",
+                "typeIdentifier": "t_contract$_ICoFiXStakingRewards_$11691",
                 "typeString": "contract ICoFiXStakingRewards"
               }
             },
-            "id": 27029,
+            "id": 11051,
             "nodeType": "InheritanceSpecifier",
-            "src": "130:20:30"
+            "src": "130:20:12"
           }
         ],
         "contractDependencies": [
-          28290
+          11691
         ],
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 27030,
+        "id": 11052,
         "linearizedBaseContracts": [
-          27030,
-          28290
+          11052,
+          11691
         ],
         "name": "ICNodeStakingRewards",
         "nodeType": "ContractDefinition",
         "nodes": [],
-        "scope": 27031,
-        "src": "96:3237:30"
+        "scope": 11053,
+        "src": "96:3237:12"
       }
     ],
-    "src": "33:3300:30"
+    "src": "33:3300:12"
   },
   "legacyAST": {
     "attributes": {
-      "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICNodeStakingRewards.sol",
+      "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICNodeStakingRewards.sol",
       "exportedSymbols": {
         "ICNodeStakingRewards": [
-          27030
+          11052
         ]
       },
       "license": "MIT"
@@ -450,43 +450,43 @@
             ".12"
           ]
         },
-        "id": 27026,
+        "id": 11048,
         "name": "PragmaDirective",
-        "src": "33:23:30"
+        "src": "33:23:12"
       },
       {
         "attributes": {
-          "SourceUnit": 28291,
-          "absolutePath": "/Users/lixiansheng/Downloads/CoFix/contracts/interface/ICoFiXStakingRewards.sol",
+          "SourceUnit": 11692,
+          "absolutePath": "/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol",
           "file": "./ICoFiXStakingRewards.sol",
-          "scope": 27031,
+          "scope": 11053,
           "symbolAliases": [
             null
           ],
           "unitAlias": ""
         },
-        "id": 27027,
+        "id": 11049,
         "name": "ImportDirective",
-        "src": "58:36:30"
+        "src": "58:36:12"
       },
       {
         "attributes": {
           "abstract": false,
           "contractDependencies": [
-            28290
+            11691
           ],
           "contractKind": "interface",
           "documentation": null,
           "fullyImplemented": false,
           "linearizedBaseContracts": [
-            27030,
-            28290
+            11052,
+            11691
           ],
           "name": "ICNodeStakingRewards",
           "nodes": [
             null
           ],
-          "scope": 27031
+          "scope": 11053
         },
         "children": [
           {
@@ -498,35 +498,35 @@
                 "attributes": {
                   "contractScope": null,
                   "name": "ICoFiXStakingRewards",
-                  "referencedDeclaration": 28290,
+                  "referencedDeclaration": 11691,
                   "type": "contract ICoFiXStakingRewards"
                 },
-                "id": 27028,
+                "id": 11050,
                 "name": "UserDefinedTypeName",
-                "src": "130:20:30"
+                "src": "130:20:12"
               }
             ],
-            "id": 27029,
+            "id": 11051,
             "name": "InheritanceSpecifier",
-            "src": "130:20:30"
+            "src": "130:20:12"
           }
         ],
-        "id": 27030,
+        "id": 11052,
         "name": "ContractDefinition",
-        "src": "96:3237:30"
+        "src": "96:3237:12"
       }
     ],
-    "id": 27031,
+    "id": 11053,
     "name": "SourceUnit",
-    "src": "33:3300:30"
+    "src": "33:3300:12"
   },
   "compiler": {
     "name": "solc",
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.4.1",
-  "updatedAt": "2021-05-11T03:07:10.138Z",
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-05-14T05:46:42.463Z",
   "devdoc": {
     "kind": "dev",
     "methods": {

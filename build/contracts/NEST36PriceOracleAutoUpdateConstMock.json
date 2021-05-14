@@ -43,7 +43,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -105,7 +106,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -149,7 +151,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -226,7 +229,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"defi\",\"type\":\"address\"}],\"name\":\"activate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"checkPriceNow\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"latestPriceBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"latestPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPriceBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredAvgPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredSigmaSQ\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"latestPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredAvgPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredSigmaSQ\",\"type\":\"uint256\"}],\"name\":\"feedPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"latestPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"latestPriceBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"latestPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPriceBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredAvgPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredSigmaSQ\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"payback\",\"type\":\"address\"}],\"name\":\"latestPriceAndTriggeredPriceInfo\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"latestPriceBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"latestPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPriceBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredAvgPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredSigmaSQ\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"priceInfoMap\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"latestPriceBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"latestPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPriceBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredPriceValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredAvgPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"triggeredSigmaSQ\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/mock/NEST36PriceOracleAutoUpdateConstMock.sol\":\"NEST36PriceOracleAutoUpdateConstMock\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/mock/NEST36PriceOracleAutoUpdateConstMock.sol\":{\"keccak256\":\"0x3c5e13722c44a3c7c38f0b750ec269a07f38070a46065fa67050d9b01fb8055e\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://22f82404fc9c36117b6bc3a2b8be686b4990107b1fe9ad6ab5f4f013227c58ad\",\"dweb:/ipfs/QmQdoXxZtUpScN7ePA9ByuB8Knxo1b5gBRyMKqxs9aDd1o\"]}},\"version\":1}",
@@ -7374,7 +7378,8 @@
   },
   "networks": {},
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-05-14T05:46:42.585Z",
+  "updatedAt": "2021-05-14T10:59:44.910Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -17,13 +17,13 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
 
     enum CoFiX_OP { QUERY, MINT, BURN, SWAP_WITH_EXACT, SWAP_FOR_EXACT } // operations in CoFiX
 
-    uint256 constant public AONE = 1 ether;
-    uint256 constant public K_BASE = 1E8;
+    // uint256 constant public AONE = 1 ether;
+    // uint256 constant public K_BASE = 1E8;
     uint256 constant public K_GAMMA_BASE = 10;
     uint256 constant public NAVPS_BASE = 1E18; // NAVPS (Net Asset Value Per Share), need accuracy
     uint256 constant internal K_ALPHA = 2600; // α=2.6e-05*1e8
     uint256 constant internal K_BETA = 1020500000; // β=10.205*1e8
-    uint256 internal T = 600; // ctrl-v2: V1 (900) -> V2 (600)
+    uint256 internal T = 900; // ctrl-v2: V1 (900) -> V2 (600)
     uint256 internal K_EXPECTED_VALUE = 0.005*1E8; // ctrl-v2: V1 (0.0025) -> V2 (0.005)
     // impact cost params
     uint256 constant internal C_BUYIN_ALPHA = 25700000000000; // α=2.570e-05*1e18
@@ -32,8 +32,8 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
     uint256 constant internal C_SELLOUT_BETA = 838600000000; // β=8.386e-07*1e18
     mapping(address => uint32) public CGammaMap;
 
-    int128 constant internal SIGMA_STEP = 0x346DC5D638865; // (0.00005*2**64).toString(16), 0.00005 as 64.64-bit fixed point
-    int128 constant internal ZERO_POINT_FIVE = 0x8000000000000000; // (0.5*2**64).toString(16)
+    // int128 constant internal SIGMA_STEP = 0x346DC5D638865; // (0.00005*2**64).toString(16), 0.00005 as 64.64-bit fixed point
+    // int128 constant internal ZERO_POINT_FIVE = 0x8000000000000000; // (0.5*2**64).toString(16)
     uint256 constant PRICE_DEVIATION = 10;  // price deviation < 10%
 
     mapping(address => uint32[3]) internal KInfoMap; // gas saving, index [0] is k vlaue, index [1] is updatedAt, index [2] is theta
@@ -45,10 +45,10 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
     address public immutable nestToken;
     address public immutable factory;
     uint256 public timespan = 14;
-    uint256 public kRefreshInterval = 5 minutes;
-    uint256 public DESTRUCTION_AMOUNT = 0 ether; // from nest oracle
-    int128 public MAX_K0 = 0xCCCCCCCCCCCCD00; // (0.05*2**64).toString(16)
-    int128 public GAMMA = 0x8000000000000000; // (0.5*2**64).toString(16)
+    // uint256 public kRefreshInterval = 5 minutes;
+    // uint256 public DESTRUCTION_AMOUNT = 0 ether; // from nest oracle
+    // int128 public MAX_K0 = 0xCCCCCCCCCCCCD00; // (0.05*2**64).toString(16)
+    // int128 public GAMMA = 0x8000000000000000; // (0.5*2**64).toString(16)
 
     struct OracleParams {
         uint256 ethAmount;
@@ -96,14 +96,14 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
         emit NewTimespan(_timeSpan);
     }
 
-    function setKRefreshInterval(uint256 _interval) external onlyGovernance {
-        kRefreshInterval = _interval;
-        emit NewKRefreshInterval(_interval);
-    }
+    // function setKRefreshInterval(uint256 _interval) external onlyGovernance {
+    //     kRefreshInterval = _interval;
+    //     emit NewKRefreshInterval(_interval);
+    // }
 
-    function setOracleDestructionAmount(uint256 _amount) external onlyGovernance {
-        DESTRUCTION_AMOUNT = _amount;
-    }
+    // function setOracleDestructionAmount(uint256 _amount) external onlyGovernance {
+    //     DESTRUCTION_AMOUNT = _amount;
+    // }
 
     function setTLimit(uint256 _T) external onlyGovernance { // ctrl-v2: new setter for T
         T = _T;

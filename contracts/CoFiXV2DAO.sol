@@ -20,7 +20,7 @@ contract CoFiXV2DAO is ICoFiXV2DAO, ReentrancyGuard {
     uint8 public flag; 
 
     uint32  public startedBlock;
-    uint32  public lastCollectingBlock;
+    // uint32  public lastCollectingBlock;
     uint32 public lastBlock;
     uint128 public redeemedAmount;
     uint128 public quotaAmount;
@@ -133,11 +133,11 @@ contract CoFiXV2DAO is ICoFiXV2DAO, ReentrancyGuard {
 
     /* ========== MAIN ========== */
 
-    function addETHReward() 
-        override
-        external
-        payable
-    { }
+    // function addETHReward() 
+    //     override
+    //     external
+    //     payable
+    // { }
 
     function redeem(uint256 amount) 
         external payable nonReentrant whenActive

@@ -17,7 +17,7 @@ contract CoFiXV2VaultForCNode is ICoFiXVaultForCNode, ReentrancyGuard {
 
     using SafeMath for uint256;
 
-    uint256 public constant RATE_BASE = 1e18;
+    // uint256 public constant RATE_BASE = 1e18;
 
     address public immutable cofiToken;
     address public immutable factory;

@@ -7,7 +7,7 @@ interface ICoFiXV2DAO {
     function setGovernance(address gov) external;
     function start() external; 
 
-    function addETHReward() external payable; 
+    // function addETHReward() external payable; 
 
     event FlagSet(address gov, uint256 flag);
     event CoFiBurn(address gov, uint256 amount);

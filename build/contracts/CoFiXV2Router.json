@@ -33,7 +33,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -46,7 +47,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -59,11 +61,13 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "stateMutability": "payable",
-      "type": "receive"
+      "type": "receive",
+      "payable": true
     },
     {
       "inputs": [
@@ -107,7 +111,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -151,7 +156,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -195,7 +201,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -244,7 +251,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -298,7 +306,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -347,7 +356,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -396,7 +406,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -445,7 +456,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -494,7 +506,8 @@
         }
       ],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [
@@ -523,7 +536,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -552,7 +566,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -581,7 +596,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_factory\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_uniFactory\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_WETH\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"WETH\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountETH\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountToken\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"liquidityMin\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"addLiquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"liquidity\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountETH\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountToken\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"liquidityMin\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"addLiquidityAndStake\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"liquidity\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"factory\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"input\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"output\",\"type\":\"address\"},{\"internalType\":\"enum ICoFiXV2Router.DEX_TYPE\",\"name\":\"dex\",\"type\":\"uint8\"}],\"name\":\"getPairForDEX\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"pair\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"input\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"output\",\"type\":\"address\"}],\"name\":\"hybridPair\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"useCoFiX\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"pair\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"path\",\"type\":\"address[]\"},{\"internalType\":\"enum ICoFiXV2Router.DEX_TYPE[]\",\"name\":\"dexes\",\"type\":\"uint8[]\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"rewardTo\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"hybridSwapExactETHForTokens\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"path\",\"type\":\"address[]\"},{\"internalType\":\"enum ICoFiXV2Router.DEX_TYPE[]\",\"name\":\"dexes\",\"type\":\"uint8[]\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"rewardTo\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"hybridSwapExactTokensForETH\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin\",\"type\":\"uint256\"},{\"internalType\":\"address[]\",\"name\":\"path\",\"type\":\"address[]\"},{\"internalType\":\"enum ICoFiXV2Router.DEX_TYPE[]\",\"name\":\"dexes\",\"type\":\"uint8[]\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"rewardTo\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"hybridSwapExactTokensForTokens\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"input\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"output\",\"type\":\"address\"}],\"name\":\"isCoFiXNativeSupported\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"supported\",\"type\":\"bool\"},{\"internalType\":\"address\",\"name\":\"pair\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"liquidity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountETHMin\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"removeLiquidityGetTokenAndETH\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amountToken\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountETH\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"rewardTo\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"swapExactETHForTokens\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountOut\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"rewardTo\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"swapExactTokensForETH\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountOut\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenIn\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenOut\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"rewardTo\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"}],\"name\":\"swapExactTokensForTokens\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_amountOut\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"uniFactory\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"addLiquidity(address,uint256,uint256,uint256,address,uint256)\":{\"details\":\"Maker add liquidity to pool, get pool token (mint XToken to maker) (notice: msg.value = amountETH + oracle fee)\",\"params\":{\"amountETH\":\"The amount of ETH added to pool\",\"amountToken\":\"The amount of Token added to pool\",\"deadline\":\"The dealine of this request\",\"liquidityMin\":\"The minimum liquidity maker wanted\",\"to\":\"The target address receiving the liquidity pool (XToken)\",\"token\":\"The address of ERC20 Token\"},\"returns\":{\"liquidity\":\"The real liquidity or XToken minted from pool\"}},\"addLiquidityAndStake(address,uint256,uint256,uint256,address,uint256)\":{\"details\":\"Maker add liquidity to pool, get pool token (mint XToken) and stake automatically (notice: msg.value = amountETH + oracle fee)\",\"params\":{\"amountETH\":\"The amount of ETH added to pool\",\"amountToken\":\"The amount of Token added to pool\",\"deadline\":\"The dealine of this request\",\"liquidityMin\":\"The minimum liquidity maker wanted\",\"to\":\"The target address receiving the liquidity pool (XToken)\",\"token\":\"The address of ERC20 Token\"},\"returns\":{\"liquidity\":\"The real liquidity or XToken minted from pool\"}},\"hybridSwapExactETHForTokens(uint256,uint256,address[],uint8[],address,address,uint256)\":{\"details\":\"Swaps an exact amount of ETH for as many output tokens as possible, along the route determined by the path. The first element of path must be WETH, the last is the output token, and any intermediate elements represent intermediate pairs to trade through (if, for example, a direct pair does not exist).\",\"params\":{\"amountIn\":\"The amount of input tokens to send.\",\"amountOutMin\":\"The minimum amount of output tokens that must be received for the transaction not to revert.\",\"deadline\":\"Unix timestamp after which the transaction will revert.\",\"dexes\":\"An array of dex type values, specifying the exchanges to be used, e.g. CoFiX, Uniswap.\",\"path\":\"An array of token addresses. path.length must be >= 2. Pools for each consecutive pair of addresses must exist and have liquidity.\",\"rewardTo\":\"The target address receiving the CoFi Token as rewards.\",\"to\":\"Recipient of the output tokens.\"},\"returns\":{\"amounts\":\"The input token amount and all subsequent output token amounts.\"}},\"hybridSwapExactTokensForETH(uint256,uint256,address[],uint8[],address,address,uint256)\":{\"details\":\"Swaps an exact amount of tokens for as much ETH as possible, along the route determined by the path. The first element of path is the input token, the last must be WETH, and any intermediate elements represent intermediate pairs to trade through (if, for example, a direct pair does not exist). If the to address is a smart contract, it must have the ability to receive ETH.\",\"params\":{\"amountIn\":\"The amount of input tokens to send.\",\"amountOutMin\":\"The minimum amount of output tokens that must be received for the transaction not to revert.\",\"deadline\":\"Unix timestamp after which the transaction will revert.\",\"dexes\":\"An array of dex type values, specifying the exchanges to be used, e.g. CoFiX, Uniswap.\",\"path\":\"An array of token addresses. path.length must be >= 2. Pools for each consecutive pair of addresses must exist and have liquidity.\",\"rewardTo\":\"The target address receiving the CoFi Token as rewards.\",\"to\":\"Recipient of the output tokens.\"},\"returns\":{\"amounts\":\"The input token amount and all subsequent output token amounts.\"}},\"hybridSwapExactTokensForTokens(uint256,uint256,address[],uint8[],address,address,uint256)\":{\"details\":\"Swaps an exact amount of input tokens for as many output tokens as possible, along the route determined by the path. The first element of path is the input token, the last is the output token, and any intermediate elements represent intermediate pairs to trade through (if, for example, a direct pair does not exist). `msg.sender` should have already given the router an allowance of at least amountIn on the input token. The swap execution can be done via cofix or uniswap. That's why it's called hybrid.\",\"params\":{\"amountIn\":\"The amount of input tokens to send.\",\"amountOutMin\":\"The minimum amount of output tokens that must be received for the transaction not to revert.\",\"deadline\":\"Unix timestamp after which the transaction will revert.\",\"dexes\":\"An array of dex type values, specifying the exchanges to be used, e.g. CoFiX, Uniswap.\",\"path\":\"An array of token addresses. path.length must be >= 2. Pools for each consecutive pair of addresses must exist and have liquidity.\",\"rewardTo\":\"The target address receiving the CoFi Token as rewards.\",\"to\":\"Recipient of the output tokens.\"},\"returns\":{\"amounts\":\"The input token amount and all subsequent output token amounts.\"}},\"removeLiquidityGetTokenAndETH(address,uint256,uint256,address,uint256)\":{\"details\":\"Maker remove liquidity from pool to get ERC20 Token and ETH back (maker burn XToken) (notice: msg.value = oracle fee)\",\"params\":{\"amountETHMin\":\"The minimum amount of ETH wanted to get from pool\",\"deadline\":\"The dealine of this request\",\"liquidity\":\"The amount of liquidity (XToken) sent to pool, or the liquidity to remove\",\"to\":\"The target address receiving the Token\",\"token\":\"The address of ERC20 Token\"},\"returns\":{\"amountETH\":\"The real amount of ETH transferred from the pool\",\"amountToken\":\"The real amount of Token transferred from the pool\"}},\"swapExactETHForTokens(address,uint256,uint256,address,address,uint256)\":{\"details\":\"Trader swap exact amount of ETH for ERC20 Tokens (notice: msg.value = amountIn + oracle fee)\",\"params\":{\"amountIn\":\"The exact amount of ETH a trader want to swap into pool\",\"amountOutMin\":\"The minimum amount of Token a trader want to swap out of pool\",\"deadline\":\"The dealine of this request\",\"rewardTo\":\"The target address receiving the CoFi Token as rewards\",\"to\":\"The target address receiving the Token\",\"token\":\"The address of ERC20 Token\"},\"returns\":{\"_amountIn\":\"The real amount of ETH transferred into pool\",\"_amountOut\":\"The real amount of Token transferred out of pool\"}},\"swapExactTokensForETH(address,uint256,uint256,address,address,uint256)\":{\"details\":\"Trader swap exact amount of ERC20 Tokens for ETH (notice: msg.value = oracle fee)\",\"params\":{\"amountIn\":\"The exact amount of Token a trader want to swap into pool\",\"amountOutMin\":\"The mininum amount of ETH a trader want to swap out of pool\",\"deadline\":\"The dealine of this request\",\"rewardTo\":\"The target address receiving the CoFi Token as rewards\",\"to\":\"The target address receiving the ETH\",\"token\":\"The address of ERC20 Token\"},\"returns\":{\"_amountIn\":\"The real amount of Token transferred into pool\",\"_amountOut\":\"The real amount of ETH transferred out of pool\"}},\"swapExactTokensForTokens(address,address,uint256,uint256,address,address,uint256)\":{\"details\":\"Trader swap exact amount of ERC20 Tokens for other ERC20 Tokens (notice: msg.value = oracle fee)\",\"params\":{\"amountIn\":\"The exact amount of Token a trader want to swap into pool\",\"amountOutMin\":\"The mininum amount of ETH a trader want to swap out of pool\",\"deadline\":\"The dealine of this request\",\"rewardTo\":\"The target address receiving the CoFi Token as rewards\",\"to\":\"The target address receiving the Token\",\"tokenIn\":\"The address of ERC20 Token a trader want to swap into pool\",\"tokenOut\":\"The address of ERC20 Token a trader want to swap out of pool\"},\"returns\":{\"_amountIn\":\"The real amount of Token transferred into pool\",\"_amountOut\":\"The real amount of Token transferred out of pool\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/CoFiXV2Router.sol\":\"CoFiXV2Router\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":6666},\"remappings\":[]},\"sources\":{\"/Users/lixiansheng/Downloads/cofix2/contracts/CoFiXV2Router.sol\":{\"keccak256\":\"0x75e4f2cd9aa3f608fc5cd500bebd2d38857f04e684b66d9bd5b1194c0097e5df\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://9b22bf78b50a7e04d6836b94c1c583bd932fb82a3d13adb73de83edd58c2e91f\",\"dweb:/ipfs/QmYpEShMoeEML38TgCZs3n6fxEqwAjDT8JxeqaJkC8Wzbq\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXERC20.sol\":{\"keccak256\":\"0xe7a64cfc871c8e42d3272947f4588ea83b541fb674212001850e8f1adf35bf69\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://a8ba0f2be1d60e90fe3d4b695de7c2eb4250e4e1ef438434dcf90ec845970b80\",\"dweb:/ipfs/QmS5kJdJxRyzL1rfXaU2BRFfbaTmhYR54eMSvgaiboRhTf\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXStakingRewards.sol\":{\"keccak256\":\"0xec95ff23d33b64a60cb65e383e414e4aac9c21183127191c18bf44d4eb0cc569\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8910063d87ab369ff58135af2a4f3eed63aaa2f7d6a92d7c82bb89516b7401c8\",\"dweb:/ipfs/QmRSDEHHBVexyjmYpzXyXqJXrdkwB59ZDMoFdxHaVJcfbJ\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2Factory.sol\":{\"keccak256\":\"0xf18b6d42258be0b28dd48ad6b3565463955e3292ca41f9ded5e0eab847c851f0\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://a3112184786c4479115129f77d95c5f4993cbe34d0f8cf5674bdd6c248290d61\",\"dweb:/ipfs/Qmes39Shu1taogLrVsvJSyByQUtcyvcJug9DkceEBwfr2C\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2Pair.sol\":{\"keccak256\":\"0xf7239bd1ba1399e80d49995753ac9f6f63a7b4bb8e45372800554addfceee617\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://a3c7c41bf239f42d751624b44ae93f23b661cbddd31ea62327ecc655e21f8fb9\",\"dweb:/ipfs/QmY2iUqs86FwNmi4q7P7Xpy9uivMCC9hDKH2aFCK2PriT8\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2Router.sol\":{\"keccak256\":\"0x5feb969d7704b60a6871ffc54744c7bcce8fff78dd87257f65f63575793c2282\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://7151c91be5c9a10e06a07a3b7145ecb3cf3f657acd0532799e0aedab95a0464e\",\"dweb:/ipfs/Qmf5RAU2okjCb5f2wnfYkUh45e1jiryZSVjnoGVxgF59rc\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXV2VaultForTrader.sol\":{\"keccak256\":\"0xccc3a9102e83d56369f1d9f49656791e1420d0f6ab2fdaf18aa88e4ab69e956d\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://f6cedfc638d187788a1ef61f1e791dbaf0bf773fd37fb785e1897150c27b7de5\",\"dweb:/ipfs/QmV2MbDSUEqcudGDF3ShsjVoWZG5ug5NpuV6Pf6T7q6DZC\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/ICoFiXVaultForLP.sol\":{\"keccak256\":\"0xde4d798d32a13c108336e324d144068d89b25a9e31612366ed8f7f3142ef5e02\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://8b2a5693184151a5fd08eabb9078480306175768eb93acb1d097135c80a9eb9a\",\"dweb:/ipfs/QmPYdBYKu8xtMVAmUaNiEXF3hdAwUhRYaUQXpicq6yp4gv\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/interface/IWETH.sol\":{\"keccak256\":\"0xda27ea3243f46ca28c47ef99b49f81d94e255f3c19ff658176ed44dbd9eb11f4\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://dc583a2ba5c1b945bf620c7fce5372385c17e02be96ba19527b0ad7836c34b5f\",\"dweb:/ipfs/QmTyFBpM24PozVw7dZGw2GaKkSvip9KVFrAKwpRYndZY9m\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/lib/TransferHelper.sol\":{\"keccak256\":\"0x0b91d6289190f84c7026124b55ac857525f1194ec3cb4ed578b5b791c6d77b34\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://3b6e41f77de27b6b9a328cdef8b5d0e951747dcc1988e7ff0cc1618f4b8871c8\",\"dweb:/ipfs/QmNr2nDyY39JPHSjRPWhUXzAbue1tqTdRwYHv7Lj4KDyFP\"]},\"/Users/lixiansheng/Downloads/cofix2/contracts/lib/UniswapV2Library.sol\":{\"keccak256\":\"0x2055fa8fd9f074cd60c705e6c5972a872f430234998636ebc286e30783d2e58b\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://84b04c1a1cdb6f3ed74935a4b25e0ca871871cf6c6d00fb048f10e999e999582\",\"dweb:/ipfs/QmdaMhnFCJ1mbehUR5mNu3GatxR9NTmGLBnRzN7ZQvdB4S\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]}},\"version\":1}",
@@ -59546,9 +59562,17 @@
     "name": "solc",
     "version": "0.6.12+commit.27d51765.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x065D43202d74545eAaF264a9A4f23879b0c4E158",
+      "transactionHash": "0x6baa08ccfb301804ff8502a9742b324ca0107ee64147ce071bc7b991b667a9cd"
+    }
+  },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-05-14T05:52:50.447Z",
+  "updatedAt": "2021-05-14T10:59:45.053Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {

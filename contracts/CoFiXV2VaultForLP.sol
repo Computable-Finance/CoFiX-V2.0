@@ -17,7 +17,7 @@ contract CoFiXV2VaultForLP is ICoFiXVaultForLP, ReentrancyGuard {
 
     using SafeMath for uint256;
 
-    uint256 public constant RATE_BASE = 1e18;
+    // uint256 public constant RATE_BASE = 1e18;
     uint256 public constant WEIGHT_BASE = 100;
 
     address public immutable cofiToken;

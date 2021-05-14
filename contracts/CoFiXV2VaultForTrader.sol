@@ -20,14 +20,14 @@ contract CoFiXV2VaultForTrader is ICoFiXV2VaultForTrader, ReentrancyGuard {
 
     uint256 public constant RATE_BASE = 1e18;
     uint256 public constant LAMBDA_BASE = 100;
-    uint256 public constant RECENT_RANGE = 300;
+    // uint256 public constant RECENT_RANGE = 300;
 
     uint256 public constant SHARE_BASE = 100;
     uint256 public constant SHARE_FOR_TRADER = 90;
     // uint256 public constant SHARE_FOR_LP = 10;
     uint256 public constant SHARE_FOR_CNODE = 10;
 
-    uint256 public constant NAVPS_BASE = 1E18; // NAVPS (Net Asset Value Per Share), need accuracy
+    // uint256 public constant NAVPS_BASE = 1E18; // NAVPS (Net Asset Value Per Share), need accuracy
 
     // make all of these constant, so we can reduce gas cost for swap features
     // uint256 public constant COFI_DECAY_PERIOD = 2400000; // LP pool yield decays for every 2,400,000 blocks
@@ -45,9 +45,9 @@ contract CoFiXV2VaultForTrader is ICoFiXV2VaultForTrader, ReentrancyGuard {
 
     // managed by governance
     address public governance;
-    uint256 public EXPECT_YIELD_RATIO = 3; // r, 0.3
-    uint256 public L_RATIO = 2; // l, 0.002
-    uint256 public THETA = 2; // 0.002
+    // uint256 public EXPECT_YIELD_RATIO = 3; // r, 0.3
+    // uint256 public L_RATIO = 2; // l, 0.002
+    // uint256 public THETA = 2; // 0.002
     uint256 public cofiRate = 0.1*1e18; // nt 0.1
 
     uint256 public pendingRewardsForCNode;

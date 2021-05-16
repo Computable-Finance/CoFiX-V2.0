@@ -21,15 +21,15 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
     // uint256 constant public K_BASE = 1E8;
     uint256 constant public K_GAMMA_BASE = 10;
     uint256 constant public NAVPS_BASE = 1E18; // NAVPS (Net Asset Value Per Share), need accuracy
-    uint256 constant internal K_ALPHA = 2600; // α=2.6e-05*1e8
-    uint256 constant internal K_BETA = 1020500000; // β=10.205*1e8
-    uint256 internal T = 900; // ctrl-v2: V1 (900) -> V2 (600)
+    uint256 constant internal K_ALPHA = 1000; // α=1e-05*1e8
+    uint256 constant internal K_BETA = 1000000000; // β=10*1e8
+    uint256 internal T = 3600; // ctrl-v2: V1 (900) -> V2 (3600)
     uint256 internal K_EXPECTED_VALUE = 0.005*1E8; // ctrl-v2: V1 (0.0025) -> V2 (0.005)
     // impact cost params
-    uint256 constant internal C_BUYIN_ALPHA = 25700000000000; // α=2.570e-05*1e18
-    uint256 constant internal C_BUYIN_BETA = 854200000000; // β=8.542e-07*1e18
-    uint256 constant internal C_SELLOUT_ALPHA = 117100000000000; // α=-1.171e-04*1e18
-    uint256 constant internal C_SELLOUT_BETA = 838600000000; // β=8.386e-07*1e18
+    uint256 constant internal C_BUYIN_ALPHA = 0; // α=0
+    uint256 constant internal C_BUYIN_BETA = 2000000000000; // β=2e-06*1e18
+    uint256 constant internal C_SELLOUT_ALPHA = 0; // α=0
+    uint256 constant internal C_SELLOUT_BETA = 2000000000000; // β=2e-06*1e18
     mapping(address => uint32) public CGammaMap;
 
     // int128 constant internal SIGMA_STEP = 0x346DC5D638865; // (0.00005*2**64).toString(16), 0.00005 as 64.64-bit fixed point
@@ -204,7 +204,7 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
     // - C = 0, if VOL < 500 / γ
     // - C = (α + β * VOL) * γ, if VOL >= 500 / γ
 
-    // α=2.570e-05，β=8.542e-07
+    // α=0，β=2e-06
     function impactCostForBuyInETH(address token, uint256 vol) public view returns (uint256 impactCost) {
         uint32 gamma = CGammaMap[token];
         if (vol.mul(gamma) < 500 ether) {
@@ -214,7 +214,7 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
         return (C_BUYIN_ALPHA.add(C_BUYIN_BETA.mul(vol).div(1e18)).div(1e10)).mul(gamma); // combine mul div
     }
 
-    // α=-1.171e-04，β=8.386e-07
+    // α=0，β=2e-06
     function impactCostForSellOutETH(address token, uint256 vol) public view returns (uint256 impactCost) {
         uint32 gamma = CGammaMap[token];
         if (vol.mul(gamma) < 500 ether) {
@@ -286,7 +286,7 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
         }
 
         // calc K
-        // K=(0.000026*T+10.205*σ)*γ(σ)
+        // K=(0.00001*T+10*σ)*γ(σ)
         {
             uint256 gamma = calcGamma(_op.sigma);
             _k = K_ALPHA.mul(_op.T).mul(1e18).add(K_BETA.mul(_op.sigma)).mul(gamma).div(K_GAMMA_BASE).div(1e18);

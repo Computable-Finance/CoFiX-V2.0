@@ -28,7 +28,7 @@ contract CoFiXV2VaultForCNode is ICoFiXVaultForCNode, ReentrancyGuard {
     address public governance;
     address public cnodePool;
 
-    uint256 public initCoFiRate = 0.5*1e18; // yield per block, 5*1e18/10
+    uint256 public initCoFiRate = 0.2*1e18; // yield per block, 5*1e18/10
     uint256 public decayPeriod = 2400000; // yield decays for every 2,400,000 blocks
     uint256 public decayRate = 80;
 

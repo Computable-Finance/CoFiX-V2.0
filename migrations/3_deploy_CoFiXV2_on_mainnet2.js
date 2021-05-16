@@ -102,9 +102,9 @@ module.exports = async function (deployer, network) {
 
         console.log(`setting controller of CoFiXFactory`);
         // creat and set pair
-        await factory.createPair(USDT.address, "1000000000000000000", "1500000000"); // ETH/USDT 1:1500
-        await factory.createPair(HBTC.address, "30000000000000000000", "1000000000000000000"); // ETH/HBTC  30:1
-        await factory.createPair(NEST.address, "1000000000000000000", "10000000000000000000000"); // ETH/nest  1：10000
+        await factory.createPair(USDT.address, "1000000000000000000", "3000000000"); // ETH/USDT 1:3000
+        await factory.createPair(HBTC.address, "20000000000000000000", "1000000000000000000"); // ETH/HBTC  20:1
+        await factory.createPair(NEST.address, "1000000000000000000", "20000000000000000000000"); // ETH/nest  1：20000
         const usdtPair = await factory.getPair(USDT.address);
         const hbtcPair = await factory.getPair(HBTC.address);
         const nestPair = await factory.getPair(NEST.address);
@@ -115,7 +115,7 @@ module.exports = async function (deployer, network) {
         // set CGamma of token
         await controller.setCGamma(USDT.address, "1");
         await controller.setCGamma(HBTC.address, "1");
-        await controller.setCGamma(NEST.address, "20");
+        await controller.setCGamma(NEST.address, "100");
 
         // set minter of cofiToken
         // let cofiToken = await CoFiToken.deployed();
@@ -134,7 +134,7 @@ module.exports = async function (deployer, network) {
         await vaultForLP.addPool(CoFiXStakingRewardsForUSDT.address);
         await vaultForLP.addPool(CoFiXStakingRewardsForHBTC.address);
         await vaultForLP.addPool(CoFiXStakingRewardsForNEST.address);
-        await vaultForLP.batchSetPoolWeight([CoFiXStakingRewardsForUSDT.address, CoFiXStakingRewardsForHBTC.address, CoFiXStakingRewardsForNEST.address], ["20", "20", "60"]);
+        await vaultForLP.batchSetPoolWeight([CoFiXStakingRewardsForUSDT.address, CoFiXStakingRewardsForHBTC.address, CoFiXStakingRewardsForNEST.address], ["25", "25", "50"]);
         const usdtPoolInfo = await vaultForLP.getPoolInfo(CoFiXStakingRewardsForUSDT.address);
         console.log(`getPoolInfo, CoFiXStakingRewardsForUSDT.address: ${CoFiXStakingRewardsForUSDT.address}, state: ${usdtPoolInfo.state}, weight: ${usdtPoolInfo.weight}`);
         const hbtcPoolInfo = await vaultForLP.getPoolInfo(CoFiXStakingRewardsForHBTC.address);

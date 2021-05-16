@@ -28,7 +28,7 @@ contract CoFiXV2VaultForLP is ICoFiXVaultForLP, ReentrancyGuard {
     // managed by governance
     address public governance;
 
-    uint256 public initCoFiRate = 4.5*1e18; // yield per block  5*1e18 - 5*1e18/10
+    uint256 public initCoFiRate = 1.8*1e18; // yield per block  5*1e18 - 5*1e18/10
     uint256 public decayPeriod = 2400000; // yield decays for every 2,400,000 blocks
     uint256 public decayRate = 80;
 

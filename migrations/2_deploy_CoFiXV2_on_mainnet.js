@@ -7,20 +7,20 @@ var CoFiXFactory = artifacts.require("CoFiXV2Factory");
 var CoFiXController = artifacts.require("CoFiXV2Controller");
 var CoFiXPair = artifacts.require("CoFiXV2Pair");
 var CoFiXRouter = artifacts.require("CoFiXV2Router");
-const CoFiXVaultForLP = artifacts.require("CoFiXV2VaultForLP");
+var CoFiXVaultForLP = artifacts.require("CoFiXV2VaultForLP");
 var CoFiXVaultForTrader = artifacts.require("CoFiXV2VaultForTrader");
-const CoFiXVaultForCNode = artifacts.require("CoFiXV2VaultForCNode");
-const CoFiXDAO = artifacts.require("CoFiXV2DAO");
+var CoFiXVaultForCNode = artifacts.require("CoFiXV2VaultForCNode");
+var CoFiXDAO = artifacts.require("CoFiXV2DAO");
 var CoFiToken = artifacts.require("CoFiToken");
 var CoFiXNode = artifacts.require("CoFiXNode");
-const CoFiXStakingRewards = artifacts.require("CoFiXV2StakingRewards.sol");
-const CNodeStakingRewards = artifacts.require("V2CNodeStakingRewards.sol");
+var CoFiXStakingRewards = artifacts.require("CoFiXV2StakingRewards.sol");
+var CNodeStakingRewards = artifacts.require("V2CNodeStakingRewards.sol");
 
 module.exports = async function (deployer, network) {
 
     console.log(`truffle deploy CoFiXV2 to ${network} network`);
 
-    const supportedNetwork = [ "mainnet", "mainnet-fork", "ropsten", "ropsten-fork", "rinkeby", "rinkeby-fork"];
+    const supportedNetwork = [ "mainnet", "mainnet-fork", "ropsten", "ropsten-fork", "rinkeby"];
 
     if (!supportedNetwork.includes(network)) {
         console.log(`skip, only for ${supportedNetwork} network`);
@@ -32,7 +32,7 @@ module.exports = async function (deployer, network) {
         HBTC = await HBTC.at("0x0316EB71485b0Ab14103307bf65a021042c6d380");
         NEST = await NEST.at("0x04abEdA201850aC0124161F037Efd70c74ddC74C");
         WETH9 = await WETH9.at("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2");
-        NestPriceOracle = await NestPriceOracle.at("0xB5D2890c061c321A5B6A4a4254bb1522425BAF0A"); // nest 3.6: NestPriceFacade 
+        NestPriceOracle = await NestPriceOracle.at("0x3bf046c114385357838D9cAE9509C6fBBfE306d2"); // nest 3.6: NestPriceFacade 
         CoFiToken = await CoFiToken.at("0x1a23a6BfBAdB59fa563008c0fB7cf96dfCF34Ea1");
         // https://uniswap.org/docs/v2/smart-contracts/factory/
         UniswapFactory = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
@@ -43,63 +43,45 @@ module.exports = async function (deployer, network) {
         NEST = await NEST.at("0x2CFa7278ecf2DB7f6f97C07EefaC4aAD19b81d80");
         WETH9 = await WETH9.at("0x59b8881812Ac484Ab78b8fc7c10b2543e079a6C3");
         NestPriceOracle = await NestPriceOracle.at("0x406C82f4F116F4FAD75bb47A142C9B5Fb213133C");
-        // await deployer.deploy(NestPriceOracle);
-        // console.log(`feedPrice to new Nest Price Oarcle: ${NestPriceOracle.address}`);
-        // const nestQuery = await NestPriceOracle.deployed();
-        // // function feedPrice(address token, uint256 ethAmount, uint256 erc20Amount, uint128 avgPrice, int128 vola) external {
-        // await nestQuery.feedPrice(USDT.address, "30000000000000000000", "39010500000", "1320675549", "7511686039347830");
-        // await nestQuery.feedPrice(HBTC.address, "30000000000000000000", "1129440000000000000", "38071631665285588", "5441325017383007");
-        // await nestQuery.feedPrice(NEST.address, "30000000000000000000", "1149043740265046089421137", "38301458008834869647371", "6231125516313609");
-
-        // const pUSDT = await nestQuery.latestPrice(USDT.address);
-        // const pHBTC = await nestQuery.latestPrice(HBTC.address);
-        // const pNEST = await nestQuery.latestPrice(NEST.address);
-        // console.log(`pUSDT: ${USDT.address}, ethAmount: ${pUSDT.ethAmount.toString()}, erc20Amount: ${pUSDT.tokenAmount.toString()}, avgPrice: ${pUSDT.avgPrice.toString()}, vola: ${pUSDT.vola.toString()}, bn: ${pUSDT.bn.toString()}`);
-        // console.log(`pHBTC: ${USDT.address}, ethAmount: ${pHBTC.ethAmount.toString()}, erc20Amount: ${pHBTC.tokenAmount.toString()}, avgPrice: ${pHBTC.avgPrice.toString()}, vola: ${pHBTC.vola.toString()}, bn: ${pHBTC.bn.toString()}`);
-        // console.log(`pNEST: ${NEST.address}, ethAmount: ${pNEST.ethAmount.toString()}, erc20Amount: ${pNEST.tokenAmount.toString()}, avgPrice: ${pNEST.avgPrice.toString()}, vola: ${pNEST.vola.toString()}, bn: ${pNEST.bn.toString()}`);
         UniswapFactory = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
         // CoFiToken = await CoFiToken.at("0x72Fd35b1dB364db812A8E726891685A25a9135D3");
         await deployer.deploy(CoFiToken);
         // CoFiXNode = await CoFiXNode.at("0x655C281DC8610003d8AE490D462B950BdA71582f");
         await deployer.deploy(CoFiXNode);
-    } else if (network == "rinkeby" || network == "rinkeby-fork") {
-        await deployer.deploy(USDT);
-        await deployer.deploy(HBTC);
-        await deployer.deploy(NEST);
-        await deployer.deploy(WETH9);
-        NestPriceOracle = await NestPriceOracle.at("0x406C82f4F116F4FAD75bb47A142C9B5Fb213133C");
+    } else {
+        USDT = await USDT.at("0x20D9165Ce14c5f3a3d97c87d1B217c475a4bC154");
+        HBTC = await HBTC.at("0xc4E6F199A72E8cbaEE801Bf3aD658F7c5bF3582d");
+        NEST = await NEST.at("0x549fC0B030369262b46cD6fF09Af8372E41F92a8");
+        WETH9 = await WETH9.at("0x1df1Ae28f32E97820eC0240169D89e23532Ee3a4");
+        NestPriceOracle = await NestPriceOracle.at("0x97F09D58a87B9a6f0cA1E69aCef77da3EFF8da0A");
         UniswapFactory = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
-        await deployer.deploy(CoFiToken);
-        await deployer.deploy(CoFiXNode);
-
-        USDT = await USDT.deployed();
-        HBTC = await HBTC.deployed();
-        NEST = await NEST.deployed();
-        WETH9 = await WETH9.deployed();
+        CoFiToken = await CoFiToken.at("0x5c6134399D38Ba6Ba1866eCAa34EDcdb2b22E79D");
+        CoFiXNode = await CoFiXNode.at("0x71467c65Ec768B943245D82495E50eDa35d47B64");
     }
 
     // CoFiXFactory
     await deployer.deploy(CoFiXFactory, WETH9.address);
-
+    // CoFiXFactory = await CoFiXFactory.at("0xF91C92B178Cb6784435ea76D3aD973970CaDFC19");
     // CoFiXRouter
     await deployer.deploy(CoFiXRouter, CoFiXFactory.address, UniswapFactory, WETH9.address);
-
+    // CoFiXRouter = await CoFiXRouter.at("0x8796595CCF320EF8E6A19602652497C7726E98E8");
     // CoFiXController
     await deployer.deploy(CoFiXController, NestPriceOracle.address, NEST.address, CoFiXFactory.address);
-
+    // CoFiXController = await CoFiXController.at("0x185c5Df9992c90aef28dcC8Ec0C93E171d38c0d4");
     // VaultForLP
     await deployer.deploy(CoFiXVaultForLP, CoFiToken.address, CoFiXFactory.address);
-
+    // CoFiXVaultForLP = await CoFiXVaultForLP.at("0xD5E5942a8f42A404C0DE3B50A391f3FD06c82B69");
     // VaultForTrader
     await deployer.deploy(CoFiXVaultForTrader, CoFiToken.address, CoFiXFactory.address);
-
+    // CoFiXVaultForTrader = await CoFiXVaultForTrader.at("0xD0BccAcaD817A374ae086B3F8c4Ec481fFFec7b6");
     // VaultForCNode
     await deployer.deploy(CoFiXVaultForCNode, CoFiToken.address, CoFiXFactory.address);
-
+    // CoFiXVaultForCNode = await CoFiXVaultForCNode.at("0xE61db20A635A04FBD13bbb822cf75A062813A080");
     // CoFiXDAO
     await deployer.deploy(CoFiXDAO, CoFiToken.address, CoFiXFactory.address);
-
+    // CoFiXDAO = await CoFiXDAO.at("0xC37112fC36C4B6C609f62786b0855709069cc323");
     let controller = await CoFiXController.deployed();
+    // let controller = CoFiXController;
 
     // add caller
     await controller.addCaller(CoFiXDAO.address);
@@ -115,22 +97,28 @@ module.exports = async function (deployer, network) {
 
     // set controller in factory
     let factory = await CoFiXFactory.deployed();
+    // let factory = CoFiXFactory;
     await factory.setController(CoFiXController.address);
     await factory.setVaultForLP(CoFiXVaultForLP.address);
     await factory.setVaultForTrader(CoFiXVaultForTrader.address);
     await factory.setVaultForCNode(CoFiXVaultForCNode.address);
     await factory.setDAO(CoFiXDAO.address);
     await factory.setFeeReceiver(CoFiXDAO.address);
+
+    // CNodeStakingRewards
+    await deployer.deploy(CNodeStakingRewards, CoFiToken.address, CoFiXNode.address, CoFiXFactory.address);
+    // CNodeStakingRewards = await CNodeStakingRewards.at("0xE61db20A635A04FBD13bbb822cf75A062813A080");
     
     // allowRouter
     console.log(`start allowRouter`);
     let vaultForTrader = await CoFiXVaultForTrader.deployed();
+    // let vaultForTrader = CoFiXVaultForTrader;
     await vaultForTrader.allowRouter(CoFiXRouter.address);
     console.log("allowRouter successfully for CoFiXRouter03");
 
-    await deployer.deploy(CNodeStakingRewards, CoFiToken.address, CoFiXNode.address, CoFiXFactory.address);
     // set cnode pool
     let vaultForCNode = await CoFiXVaultForCNode.deployed();
+    // let vaultForCNode = CoFiXVaultForCNode;
     await vaultForCNode.setCNodePool(CNodeStakingRewards.address);
     const cnodePool = await vaultForCNode.cnodePool();
     console.log(`setCNodePool, CNodeStakingRewards.address: ${CNodeStakingRewards.address}, cnodePool: ${cnodePool}`);
@@ -145,12 +133,12 @@ module.exports = async function (deployer, network) {
 
     // set from multi sig gov for mainnet release
     // // set controller in factory
-    if (network == "ropsten" || network == "ropsten-fork") {
+    if (network == "ropsten" || network == "ropsten-fork" || network == "rinkeby") {
         console.log(`setting controller of CoFiXFactory`);
         // createPair(address token, uint256 initToken0Amount, uint256 initToken1Amount)   
-        await factory.createPair(USDT.address, "1000000000000000000", "1500000000"); // ETH/USDT 1:1500
-        await factory.createPair(HBTC.address, "30000000000000000000", "1000000000000000000"); // ETH/HBTC  30:1
-        await factory.createPair(NEST.address, "1000000000000000000", "10000000000000000000000"); // ETH/nest  1：10000
+        await factory.createPair(USDT.address, "1000000000000000000", "3000000000"); // ETH/USDT 1:3000
+        await factory.createPair(HBTC.address, "20000000000000000000", "1000000000000000000"); // ETH/HBTC  20:1
+        await factory.createPair(NEST.address, "1000000000000000000", "20000000000000000000000"); // ETH/nest  1：20000
         const usdtPair = await factory.getPair(USDT.address);
         const hbtcPair = await factory.getPair(HBTC.address);
         const nestPair = await factory.getPair(NEST.address);
@@ -161,13 +149,13 @@ module.exports = async function (deployer, network) {
         // set CGamma of token
         await controller.setCGamma(USDT.address, "1");
         await controller.setCGamma(HBTC.address, "1");
-        await controller.setCGamma(NEST.address, "20");
+        await controller.setCGamma(NEST.address, "100");
 
         // set minter of cofiToken
-        let cofiToken = await CoFiToken.deployed();
-        await cofiToken.addMinter(CoFiXVaultForTrader.address);
-        await cofiToken.addMinter(CoFiXVaultForLP.address);
-        await cofiToken.addMinter(CoFiXVaultForCNode.address);
+        // let cofiToken = await CoFiToken.deployed();
+        // await cofiToken.addMinter(CoFiXVaultForTrader.address);
+        // await cofiToken.addMinter(CoFiXVaultForLP.address);
+        // await cofiToken.addMinter(CoFiXVaultForCNode.address);
 
         // deploy USDT HBTC NEST LP Token Rewards Pool (deployCoFiXStakingRewards)
         let CoFiXStakingRewardsForUSDT = await CoFiXStakingRewards.new(CoFiToken.address, usdtPair, CoFiXFactory.address);
@@ -176,11 +164,12 @@ module.exports = async function (deployer, network) {
 
         // add pool and set pool weight
         let vaultForLP = await CoFiXVaultForLP.deployed();
+        // let vaultForLP = CoFiXVaultForLP
         console.log(`CoFiXStakingRewardsForUSDT.address: ${CoFiXStakingRewardsForUSDT.address}, CoFiXStakingRewardsForHBTC: ${CoFiXStakingRewardsForHBTC.address}, CoFiXStakingRewardsForNEST: ${CoFiXStakingRewardsForNEST.address}`);
         await vaultForLP.addPool(CoFiXStakingRewardsForUSDT.address);
         await vaultForLP.addPool(CoFiXStakingRewardsForHBTC.address);
         await vaultForLP.addPool(CoFiXStakingRewardsForNEST.address);
-        await vaultForLP.batchSetPoolWeight([CoFiXStakingRewardsForUSDT.address, CoFiXStakingRewardsForHBTC.address, CoFiXStakingRewardsForNEST.address], ["20", "20", "60"]);
+        await vaultForLP.batchSetPoolWeight([CoFiXStakingRewardsForUSDT.address, CoFiXStakingRewardsForHBTC.address, CoFiXStakingRewardsForNEST.address], ["25", "25", "50"]);
         const usdtPoolInfo = await vaultForLP.getPoolInfo(CoFiXStakingRewardsForUSDT.address);
         console.log(`getPoolInfo, CoFiXStakingRewardsForUSDT.address: ${CoFiXStakingRewardsForUSDT.address}, state: ${usdtPoolInfo.state}, weight: ${usdtPoolInfo.weight}`);
         const hbtcPoolInfo = await vaultForLP.getPoolInfo(CoFiXStakingRewardsForHBTC.address);
@@ -211,6 +200,7 @@ module.exports = async function (deployer, network) {
     console.log(`| CoFiXV2VaultForCNode | ${CoFiXVaultForCNode.address} |`);
 
     console.log(`| V2CNodeStakingRewards CNode | ${CNodeStakingRewards.address} |`);
+    console.log(`| CoFiXDAO | ${CoFiXDAO.address} |`);
 
     // check deploying results
     const pairCnt = await factory.allPairsLength();

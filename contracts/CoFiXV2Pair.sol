@@ -344,51 +344,51 @@ contract CoFiXV2Pair is ICoFiXV2Pair, CoFiXERC20 {
         _update(IERC20(token0).balanceOf(address(this)), IERC20(token1).balanceOf(address(this)));
     }
 
-    // calc Net Asset Value Per Share for mint
-    // use it in this contract, for optimized gas usage
-    function calcNAVPerShareForMint(uint256 balance0, uint256 balance1, OraclePrice memory _op) public view returns (uint256 navps) {
-        uint _totalSupply = totalSupply;
-        if (_totalSupply == 0) {
-            navps = NAVPS_BASE;
-        } else {
-            /*
-            N_{p} &= (A_{u}/P_{s}^{'} + A_{e})/S \\\\
-                  &= (A_{u}/(P * (1 - K)) + A_{e})/S \\\\
-                  &= (\frac{A_{u}}{\frac{erc20Amount}{ethAmount} * \frac{(k_{BASE} - k)}{(k_{BASE})}} + A_{e})/S \\\\
-                  &= (\frac{A_{u}*ethAmount*k_{BASE}}{erc20Amount*(k_{BASE} - k)}+ A_{e}) / S \\\\
-                  &= (A_{u}*ethAmount*k_{BASE}+ A_{e}*erc20Amount*(k_{BASE} - k)) / S / (erc20Amount*(k_{BASE} - k)) \\\\
-            N_{p} &= NAVPS_{BASE}*(A_{u}*ethAmount*k_{BASE}+ A_{e}*erc20Amount*(k_{BASE} - k)) / S / (erc20Amount*(k_{BASE} - k)) \\\\
-            // navps = NAVPS_BASE * ( (balance1*_op.ethAmount*K_BASE) + (balance0*_op.erc20Amount*(K_BASE-_op.K)) ) / _totalSupply / _op.erc20Amount / (K_BASE-_op.K);
-            */
-            uint256 kbaseSubK = K_BASE.sub(_op.K);
-            uint256 balance1MulEthKbase = balance1.mul(_op.ethAmount).mul(K_BASE);
-            uint256 balance0MulErcKbsk = balance0.mul(_op.erc20Amount).mul(kbaseSubK);
-            navps = NAVPS_BASE.mul( (balance1MulEthKbase).add(balance0MulErcKbsk) ).div(_totalSupply).div(_op.erc20Amount).div(kbaseSubK);
-        }
-    }
+    // // calc Net Asset Value Per Share for mint
+    // // use it in this contract, for optimized gas usage
+    // function calcNAVPerShareForMint(uint256 balance0, uint256 balance1, OraclePrice memory _op) public view returns (uint256 navps) {
+    //     uint _totalSupply = totalSupply;
+    //     if (_totalSupply == 0) {
+    //         navps = NAVPS_BASE;
+    //     } else {
+    //         /*
+    //         N_{p} &= (A_{u}/P_{s}^{'} + A_{e})/S \\\\
+    //               &= (A_{u}/(P * (1 - K)) + A_{e})/S \\\\
+    //               &= (\frac{A_{u}}{\frac{erc20Amount}{ethAmount} * \frac{(k_{BASE} - k)}{(k_{BASE})}} + A_{e})/S \\\\
+    //               &= (\frac{A_{u}*ethAmount*k_{BASE}}{erc20Amount*(k_{BASE} - k)}+ A_{e}) / S \\\\
+    //               &= (A_{u}*ethAmount*k_{BASE}+ A_{e}*erc20Amount*(k_{BASE} - k)) / S / (erc20Amount*(k_{BASE} - k)) \\\\
+    //         N_{p} &= NAVPS_{BASE}*(A_{u}*ethAmount*k_{BASE}+ A_{e}*erc20Amount*(k_{BASE} - k)) / S / (erc20Amount*(k_{BASE} - k)) \\\\
+    //         // navps = NAVPS_BASE * ( (balance1*_op.ethAmount*K_BASE) + (balance0*_op.erc20Amount*(K_BASE-_op.K)) ) / _totalSupply / _op.erc20Amount / (K_BASE-_op.K);
+    //         */
+    //         uint256 kbaseSubK = K_BASE.sub(_op.K);
+    //         uint256 balance1MulEthKbase = balance1.mul(_op.ethAmount).mul(K_BASE);
+    //         uint256 balance0MulErcKbsk = balance0.mul(_op.erc20Amount).mul(kbaseSubK);
+    //         navps = NAVPS_BASE.mul( (balance1MulEthKbase).add(balance0MulErcKbsk) ).div(_totalSupply).div(_op.erc20Amount).div(kbaseSubK);
+    //     }
+    // }
 
-    // calc Net Asset Value Per Share for burn
-    // use it in this contract, for optimized gas usage
-    function calcNAVPerShareForBurn(uint256 balance0, uint256 balance1, OraclePrice memory _op) public view returns (uint256 navps) {
-        uint _totalSupply = totalSupply;
-        if (_totalSupply == 0) {
-            navps = NAVPS_BASE;
-        } else {
-            /*
-            N_{p}^{'} &= (A_{u}/P_{b}^{'} + A_{e})/S \\\\
-                      &= (A_{u}/(P * (1 + K)) + A_{e})/S \\\\
-                      &= (\frac{A_{u}}{\frac{erc20Amount}{ethAmount} * \frac{(k_{BASE} + k)}{(k_{BASE})}} + A_{e})/S \\\\
-                      &= (\frac{A_{u}*ethAmount*k_{BASE}}{erc20Amount*(k_{BASE} + k)}+ A_{e}) / S \\\\
-                      &= (A_{u}*ethAmount*k_{BASE}+ A_{e}*erc20Amount*(k_{BASE} + k)) / S / (erc20Amount*(k_{BASE} + k)) \\\\
-            N_{p}^{'} &= NAVPS_{BASE}*(A_{u}*ethAmount*k_{BASE}+ A_{e}*erc20Amount*(k_{BASE} + k)) / S / (erc20Amount*(k_{BASE} + k)) \\\\
-            // navps = NAVPS_BASE * ( (balance1*_op.ethAmount*K_BASE) + (balance0*_op.erc20Amount*(K_BASE+_op.K)) ) / _totalSupply / _op.erc20Amount / (K_BASE+_op.K);
-            */
-            uint256 kbaseAddK = K_BASE.add(_op.K);
-            uint256 balance1MulEthKbase = balance1.mul(_op.ethAmount).mul(K_BASE);
-            uint256 balance0MulErcKbsk = balance0.mul(_op.erc20Amount).mul(kbaseAddK);
-            navps = NAVPS_BASE.mul( (balance1MulEthKbase).add(balance0MulErcKbsk) ).div(_totalSupply).div(_op.erc20Amount).div(kbaseAddK);
-        }
-    }
+    // // calc Net Asset Value Per Share for burn
+    // // use it in this contract, for optimized gas usage
+    // function calcNAVPerShareForBurn(uint256 balance0, uint256 balance1, OraclePrice memory _op) public view returns (uint256 navps) {
+    //     uint _totalSupply = totalSupply;
+    //     if (_totalSupply == 0) {
+    //         navps = NAVPS_BASE;
+    //     } else {
+    //         /*
+    //         N_{p}^{'} &= (A_{u}/P_{b}^{'} + A_{e})/S \\\\
+    //                   &= (A_{u}/(P * (1 + K)) + A_{e})/S \\\\
+    //                   &= (\frac{A_{u}}{\frac{erc20Amount}{ethAmount} * \frac{(k_{BASE} + k)}{(k_{BASE})}} + A_{e})/S \\\\
+    //                   &= (\frac{A_{u}*ethAmount*k_{BASE}}{erc20Amount*(k_{BASE} + k)}+ A_{e}) / S \\\\
+    //                   &= (A_{u}*ethAmount*k_{BASE}+ A_{e}*erc20Amount*(k_{BASE} + k)) / S / (erc20Amount*(k_{BASE} + k)) \\\\
+    //         N_{p}^{'} &= NAVPS_{BASE}*(A_{u}*ethAmount*k_{BASE}+ A_{e}*erc20Amount*(k_{BASE} + k)) / S / (erc20Amount*(k_{BASE} + k)) \\\\
+    //         // navps = NAVPS_BASE * ( (balance1*_op.ethAmount*K_BASE) + (balance0*_op.erc20Amount*(K_BASE+_op.K)) ) / _totalSupply / _op.erc20Amount / (K_BASE+_op.K);
+    //         */
+    //         uint256 kbaseAddK = K_BASE.add(_op.K);
+    //         uint256 balance1MulEthKbase = balance1.mul(_op.ethAmount).mul(K_BASE);
+    //         uint256 balance0MulErcKbsk = balance0.mul(_op.erc20Amount).mul(kbaseAddK);
+    //         navps = NAVPS_BASE.mul( (balance1MulEthKbase).add(balance0MulErcKbsk) ).div(_totalSupply).div(_op.erc20Amount).div(kbaseAddK);
+    //     }
+    // }
 
     // calc Net Asset Value Per Share (no K)
     // use it in this contract, for optimized gas usage

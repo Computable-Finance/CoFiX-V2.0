@@ -21,15 +21,15 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
     // uint256 constant public K_BASE = 1E8;
     uint256 constant public K_GAMMA_BASE = 10;
     uint256 constant public NAVPS_BASE = 1E18; // NAVPS (Net Asset Value Per Share), need accuracy
-    uint256 constant internal K_ALPHA = 1000; // α=1e-05*1e8
-    uint256 constant internal K_BETA = 1000000000; // β=10*1e8
+    uint256 constant internal K_ALPHA = 2000; // α=2e-05*1e8
+    uint256 constant internal K_BETA = 4000000000; // β=40*1e8
     uint256 internal T = 3600; // ctrl-v2: V1 (900) -> V2 (3600)
     uint256 internal K_EXPECTED_VALUE = 0.005*1E8; // ctrl-v2: V1 (0.0025) -> V2 (0.005)
     // impact cost params
     uint256 constant internal C_BUYIN_ALPHA = 0; // α=0
-    uint256 constant internal C_BUYIN_BETA = 2000000000000; // β=2e-06*1e18
+    uint256 constant internal C_BUYIN_BETA = 20000000000000; // β=2e-05*1e18
     uint256 constant internal C_SELLOUT_ALPHA = 0; // α=0
-    uint256 constant internal C_SELLOUT_BETA = 2000000000000; // β=2e-06*1e18
+    uint256 constant internal C_SELLOUT_BETA = 20000000000000; // β=2e-05*1e18
     mapping(address => uint32) public CGammaMap;
 
     // int128 constant internal SIGMA_STEP = 0x346DC5D638865; // (0.00005*2**64).toString(16), 0.00005 as 64.64-bit fixed point
@@ -201,23 +201,23 @@ contract CoFiXV2Controller is ICoFiXV2Controller {  // ctrl-03: change contract 
     }
 
     // impact cost
-    // - C = 0, if VOL < 500 / γ
-    // - C = (α + β * VOL) * γ, if VOL >= 500 / γ
+    // - C = 0, if VOL < 50 / γ
+    // - C = (α + β * VOL) * γ, if VOL >= 50 / γ
 
-    // α=0，β=2e-06
+    // α=0，β=2e-05
     function impactCostForBuyInETH(address token, uint256 vol) public view returns (uint256 impactCost) {
         uint32 gamma = CGammaMap[token];
-        if (vol.mul(gamma) < 500 ether) {
+        if (vol.mul(gamma) < 50 ether) {
             return 0;
         }
         // return C_BUYIN_ALPHA.add(C_BUYIN_BETA.mul(vol).div(1e18)).mul(1e8).div(1e18);
         return (C_BUYIN_ALPHA.add(C_BUYIN_BETA.mul(vol).div(1e18)).div(1e10)).mul(gamma); // combine mul div
     }
 
-    // α=0，β=2e-06
+    // α=0，β=2e-05
     function impactCostForSellOutETH(address token, uint256 vol) public view returns (uint256 impactCost) {
         uint32 gamma = CGammaMap[token];
-        if (vol.mul(gamma) < 500 ether) {
+        if (vol.mul(gamma) < 50 ether) {
             return 0;
         }
         // return (C_SELLOUT_BETA.mul(vol).div(1e18)).sub(C_SELLOUT_ALPHA).mul(1e8).div(1e18);

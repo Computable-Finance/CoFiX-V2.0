@@ -34,7 +34,7 @@ contract CoFiXV2DAO is ICoFiXV2DAO, ReentrancyGuard {
 
     /* ========== PARAMETERS ============== */
 
-    uint256 constant DAO_REPURCHASE_PRICE_DEVIATION = 10;  // price deviation < 5% 
+    uint256 constant DAO_REPURCHASE_PRICE_DEVIATION = 10;  // price deviation < 10% 
     uint256 constant _oracleFee = 0.01 ether;
 
 

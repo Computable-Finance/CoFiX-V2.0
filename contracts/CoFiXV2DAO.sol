@@ -34,7 +34,7 @@ contract CoFiXV2DAO is ICoFiXV2DAO, ReentrancyGuard {
 
     /* ========== PARAMETERS ============== */
 
-    uint256 constant DAO_REPURCHASE_PRICE_DEVIATION = 10;  // price deviation < 10% 
+    uint256 constant DAO_REPURCHASE_PRICE_DEVIATION = 10;  // price deviation < 5% 
     uint256 constant _oracleFee = 0.01 ether;
 
 
@@ -177,15 +177,15 @@ contract CoFiXV2DAO is ICoFiXV2DAO, ReentrancyGuard {
 
     function _quota() internal view returns (uint256 quota) 
     {
-        uint256 n = 50;
+        uint256 n = 100;
         uint256 intv = (lastBlock == 0) ? 
             (block.number).sub(startedBlock) : (block.number).sub(uint256(lastBlock));
-        uint256 _acc = (n * intv > 15_000) ? 15_000 : (n * intv);
+        uint256 _acc = (n * intv > 30_000) ? 30_000 : (n * intv);
 
         // check if total amounts overflow
         uint256 total = _acc.mul(1e18).add(quotaAmount);
-        if (total > uint256(15_000).mul(1e18)){
-            quota = uint256(15_000).mul(1e18);
+        if (total > uint256(30_000).mul(1e18)){
+            quota = uint256(30_000).mul(1e18);
         } else{
             quota = total;
         }

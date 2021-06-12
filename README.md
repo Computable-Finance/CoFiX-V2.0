@@ -120,5 +120,6 @@ Check *Record of Governance Authority Transfer to Multi-Sig Wallet* and *Details
 | CoFiXV2StakingRewards ETH/NEST Pair | 0x74246388De82e5c40A01F640c7cab678ac1C5C13 |
 | V2CNodeStakingRewards CNode | 0x810c0379d3215c4109F203E1C802A09008f7EbA2 |
 | CoFiXDAO(Abandoned) | 0x278f5d08bEa1989BEfcC09A20ad60fB39702D556 |
-| CoFiXDAO | 0x2a9Dd2Cc6595b089a300c6D149032c52Da0cEDc1 |
+| CoFiXDAO(Abandoned) | 0x2a9Dd2Cc6595b089a300c6D149032c52Da0cEDc1 |
+| CoFiXDAO | 0x31127c12bc0C0d7D779dDfd57A87697b067FB100 |
 
